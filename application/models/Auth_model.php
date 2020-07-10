@@ -10,7 +10,7 @@ class Auth_model extends CI_Model {
 
     public function authenticate($data) 
     {
-        $this->db->where(['username' => $data['uname'] , 'status' => 1 ]);
+        $this->db->where(['mobile_no' => $data['mob'] , 'is_active' => 1, 'role_id' => 3 ]); /* Role ID 3 is for Users */
         $query = $this->db->get('users');
         if($query->num_rows() == 0)
             return false;
@@ -19,7 +19,7 @@ class Auth_model extends CI_Model {
         // echo password_hash($data['pwd'], PASSWORD_DEFAULT);
         // echo "<br>".$data['uname'];
         // exit;
-        return password_verify($data['pwd'], $user->pwd) ? $user : FALSE;
+        return password_verify($data['pwd'], $user->password) ? $user : FALSE;
     }
 
 

@@ -459,7 +459,7 @@ ul{
 }
 .search_field{
 	position: relative;
-	border-radius: 10px;
+	border-radius: 100px;
 	width: 1070px;
 }
 .search_box .search_block .search_field input{
@@ -473,7 +473,7 @@ ul{
 	padding-right: 80px;
 }
 .search_box .search_block .search_field > a{
-	position: absolute;
+	/* position: absolute; */
 	right: 0;
 	top: 0;
 	bottom: 0;
@@ -486,6 +486,7 @@ ul{
 	border-radius: 0px 50px 50px 0px;
 	display: inline-block;
 	font-weight: 500;
+	margin-left: 10px;
 }
 .clv_right_header .clv_menu .cart_nav ul > li > a.cart_toggle > span{
     border-radius: 50%;
@@ -9442,7 +9443,8 @@ ul{
 	}
 }
 .search_field{
-	padding:5px 15px !important;
+	/* padding:5px 15px !important; */
+	padding:0 0 0 25px !important;
 	background-color: white;
 	align-items: center;
 }

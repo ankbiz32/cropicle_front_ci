@@ -57,4 +57,6 @@ $route['default_controller'] = 'Home';
 $route['404_override'] = 'Error404';
 $route['about'] = 'Home/About';
 $route['contact'] = 'Home/Contact';
-$route['cases'] = 'Home/Cases';
+$route['profile'] = 'Home/Profile';
+$route['register'] = 'Login/register';
+$route['logout'] = 'Login/logout';

@@ -7,16 +7,16 @@ class MY_Controller extends CI_Controller
     }
 
     public function loggedIn(){
-        return isset($this->session->user->user_id) ? true : false;
+        return isset($this->session->user) ? true : false;
     }
 
-    public function redirectIfNotLoggedIn($uri = 'Login'){
+    public function redirectIfNotLoggedIn($uri = 'Home'){
         if(!$this->loggedIn()){
             redirect($uri);
         }
     }
 
-    public function redirectIfLoggedIn($uri = 'Admin'){
+    public function redirectIfLoggedIn($uri = 'profile'){
         if($this->loggedIn()){
             redirect($uri);
         }

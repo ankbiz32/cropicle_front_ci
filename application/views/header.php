@@ -6,7 +6,7 @@
 <!--<![endif]-->
 <!-- Begin Head --> 
 <head>
-	<title>Cropicle</title>
+	<title>Cropicle | <?=isset($title)?$title:''?></title>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="description" content="">
@@ -122,23 +122,26 @@
                                 </div>
                             </div>
                         </div>
+                        <?php if(isset($this->session->user)){?>
+                        <div class="clv_menu col-md-10 ml-auto">
+                        <?php }else{?>
                         <div class="clv_menu col-md-8 ml-auto">
+                        <?php }?>
                             <div class="clv_menu_nav">
                                 <ul>
-                                    <!-- <li>
-                                        <a href="javascript:;">home</a>
-                                        <ul>
-                                            <li><a href="index.html">home 1</a></li>
-                                            <li><a href="index2.html">home 2</a></li>
-                                            <li><a href="index3.html">home 3</a></li>
-                                            <li><a href="index4.html">home 4</a></li>
-                                            <li><a href="index5.html">home 5</a></li>
-                                            <li><a href="index6.html">home 6</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">How it works ?</a></li>
-									<li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="<?=base_url()?>">Home</a></li>
+                                    <li><a href="<?=base_url()?>about">How it works ?</a></li>
+                                    <li><a href="<?=base_url()?>contact">Contact us</a></li>
+                                    <?php if(isset($this->session->user)){?>
+                                        <li>
+                                            <a href="profile"><?=$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
+                                            <ul>
+                                                <li><a href="profile">See profile</a></li>
+                                                <li><a href="<?=base_url('logout')?>">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="<?=base_url()?>logout" class="d-md-none d-block">Logout</a></li>
+                                    <?php }?>
                                 </ul>
                             </div>
                             <div class="cart_nav">

@@ -107,6 +107,13 @@ class GetModel extends CI_Model{
         return $this->db->get($table)->result();
     }
 
+    // Fetch visible Info
+    public function getActiveInfo($table)
+    {
+        $this->db->where('is_active', '1');
+        return $this->db->get($table)->result();
+    }
+
     // Fetch max info
     public function getMaxNo($table, $column)
     {

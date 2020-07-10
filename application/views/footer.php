@@ -69,6 +69,7 @@
 		<div class="search_block">
 			<h3>Explore more with us</h3>
 			<div class="search_field row">
+                
 				<i class="fa fa-map-marker fa-lg px-0 col"></i>
 				<select id="loc-select" class="col">
 					<option value="" hidden>Select you area</option>
@@ -76,6 +77,7 @@
 					<option value="shankar">Shankar nagar</option>
 					<option value="vip">VIP colony</option>
 				</select>
+                <a href="javascript:;">search</a>
 			</div>
 		</div>
 		<span class="search_close">
@@ -91,6 +93,7 @@
 			</svg>
 		</span>
 	</div>
+    
     <!--SignUp Popup-->
     <div class="signup_wrapper">
         <div class="signup_inner">
@@ -108,19 +111,19 @@
                     <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
                 </ul>
             </div>
-            <div class="signup_form_section">
+            <form class="signup_form_section regForm" action="register">
                 <h4>create account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
                 <div class="form_block">
-                    <input type="text" class="form_field" placeholder="Name">
+                    <input type="text" class="form_field" name="name" placeholder="Name">
                 </div>
                 <div class="form_block">
-                    <input type="text" class="form_field" placeholder="Email">
+                    <input type="text" class="form_field" name="mobile_no" placeholder="10 digit Mobile no">
                 </div>
                 <div class="form_block">
-                    <input type="text" class="form_field" placeholder="Password">
+                    <input type="text" class="form_field" name="password" placeholder="Password">
                 </div>
-                <a href="javascript:;" class="clv_btn">sign up</a>
+                <button type="submit" id="regSubmit" class="clv_btn">sign up</button>
                 <div class="social_button_section">
                     <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
@@ -143,7 +146,7 @@
                     </g>
                     </svg>
                 </span>
-            </div>
+            </form>
         </div>
     </div>
     <!--SignIn Popup-->
@@ -151,7 +154,7 @@
         <div class="signup_inner">
             <div class="signup_details">
                 <div class="site_logo">
-                    <a href="index.html"> <img src="<?=base_url('assets/')?>images/logo_white.png" alt="image"></a>
+                    <a href="<?=base_url()?>"> <img src="<?=base_url('assets/')?>images/logo_white.png" alt="image"></a>
                 </div>
                 <h3>welcome to Cropicle!</h3>
                 <p>Consectetur adipisicing elit sed do eiusmod por incididunt uttelabore et dolore magna aliqu.</p>
@@ -166,13 +169,15 @@
             <div class="signup_form_section">
                 <h4>sign in account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
-                <div class="form_block">
-                    <input type="text" class="form_field" placeholder="Email">
-                </div>
-                <div class="form_block">
-                    <input type="text" class="form_field" placeholder="Password">
-                </div>
-                <a href="javascript:;" class="clv_btn">sign up</a>
+                <form action="<?=base_url('Login/authenticate')?>" method="POST">
+                    <div class="form_block">
+                        <input type="text" maxlength="10" minlength="10" class="form_field" name="mob" placeholder="Mobile no">
+                    </div>
+                    <div class="form_block">
+                        <input type="password" class="form_field" name="pwd" placeholder="Password">
+                    </div>
+                    <button type="submit" class="clv_btn">sign up</button>
+                </form>
                 <div class="social_button_section">
                     <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
@@ -198,8 +203,34 @@
             </div>
         </div>
     </div>
-    <!--Profile Toggle-->
-    <div class="profile_toggle"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/login.gif" alt=""></a></div>
+
+     <!--Success Popup-->
+     <div class="success_wrapper">
+        <div class="success_inner">
+            <div class="success_img"><img src="<?=base_url('assets/')?>images/success.png" alt=""></div>
+            <h3>Login success</h3>
+            <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="">
+            <p>Your order has been successfully processed! Please direct any questions you have to the store owner. Thanks for shopping</p>
+            <a href="javascript:;" class="clv_btn">continue browsing</a>
+            <span class="success_close">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve" width="11px" height="11px" >
+                <g>
+                    <path fill="#fec007" style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+                        c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+                        l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+                        c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                </g>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <?php if(!isset($this->session->user)){?>
+        <!--Profile Toggle-->
+        <div class="profile_toggle"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/login.gif" alt=""></a></div>
+    <?php }?>
 </div>
 <!--Main js file Style-->
 <script src="<?=base_url('assets/')?>js/jquery.js"></script>
@@ -222,5 +253,86 @@
 <script src="<?=base_url('assets/')?>js/revolution.extension.slideanims.min.js"></script>
 <script src="<?=base_url('assets/')?>js/revolution.extension.video.min.js"></script>
 <script src="<?=base_url('assets/')?>js/custom.js"></script>
+<!-- Sweet alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+<script>
+
+  //  Sweet alert for normal response
+    var base_url = '<?=base_url()?>';
+      $(document).ready(function(){
+          const Toast = Swal.mixin({
+              toast: false,
+              position: 'center',
+              showConfirmButton: false,
+              timer: 3000
+          });
+
+          <?php if($this->session->flashdata('success') || $message = $this->session->flashdata('failed')):
+              $class = $this->session->flashdata('success') ? 'success' : 'error';
+          ?>
+              
+              Toast.fire({
+                  icon: '<?=$class?>',
+                  title: '<?= $this->session->flashdata('success'); ?>
+                          <?= $this->session->flashdata('failed'); ?>'
+              });
+          <?php 
+              endif;
+          ?>
+      });
+
+
+  //  Sweet alert for delete
+    function confirmation(ev) {
+      ev.preventDefault();
+      var urlToRedirect = ev.currentTarget.getAttribute('href'); 
+
+        Swal.fire({
+          title: 'Are you sure?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            window.location = urlToRedirect;
+          }
+        })
+
+  }
+    
+</script>
+
+<script>
+    // Form Submit
+    $('form.regForm').on('submit', function (e) {
+            e.preventDefault();
+            var url = form.attr('action');
+            var data= $('form.regForm').serialize();
+            console.log(data);
+            // $.ajax({
+            //     type: 'post',
+            //     url: url,
+            //     data: $('form.regForm').serialize(),
+            //     success: function(data)
+            //     {
+            //         if(data){
+            //             window.location.replace(loc+'demand-lists');
+            //         }
+            //         else{
+            //             toastr.error('Invalid/incomplete data submitted', 'Error !', {"showMethod": "slideDown","timeOut": 0,"closeButton": true});
+            //         }
+            //     },
+            //     error: function(){
+            //         alert('error');
+            //     }
+            // });
+        });
+</script>
+
+
 </body>
 </html>

@@ -15,28 +15,57 @@ class Login extends MY_Controller {
 
     public function index(){
         $this->redirectIfLoggedIn();
-        $this->load->view('admin/login');
+        redirect('Home');
     }
 
     public function authenticate(){
+        // echo'<pre>';var_dump($this->input->post());exit;
         $this->redirectIfLoggedIn();
-        $this->form_validation->set_rules('uname', 'Username', 'required|min_length[3]');
-        $this->form_validation->set_rules('pwd', 'Password', 'required|min_length[6]');
+        $this->form_validation->set_rules('mob', 'Mobile no.', 'required|min_length[10]|max_length[10]|numeric');
+        $this->form_validation->set_rules('pwd', 'Password', 'required');
         $response ['errors'] = '';
         if($this->form_validation->run() == FALSE){
-            $response[ 'errors' ]= validation_errors() ;
+            $this->session->set_flashdata('failed',trim(strip_tags(validation_errors() )));
+            redirect('Home');
+            // $response[ 'errors' ]= validation_errors() ;
         }
         else{
             if($user = $this->auth->authenticate($this->input->post()) ){
                 $this->session->set_userdata(['user' =>  $user]);
-                $this->redirectIfLoggedIn();
+                $this->session->set_flashdata('success','You are now logged in !');
+                redirect('Home');
+                // $this->redirectIfLoggedIn();
             }else{
-                $response['errors'] .= "Invalid Username or Password";
+                $this->session->set_flashdata('failed','Invalid Mobile no. or Password');
+                redirect('Home');
+                // $response['errors'] .= "Invalid Username or Password";
             }
         }
         
         // echo validation_errors();
         $this->load->view('admin/login',$response);
+    }
+
+    public function register(){
+        echo'<pre>';var_dump($this->input->post());exit;
+        $this->redirectIfLoggedIn();
+        $this->form_validation->set_rules('mob', 'Mobile no.', 'required|min_length[10]|max_length[10]|numeric');
+        $this->form_validation->set_rules('pwd', 'Password', 'required');
+        $response ['errors'] = '';
+        if($this->form_validation->run() == FALSE){
+            $this->session->set_flashdata('failed',trim(strip_tags(validation_errors() )));
+            redirect('Home');
+        }
+        else{
+            if($user = $this->auth->authenticate($this->input->post()) ){
+                $this->session->set_userdata(['user' =>  $user]);
+                $this->session->set_flashdata('success','You are now logged in !');
+                redirect('Home');
+            }else{
+                $this->session->set_flashdata('failed','Invalid Mobile no. or Password');
+                redirect('Home');
+            }
+        }
     }
 
     public function changePwd(){
