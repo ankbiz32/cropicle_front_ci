@@ -47,24 +47,44 @@ class Login extends MY_Controller {
     }
 
     public function register(){
-        echo'<pre>';var_dump($this->input->post());exit;
-        $this->redirectIfLoggedIn();
-        $this->form_validation->set_rules('mob', 'Mobile no.', 'required|min_length[10]|max_length[10]|numeric');
-        $this->form_validation->set_rules('pwd', 'Password', 'required');
-        $response ['errors'] = '';
+        $this->form_validation->set_rules('mobile_no', 'Mobile no.', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('name', 'Name', 'required');
         if($this->form_validation->run() == FALSE){
-            $this->session->set_flashdata('failed',trim(strip_tags(validation_errors() )));
-            redirect('Home');
+            return false;
         }
         else{
-            if($user = $this->auth->authenticate($this->input->post()) ){
-                $this->session->set_userdata(['user' =>  $user]);
-                $this->session->set_flashdata('success','You are now logged in !');
-                redirect('Home');
+            $data=$this->input->post();
+            $data['password']=password_hash($data['password'], PASSWORD_DEFAULT);
+            $data['role_id']=3;
+            $this->load->model('AddModel', 'add');
+            if($id=$this->add->saveInfo('users',$data) ){
+                $_SESSION["regID"] = $id;
+                $_SESSION["vno"] = rand(1000,9999);
+                echo $_SESSION["vno"];
+                return true;
             }else{
-                $this->session->set_flashdata('failed','Invalid Mobile no. or Password');
-                redirect('Home');
+                return false;
             }
+        }
+    }
+    
+    public function registerFinish(){
+        $data['is_verified']=1;
+        $data['otp_verified']=1;
+        $data['modified']=date('Y-m-d H:i:s');
+        $data['is_active']=1;
+        $this->load->model('EditModel', 'edit');
+        if($this->edit->updateInfo($data,$_SESSION["regID"],'users') ){
+            unset($_SESSION["regID"]);
+            unset($_SESSION["vno"]);
+            $this->session->set_flashdata('success','You have successfully registered with Cropicle !');
+            redirect('Home');
+        }else{
+            unset($_SESSION["regID"]);
+            unset($_SESSION["vno"]);
+            $this->session->set_flashdata('failed','Error !');
+            redirect('Home');
         }
     }
 

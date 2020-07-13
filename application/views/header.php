@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/settings.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/range.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/nice-select.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/form-validation.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/style.css">
 	<!-- Favicon Link -->
 	<link rel="shortcut icon" type="image/png" href="<?=base_url('assets/')?>images/favicon.png">
@@ -40,7 +41,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="clv_left_header"> 
                         <div class="clv_logo">
-                            <a href="#"><img src="<?=base_url('assets/')?>images/logo.png" alt="Cropicle" /></a>
+                            <a href="<?=base_url()?>"><img src="<?=base_url('assets/')?>images/logo.png" alt="Cropicle" /></a>
                         </div>
                     </div>
                 </div>

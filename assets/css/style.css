@@ -81,6 +81,9 @@ ul{
 	padding: 0;
 	list-style: none;
 }
+.error{
+	color:#d00000 !important;
+}
 .container{
 	max-width: 1200px;
 }

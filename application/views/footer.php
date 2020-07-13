@@ -73,11 +73,11 @@
 				<i class="fa fa-map-marker fa-lg px-0 col"></i>
 				<select id="loc-select" class="col">
 					<option value="" hidden>Select you area</option>
-					<option value="budhapara">Budhapara</option>
-					<option value="shankar">Shankar nagar</option>
-					<option value="vip">VIP colony</option>
+                    <?php foreach($loc as $l){?>
+					<option value="<?=$l->id?>"><?=$l->area.', '.$l->city.', '.$l->state.' ('.$l->pin_code.')'?></option>
+                    <?php }?>
 				</select>
-                <a href="javascript:;">search</a>
+                <a href="javascript:;" id="loc-search">search</a>
 			</div>
 		</div>
 		<span class="search_close">
@@ -115,15 +115,15 @@
                 <h4>create account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
                 <div class="form_block">
-                    <input type="text" class="form_field" name="name" placeholder="Name">
+                    <input type="text" class="form_field required" name="name" placeholder="Name" requried>
                 </div>
                 <div class="form_block">
-                    <input type="text" class="form_field" name="mobile_no" placeholder="10 digit Mobile no">
+                    <input type="text" class="form_field requried digits" name="mobile_no" maxlength="10" placeholder="10 digit Mobile no" requried>
                 </div>
                 <div class="form_block">
-                    <input type="text" class="form_field" name="password" placeholder="Password">
+                    <input type="password" class="form_field requried" id="pwd" name="password" placeholder="Password" requried>
                 </div>
-                <button type="submit" id="regSubmit" class="clv_btn">sign up</button>
+                <button type="submit" id="regSubmit" class="clv_btn">Next</button>
                 <div class="social_button_section">
                     <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
@@ -253,6 +253,8 @@
 <script src="<?=base_url('assets/')?>js/revolution.extension.slideanims.min.js"></script>
 <script src="<?=base_url('assets/')?>js/revolution.extension.video.min.js"></script>
 <script src="<?=base_url('assets/')?>js/custom.js"></script>
+<script src="<?=base_url('assets/')?>js/jquery.validate.min.js"></script>
+<script src="<?=base_url('assets/')?>js/app.js"></script>
 <!-- Sweet alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
@@ -305,34 +307,6 @@
   }
     
 </script>
-
-<script>
-    // Form Submit
-    $('form.regForm').on('submit', function (e) {
-            e.preventDefault();
-            var url = form.attr('action');
-            var data= $('form.regForm').serialize();
-            console.log(data);
-            // $.ajax({
-            //     type: 'post',
-            //     url: url,
-            //     data: $('form.regForm').serialize(),
-            //     success: function(data)
-            //     {
-            //         if(data){
-            //             window.location.replace(loc+'demand-lists');
-            //         }
-            //         else{
-            //             toastr.error('Invalid/incomplete data submitted', 'Error !', {"showMethod": "slideDown","timeOut": 0,"closeButton": true});
-            //         }
-            //     },
-            //     error: function(){
-            //         alert('error');
-            //     }
-            // });
-        });
-</script>
-
 
 </body>
 </html>

@@ -53,6 +53,19 @@ class Home extends MY_Controller {
 		$this->load->view('footer');
 	}
 
+	public function fetchItems($id)
+	{
+		$prods=$this->fetch->fetchProds($id);
+		$loc=$this->fetch->getActiveInfo('locations_master');
+		$this->load->view('header',['title' => 'Home',
+									'loc'=>$loc,
+									'prods'=>$prods
+								]
+							);
+		$this->load->view('index');
+		$this->load->view('footer');
+	}
+
 
 
 }
