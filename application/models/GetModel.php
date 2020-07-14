@@ -13,33 +13,68 @@ class GetModel extends CI_Model{
                         ->get()
                         ->result();
         if(!empty($users)){
+            $hawker_count=sizeof($users);
             $orders=array();
             foreach($users as $u){
                 $orders[]=$this->getLastDelivered($u->user_id);
             }
+            // echo'<pre>';var_dump($orders);exit;
             if(!empty($orders)){
+                $arr=array();
+                $arr2=array();
                 foreach($orders as $o){
                     if(!empty($o)){
                         if($o->updated_by_hawker==0){
                             $prms=['order_id'=>$o->id];
-                            $arr=$this->fetch->getInfoParams('order_details',$prms);
+                            $arr[]=$this->getOrderDetailsForLoc('order_details',$prms);
                         }
                         else{
-                            $prms=['order_id'=>$o->id];
-                            $arr2=$this->fetch->getInfoParams('order_details',$prms);
+                            $prms=['order_id'=>$o->id,'remaining_qty >'=>0];
+                            $arr2[]=$this->getOrderDetailsForLoc2('order_details',$prms);   
                         }
                     }
                 }
-                echo'<pre>';var_dump($arr);exit;
+                $merged = call_user_func_array('array_merge', $arr);
+                $merged = array_unique($merged,SORT_REGULAR);
+
+                $merged2= call_user_func_array('array_merge', $arr2);
+                $merged2= array_unique($merged2,SORT_REGULAR);
+
+                $merged3= array_merge($merged,$merged2);
+                $merged3= array_unique($merged3,SORT_REGULAR);
+              
+                foreach($merged as $mer){
+                    $items[]=$this->getItemInfo($mer->item_id,'items_master');
+                }
+                $result['hawker_count']=$hawker_count;
+                $result['items']=$items;
+                // echo'<pre>';var_dump($merged3);exit;
+                return $result;
             }
             else{
-                echo'<pre>';var_dump(Null);exit;
+                return false;
             }
         }
         else{
-            echo'<pre>';var_dump(Null);exit;
+            return false;
         }
         
+    }
+
+    public function getOrderDetailsForLoc($table, $where)
+    {
+        return $this->db->select('item_id')
+                        ->where($where)
+                        ->get($table)
+                        ->result();
+    }
+
+    public function getOrderDetailsForLoc2($table, $where)
+    {
+        return $this->db->select('item_id')
+                        ->where($where)
+                        ->get($table)
+                        ->result();
     }
 
     public function getLastDelivered($uid)
@@ -57,6 +92,16 @@ class GetModel extends CI_Model{
         else{
             return NULL;
         }
+    }
+
+    // Fetch info
+    public function getItemInfo($id,$table)
+    {
+        return $this->db->select('item_name, item_price_customer, item_img')
+                    ->where('id',$id)
+                    ->where('is_active',1)
+                    ->get($table)
+                    ->row();
     }
 
     // Fetch info

@@ -28,6 +28,9 @@
 	<!-- Favicon Link -->
 	<link rel="shortcut icon" type="image/png" href="<?=base_url('assets/')?>images/favicon.png">
 </head>
+<script>
+    var loc="<?=base_url()?>";
+</script>
 <body>
 	<div class="preloader_wrapper">
 		<div class="preloader_inner">
@@ -148,7 +151,7 @@
                             <div class="cart_nav">
                                 <ul class="">
                                     <li class="ml-3">
-                                        <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;Budhapara</a>
+                                        <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($location)?$location:'Select Area'?></a>
                                     </li>
 									<li class="menu_toggle ml-5" style="float:left">
 										<span>

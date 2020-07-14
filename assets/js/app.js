@@ -71,6 +71,6 @@
 
     $('#loc-search').on('click', function (e) {
         var area= $('#loc-select').val();
-        var url= 'location/'+area;
+        var url= loc+'location/'+area;
         window.location.replace(url)
     });

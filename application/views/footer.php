@@ -308,5 +308,12 @@
     
 </script>
 
+<?php if(isset($prods)){?>
+    <script>
+        var elmnt = document.getElementById("prods");
+        elmnt.scrollIntoView();
+    </script>
+<?php }?>
+
 </body>
 </html>

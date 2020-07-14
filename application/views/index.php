@@ -258,14 +258,14 @@
 	</div>
 
 	<!--Shop-->
-	<div class="clv_shop_wrapper clv_section">
+	<div class="clv_shop_wrapper clv_section" id="prods">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-6">
 					<div class="clv_heading">
 						<h3>our shop</h3>
 						<div class="clv_underline"><img src="<?=base_url('assets/')?>images/agri_underline2.png" alt="image" /></div>
-						<h4 class="text-success"><strong><span id="hawker-count">05 hawkers</span></strong>found in <span id="area-name">"Budhapara"</span></h4>
+						<h4 class="text-success"><strong><span id="hawker-count"><?=isset($hawker_count)?$hawker_count:'0'?> hawkers</span></strong> found in <span id="area-name">"<?=isset($location)?$location:''?>"</span></h4>
 					</div>
 					<div class="">
 						<div class="sidebar_search">
@@ -321,27 +321,29 @@
                         </div>
                         <div class="product_items_section">
                             <ul class="dynamic-products">
+							<?php if(!empty($prods)){?>
+								<?php foreach($prods as $pr){?>
                                 <li>
                                     <div class="product_item_block">
                                         <div class="org_product_block">
                                             <!-- <span class="product_label">30% off</span> -->
-                                            <div class="org_product_image"><img src="<?=base_url('assets/')?>images/potato.jpeg" alt="image"></div>
-                                            <h4>Potato</h4>
+                                            <div class="org_product_image"><img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>"></div>
+                                            <h4><?=$pr->item_name?></h4>
 											<h3><span>
-												<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;</span>25
+												<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;</span><?=$pr->item_price_customer?>
 												<small>/kg &nbsp;&nbsp;&nbsp;
-													<small> <del><i class="fa fa-inr fa-xl"></i> 28/kg</del>
+													<!-- <small> <del><i class="fa fa-inr fa-xl"></i> <?=$pr->item_price_customer?>/kg</del> -->
 												</small>
 											</small></h3>
                                             <!-- <a href="javascript:;">add to cart</a> -->
                                         </div>
                                         <div class="content_block">
                                             <div class="product_price_box"> 
-                                                <h3>farm sprayer</h3>            
-                                                <h5><span><i class="fa fa-inr" aria-hidden="true"></i></span>25<small>/kg <small><i class="fa fa-inr"></i> 56/kg</small></small></h5>   
+                                                <h3><?=$pr->item_name?></h3>            
+                                                <h5><span><i class="fa fa-inr" aria-hidden="true"></i></span><?=$pr->item_price_customer?><small>/kg </small></h5>   
                                             </div>
-                                            <p>Farm & Garden</p>
-                                            <div class="rating_section">
+                                            <p>Fruits & Veggies</p>
+                                            <!-- <div class="rating_section">
                                                 <span>4.1</span>
                                                 <ul>
                                                     <li><a class="active" href="javascript:;"><i class="fa fa-star" aria-hidden="true"></i></a></li>
@@ -360,10 +362,11 @@
                                                     <p>availability: <span>in stock</span></p>
                                                 </li>
                                             </ul>
-                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt utte labore et dolore magna aliqua Ut enim ad minim</p>
+                                            <p>Consectetur adipisicing elit sed do eiusmod tempor incididunt utte labore et dolore magna aliqua Ut enim ad minim</p> -->
                                         </div>
                                     </div>
                                 </li>
+							<?php }}?>
                             </ul>
                         </div>
                         <div class="blog_pagination_section">
@@ -396,4 +399,3 @@
 			</div>
 		</div>
 	</div>
-   

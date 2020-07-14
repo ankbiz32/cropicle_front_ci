@@ -55,18 +55,30 @@ class Home extends MY_Controller {
 
 	public function fetchItems($id)
 	{
-		$prods=$this->fetch->fetchProds($id);
-		$loc=$this->fetch->getActiveInfo('locations_master');
-		$this->load->view('header',['title' => 'Home',
-									'loc'=>$loc,
-									'prods'=>$prods
-								]
-							);
-		$this->load->view('index');
-		$this->load->view('footer');
+		$res=$this->fetch->fetchProds($id);
+		$location=$this->fetch->getInfoById($id,'locations_master')->area;
+		if($res){
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'loc'=>$loc,
+										'prods'=>$res['items'],
+										'location'=>$location,
+										'hawker_count'=>$res['hawker_count']
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+		}else{
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'loc'=>$loc,
+										'location'=>$location
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+		}
 	}
-
-
 
 }
 ?>
