@@ -61,6 +61,9 @@ class Edit extends MY_Controller {
         $status= $this->edit->updateInfoById('users',$data2,'id',$this->session->user->id);
         if($status){
             $this->session->user->name=$data2['name'];
+            $this->session->location_id=$data['location_id'];
+            $l= $this->fetch->getInfoByColId('id',$data['location_id'],'locations_master');
+            $this->session->location_name=$l->area;
             $this->session->set_flashdata('success','Profile updated');
             redirect('profile');
         }

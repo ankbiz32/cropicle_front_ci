@@ -32,6 +32,13 @@ class Login extends MY_Controller {
         else{
             if($user = $this->auth->authenticate($this->input->post()) ){
                 $this->session->set_userdata(['user' =>  $user]);
+
+                $loc_arr=$this->fetch->getInfoByColId('user_id',$this->session->user->id,'user_info');
+                $this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
+                
+                $loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
+                $this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+
                 $this->session->set_flashdata('success','You are now logged in !');
                 redirect('Home');
                 // $this->redirectIfLoggedIn();

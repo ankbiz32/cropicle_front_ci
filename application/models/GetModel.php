@@ -97,7 +97,7 @@ class GetModel extends CI_Model{
     // Fetch info
     public function getItemInfo($id,$table)
     {
-        return $this->db->select('item_name, item_price_customer, item_img')
+        return $this->db->select('id, item_name, item_price_customer, item_img')
                     ->where('id',$id)
                     ->where('is_active',1)
                     ->get($table)

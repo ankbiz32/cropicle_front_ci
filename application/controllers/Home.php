@@ -21,6 +21,7 @@ class Home extends MY_Controller {
 								);
 			$this->load->view('index');
 			$this->load->view('footer');
+			$this->load->view('cart_scripts');
 		}
 	}
 
@@ -66,6 +67,7 @@ class Home extends MY_Controller {
 		$res=$this->fetch->fetchProds($id);
 		$location=$this->fetch->getInfoById($id,'locations_master')->area;
 		$this->session->set_userdata(['location_name' =>  $location]);
+		// echo'<pre>';var_dump($res['items']);exit;
 		if($res){
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',
@@ -77,6 +79,7 @@ class Home extends MY_Controller {
 								);
 			$this->load->view('index.php');
 			$this->load->view('footer');
+			$this->load->view('cart_scripts');
 		}else{
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',

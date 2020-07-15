@@ -362,8 +362,14 @@
 												/kg
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h3>
-											<?php if(isset($this->session->user)){?>
-												<a href="javascript:;">Add to demand</a>
+											<?php if(isset($this->session->user)){
+												
+												$isAdded = (isset($cart[$pr->id]) and ($cart[$pr->id]["quantity"]>0))?true:false;
+											?>
+												<a href="javascript:;" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><?php echo (!empty($isAdded))?'Added':'Add to demand'; ?></a>
+
+
+												<!-- <a href="javascript:;">Add to demand</a> -->
 											<?php }?>
                                         </div>
                                         <div class="content_block">
@@ -429,3 +435,5 @@
 		</div>
 	</div>
 	<?php }?>
+
+

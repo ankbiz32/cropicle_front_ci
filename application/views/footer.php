@@ -176,7 +176,7 @@
                     <div class="form_block">
                         <input type="password" class="form_field" name="pwd" placeholder="Password">
                     </div>
-                    <button type="submit" class="clv_btn">sign up</button>
+                    <button type="submit" class="clv_btn">sign in</button>
                 </form>
                 <div class="social_button_section">
                     <a href="javascript:;" class="fb_btn">
@@ -314,12 +314,6 @@
         elmnt.scrollIntoView();
     </script>
 <?php }?>
-
-<script>
-    window.onbeforeunload = function(event) {
-        <?php unset($_SESSION['location_id']); unset($_SESSION['location_name']) ?>
-    };
-</script>
 
 </body>
 </html>
