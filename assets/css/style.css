@@ -5578,6 +5578,9 @@ ul{
 	padding: 60px 30px;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
+.org_product_block h4{
+	font-size: 16px;
+}
 .org_product_block:hover{
 	box-shadow: 0px 0px 39px 1px rgba(0,0,0,0.1);
 }
@@ -5602,7 +5605,7 @@ ul{
 	border-right: 10px solid transparent;
 }
 .org_product_block .org_product_image{
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
 .org_product_block h4{
 	font-size: 22px;
@@ -7640,7 +7643,7 @@ ul{
 }
 .product_list_filter > ul > li{
 	display: inline-block;
-	width: 33%;
+	width: 49.5%;
 	text-align: center;
 	color: #222222;
 	font-size: 18px;
@@ -7721,20 +7724,23 @@ ul{
 	margin: 0px -15px;
 }
 .product_items_section > ul > li{
-	width: 24%;
-	padding: 0px 15px;
+	width: 16%;
+	padding: 0px 5px;
 	display: inline-block;
 }
 .product_item_block{
 	margin-bottom: 30px;
 }
 .product_items_section ul li .org_product_block{
-	padding: 60px 0px 10px;
+	padding: 0px 0px 10px;
 	margin-bottom: 0;
 	z-index: 1;
 }
 .product_items_section ul li .org_product_block .org_product_image > img{
-	max-width: 100%;
+	width: 100%;
+	height: 150px;
+	object-fit: cover !important;
+	object-position: center !important;
 }
 .product_items_section ul li .org_product_block a{
 	position: absolute;
@@ -11073,7 +11079,7 @@ ul{
 		margin-left: 20px;
 	}
 	.product_items_section > ul > li{
-		width: 49%;
+		width: 32%;
 		text-align: center;
 	}
 	.fd_pro_thumnail{
@@ -11112,6 +11118,9 @@ ul{
 	}
 }
 @media (max-width: 480px){
+	.text-sm-sm{
+		font-size: 16px;
+	}
 	.index_v1 .clv_rev_slider .erinyen.tparrows{
 		min-width: 40px;
 		min-height: 40px;
@@ -11142,7 +11151,14 @@ ul{
 		margin-left: 30px;
 	}
 	.product_items_section > ul > li{
+		width: 32.5%;
+	}
+	.product_items_section > ul > li > .product_item_block > .org_product_block > .org_product_image >img{
 		width: 100%;
+		height: 95px;
+	}
+	.product_items_section > ul > li > .product_item_block > .org_product_block > h4{
+		font-size: 14px;
 	}
 	.signup_wrapper > .signup_inner > .signup_form_section > h4{
 		font-size:26px;

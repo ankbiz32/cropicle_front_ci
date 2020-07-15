@@ -76,6 +76,10 @@ class Login extends MY_Controller {
         $data['is_active']=1;
         $this->load->model('EditModel', 'edit');
         if($this->edit->updateInfo($data,$_SESSION["regID"],'users') ){
+            $info=['user_id'=>$_SESSION["regID"],'profile_img'=>'user.png'];
+            $this->load->model('AddModel', 'add');
+            $id=$this->add->saveInfo('user_info',$info);
+
             unset($_SESSION["regID"]);
             unset($_SESSION["vno"]);
             $this->session->set_flashdata('success','You have successfully registered with Cropicle !');

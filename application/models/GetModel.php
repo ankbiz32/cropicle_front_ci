@@ -118,6 +118,12 @@ class GetModel extends CI_Model{
         return $this->db->get($table)->row();
     }
 
+    
+    public function getInfoByColId($col,$id, $table)
+    {
+        $this->db->where($col, $id);
+        return $this->db->get($table)->row();
+    }
 
     public function getInfoParams($table, $where)
     {

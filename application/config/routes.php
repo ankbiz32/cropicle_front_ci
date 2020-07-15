@@ -59,6 +59,7 @@ $route['about'] = 'Home/About';
 $route['contact'] = 'Home/Contact';
 $route['location/(:num)'] = 'Home/fetchItems/$1';
 $route['profile'] = 'Home/Profile';
+$route['user/update'] = 'Edit/userInfo';
 $route['register'] = 'Login/register';
 $route['finish'] = 'Login/registerFinish';
 $route['logout'] = 'Login/logout';

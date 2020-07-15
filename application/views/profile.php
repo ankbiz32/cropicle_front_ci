@@ -24,8 +24,8 @@
             <div class="user_profile_section">
                 <div class="profile_image_block">
                     <div class="user_profile_img">
-                        <img src="https://via.placeholder.com/172x172" alt="image">
-                        <input type="file" id="user_profile">
+                        <img src="<?=base_url('assets/images/').$profile->profile_img?>" alt="<?=isset($this->session->user)?$this->session->user->name:''?>">
+                        <input type="file" id="user_profile" class="user_profile_img" name="img">
                         <label for="user_profile">
                             <span>
                                 <?xml version="1.0" encoding="iso-8859-1"?>
@@ -74,34 +74,41 @@
                 </div>
                 <div class="profile_form">
                     <form class="row" method="POST" action="<?=base_url('user/update')?>">
-                        <div class="col-lg-6 col-md-6">
+                        <div class="col-md-6">
                             <div class="form_block">
-                                <h6>First ame</h6>
-                                <input type="text" class="form_field" placeholder="John David" required>
+                                <h6>Name</h6>
+                                <input type="text" class="form_field" placeholder="John David" value="<?=isset($this->session->user)?$this->session->user->name:''?>" name="name" required>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form_block">
-                                <h6>Last name</h6>
-                                <input type="text" class="form_field" placeholder="Parker" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form_block">
-                                <h6>Email</h6>
-                                <input type="text" class="form_field" placeholder="John@example.com" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
+                        <div class="col-md-6">
                             <div class="form_block">
                                 <h6>Contact no.</h6>
-                                <input type="text" class="form_field" placeholder="+(81) 16002-123-123" required>
+                                <input type="text" class="form_field bg-light" placeholder="Example: 9876543210" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" readonly required>
                             </div>
                         </div>
-                        <div class="col-lg-12 col-md-12">
+                        <div class="col-md-6">
+                            <div class="form_block">
+                                <h6>Email</h6>
+                                <input type="email" class="form_field" placeholder="John@example.com" value="<?=$profile->email?>" name="email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form_block">
+                                <h6>Area</h6>
+                                <select class="form_field" name="location_id" required>
+                                    <option value="" hidden >-- Select your area --</option>
+                                    <?php foreach($loc as $l){?>
+                                    <option value="<?=$l->id?>" <?=$l->id==$profile->location_id?' selected':''?>>
+                                        <?=$l->area.', '.$l->city.', '.$l->state.' ('.$l->pin_code.')'?>
+                                    </option>
+                                    <?php }?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
                             <div class="form_block">
                                 <h6>Address</h6>
-                                <textarea class="form_field" placeholder="John@example.com" required></textarea>
+                                <textarea class="form_field" name="address" required><?=$profile->address?></textarea>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">

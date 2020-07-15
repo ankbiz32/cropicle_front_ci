@@ -61,11 +61,12 @@ Assigned to: Theme Forest
             }
         },
         SearchBox: function() {
-			$('.clv_menu .cart_nav .search_toggle').on('click', function(){
+			$('.search_toggle').on('click', function(){
 				$('.search_box').toggleClass('search_box_open');
 			});
 			$('.search_close').on('click', function(){
-				$('.search_box').removeClass('search_box_open');
+			
+
 			});
 			$('.search_box').on('click', function(){
 				$('.search_box').removeClass('search_box_open');

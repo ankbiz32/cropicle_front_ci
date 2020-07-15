@@ -138,9 +138,9 @@
                                     <li><a href="<?=base_url()?>contact">Contact us</a></li>
                                     <?php if(isset($this->session->user)){?>
                                         <li>
-                                            <a href="profile"><?=$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
+                                            <a href="<?=base_url('profile')?>"><?=strlen($this->session->user->name)>6?substr($this->session->user->name,0,6).'...':$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
                                             <ul>
-                                                <li><a href="profile">See profile</a></li>
+                                                <li><a href="<?=base_url('profile')?>">See profile</a></li>
                                                 <li><a href="<?=base_url('logout')?>">Logout</a></li>
                                             </ul>
                                         </li>
@@ -151,7 +151,7 @@
                             <div class="cart_nav">
                                 <ul class="">
                                     <li class="ml-3">
-                                        <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($location)?$location:'Select Area'?></a>
+                                        <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>10?substr($this->session->location_name,0,10).'...':$this->session->location_name):'Select area'?></a>
                                     </li>
 									<li class="menu_toggle ml-5" style="float:left">
 										<span>

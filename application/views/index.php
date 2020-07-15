@@ -258,6 +258,7 @@
 	</div>
 
 	<!--Shop-->
+	<?php if(!isset($this->session->location_id)){?>
 	<div class="clv_shop_wrapper clv_section" id="prods">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -265,31 +266,57 @@
 					<div class="clv_heading">
 						<h3>our shop</h3>
 						<div class="clv_underline"><img src="<?=base_url('assets/')?>images/agri_underline2.png" alt="image" /></div>
-						<h4 class="text-success"><strong><span id="hawker-count"><?=isset($hawker_count)?$hawker_count:'0'?> hawkers</span></strong> found in <span id="area-name">"<?=isset($location)?$location:''?>"</span></h4>
+						<h4 class="text my-4">Explore your area to see whats available !</h4>
+						<a class="search_toggle tp-caption rev-btn clv_btn pt-0" href="javascript:;"> <i class="fa fa-map-marker fa-lg"></i>&nbsp; Select area</a>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php } else{?>
+	<div class="clv_shop_wrapper clv_section" id="prods">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 col-md-6">
+					<div class="clv_heading">
+						<h3>our shop</h3>
+						<div class="clv_underline"><img src="<?=base_url('assets/')?>images/agri_underline2.png" alt="image" /></div>
+						<h4 class="text text-sm-sm mt-4">
+							<strong>
+								<span id="hawker-count">
+									<?=isset($hawker_count)?$hawker_count:'0'?><?=isset($hawker_count)?($hawker_count==1?' hawker':' hawkers'):' hawkers'?>
+								</span>
+							</strong> 
+							available in&nbsp;
+							<span id="area-name" class="search_toggle text-success" style="cursor:pointer"> <i class="fa fa-map-marker fa-sm"></i> <?=isset($location)?$location:''?></span>
+						</h4>
+					</div>
+					<?php if(isset($prods)){?>
 					<div class="">
 						<div class="sidebar_search">
 							<input type="text" placeholder="Search for items">
 							<a href="javascript:;"><i class="fa fa-search" aria-hidden="true"></i></a>
 						</div>
 					</div>
+				<?php }?>
 				</div>
 			</div>
 			<div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="product_list_section">
+						<?php if(isset($prods)){?>
                         <div class="product_list_filter">
                             <ul>
                                 <li>
-                                    <p>showing <span>1-9 of 9</span> result</p>
+                                    <p>showing <span><?=sizeof($prods)?></span> items</p>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <select id="sort-select">
                                         <option value="sort by popularity">Sort by popularity</option>
                                         <option value="sort by price">sort by price</option>
                                         <option value="sort by category">sort by category</option>
                                     </select>
-                                </li>
+                                </li> -->
                                 <li>
                                     <ul class="list_view_toggle">
                                         <li><span>view style</span></li>
@@ -319,6 +346,7 @@
                                 </li>
                             </ul>
                         </div>
+						<?php }?>
                         <div class="product_items_section">
                             <ul class="dynamic-products">
 							<?php if(!empty($prods)){?>
@@ -328,22 +356,23 @@
                                         <div class="org_product_block">
                                             <!-- <span class="product_label">30% off</span> -->
                                             <div class="org_product_image"><img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>"></div>
-                                            <h4><?=$pr->item_name?></h4>
-											<h3><span>
-												<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;</span><?=$pr->item_price_customer?>
-												<small>/kg &nbsp;&nbsp;&nbsp;
-													<!-- <small> <del><i class="fa fa-inr fa-xl"></i> <?=$pr->item_price_customer?>/kg</del> -->
-												</small>
-											</small></h3>
-                                            <!-- <a href="javascript:;">add to cart</a> -->
+                                            <h5><?=$pr->item_name?></h4>
+											<h5>
+												<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;<?=$pr->item_price_customer?>
+												/kg
+												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
+											</h3>
+											<?php if(isset($this->session->user)){?>
+												<a href="javascript:;">Add to demand</a>
+											<?php }?>
                                         </div>
                                         <div class="content_block">
                                             <div class="product_price_box"> 
-                                                <h3><?=$pr->item_name?></h3>            
+                                                <h5><?=$pr->item_name?></h5>            
                                                 <h5><span><i class="fa fa-inr" aria-hidden="true"></i></span><?=$pr->item_price_customer?><small>/kg </small></h5>   
                                             </div>
                                             <p>Fruits & Veggies</p>
-                                            <!-- <div class="rating_section">
+                                             <!-- <div class="rating_section">
                                                 <span>4.1</span>
                                                 <ul>
                                                     <li><a class="active" href="javascript:;"><i class="fa fa-star" aria-hidden="true"></i></a></li>
@@ -369,7 +398,7 @@
 							<?php }}?>
                             </ul>
                         </div>
-                        <div class="blog_pagination_section">
+                        <!-- <div class="blog_pagination_section">
                             <ul>
                                 <li class="blog_page_arrow">
                                     <a href="javascript:;">
@@ -393,9 +422,10 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 			</div>
 		</div>
 	</div>
+	<?php }?>

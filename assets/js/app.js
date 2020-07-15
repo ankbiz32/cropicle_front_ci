@@ -74,3 +74,24 @@
         var url= loc+'location/'+area;
         window.location.replace(url)
     });
+
+    
+    $('#user_profile').change(function() {
+        var file_data = $('#user_profile').prop('files')[0];   
+        var form_data = new FormData();                
+        form_data.append('file', file_data);             
+        $.ajax({
+            url: 'Edit/img_upload',
+             
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,                         
+            type: 'post',
+            success: function(data){
+                console.log(data);
+                window.location.reload();
+            }
+        });
+    });

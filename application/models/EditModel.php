@@ -15,6 +15,19 @@ class EditModel extends CI_Model{
         }
     }
 
+    // Update Info
+    public function updateInfoById($table,$data,$col,$id)
+    {
+        $this->db->where($col, $id);
+        $wpflag = $this->db->update($table , $data);
+        if($wpflag){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     // Update patients
     public function updateInfoType($data,$column, $id, $table)
     {

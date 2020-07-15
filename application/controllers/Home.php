@@ -10,13 +10,18 @@ class Home extends MY_Controller {
 
 	public function index()
 	{	
-		$loc=$this->fetch->getActiveInfo('locations_master');
-		$this->load->view('header',['title' => 'Home',
-									'loc'=>$loc
-								]
-							);
-		$this->load->view('index');
-		$this->load->view('footer');
+		if(isset($this->session->location_id)){
+			$this->fetchItems($this->session->location_id);
+		}
+		else{
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'loc'=>$loc
+									]
+								);
+			$this->load->view('index');
+			$this->load->view('footer');
+		}
 	}
 
 	public function About()
@@ -44,9 +49,11 @@ class Home extends MY_Controller {
 	public function Profile()
 	{
 		$this->redirectIfNotLoggedIn();
+		$profile=$this->fetch->getInfoByColId('user_id',$this->session->user->id, 'user_info');
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
-									'loc'=>$loc
+									'loc'=>$loc,
+									'profile'=>$profile
 								]
 							);
 		$this->load->view('profile');
@@ -55,8 +62,10 @@ class Home extends MY_Controller {
 
 	public function fetchItems($id)
 	{
+		$this->session->set_userdata(['location_id' =>  $id]);
 		$res=$this->fetch->fetchProds($id);
 		$location=$this->fetch->getInfoById($id,'locations_master')->area;
+		$this->session->set_userdata(['location_name' =>  $location]);
 		if($res){
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',

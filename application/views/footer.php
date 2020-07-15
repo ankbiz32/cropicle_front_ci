@@ -74,7 +74,7 @@
 				<select id="loc-select" class="col">
 					<option value="" hidden>Select you area</option>
                     <?php foreach($loc as $l){?>
-					<option value="<?=$l->id?>"><?=$l->area.', '.$l->city.', '.$l->state.' ('.$l->pin_code.')'?></option>
+					<option value="<?=$l->id?>" <?=isset($this->session->location_id)?($l->id==$this->session->location_id?' selected':''):''?>><?=$l->area.', '.$l->city.', '.$l->state.' ('.$l->pin_code.')'?></option>
                     <?php }?>
 				</select>
                 <a href="javascript:;" id="loc-search">search</a>
@@ -314,6 +314,12 @@
         elmnt.scrollIntoView();
     </script>
 <?php }?>
+
+<script>
+    window.onbeforeunload = function(event) {
+        <?php unset($_SESSION['location_id']); unset($_SESSION['location_name']) ?>
+    };
+</script>
 
 </body>
 </html>
