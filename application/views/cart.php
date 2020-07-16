@@ -30,7 +30,9 @@
                     <h3>Demand cart</h3>
                     <h4><?=sizeof($cart)?> items in your cart</h4>
                 </div>
-                    <?php if (!empty($cart)){ ?>
+                    <?php if (!empty($cart)){ 
+                        $finalTotal = 0;
+                    ?>
                     <table class="table-responsive  cart_table woocommerce-cart-form__contents">
                         <tr>
                             <th>items</th>
@@ -41,7 +43,7 @@
                         </tr>
                         <?php foreach($cart as $row){    
                         ?>
-                        <tr>
+                        <tr class="productRow<?=$row['product_id']?>">
                             <td>
                                 <div class="product_img">
                                     <img src="<?=base_url('assets/images/').$row['image']?>" alt="image" height="60" width="60" style="object-fit:cover;">
@@ -50,29 +52,53 @@
                             </td>
                             <td>
                                 <div class="pro_price">
-                                    <h5><?=$row['price']?></h5>
+                                    <h5>₹<?=$row['price']?></h5>
                                 </div>
                             </td>
                             <td>
                                 <div class="item_quantity">
                                     <a href="javascript:;" class="quantity_minus">-</a>
-                                    <input type="text" value="<?=$row['quantity']?>" class="quantity" disabled="">
+
+                                    <input type="text" 
+                                            id="product_quantity<?=$row["product_id"];?>" 
+                                            name="product_quantity<?=$row["product_id"];?>" 
+                                            value="<?=$row['quantity']?>" 
+                                            class="demand_quantity" 
+                                            disabled=""
+                                            data-product_id="<?=$row['product_id'];?>">
+
                                     <a href="javascript:;" class="quantity_plus">+</a>
                                 </div>
                             </td>
                             
                             <td>
-                                <div class="pro_total_price pro_price">
-                                    <h5><?=$row['price']*$row['quantity']?></h5>
+                                <div class="product_total<?=$row['product_id']?> pro_price">
+                                    <h5>₹<?=$row['total']?></h5>
                                 </div>
                             </td>
                             <td>
-                                <a href="javascript:;" class="pro_remove">
-                                    <i class="fa fa-trash fa-lg"></i>
+                                <a href="javascript:;" class="pro_remove" onclick="removeCartItem(<?=$row['product_id']?>);">
+                                    <i class="fa fa-times-circle fa-lg"></i>
                                 </a>
                             </td>
                         </tr>
-                    <?php }?>
+                    <?php 
+                        $finalTotal=$finalTotal+$row["total"];
+                    }?>
+                        <tr class="mt-4" style="border-top:2px solid #ddd">
+                            <td colspan="3">
+                                <div class="pro_price">
+                                    <h5 class="pl-5 ml-4">Total:</h5>
+                                </div>
+                            </td>
+                            <td>
+                            <div class="pro_price pro_final_total">
+                                <h5>₹<?=$finalTotal?></h5>
+                            </div>
+                            </td>
+                            <td></td>
+                            
+                        </tr>
                     </table>
                     <div class="checkout_btn_block mt-3">
                         <a href="javascript:;" class="clv_btn checkout-button">Send demand</a>
@@ -83,4 +109,6 @@
             </div>
         </div>
     </div>
+
+
    

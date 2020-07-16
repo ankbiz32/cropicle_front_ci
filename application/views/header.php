@@ -187,10 +187,10 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="cart_block">
-                                                                    <h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> <?=$row['price']?></h4>
+                                                                    <h4><span>₹</span> <?=$row['price']?></h4>
                                                                 </div>
                                                                 <div class="cart_block">
-                                                                    <a href="javascript:void(0);" onclick="removeCartItem(<?=$row['product_id']?>);"><i class="fa fa-trash"></i></a>
+                                                                    <a href="javascript:void(0);" onclick="removeCartItem(<?=$row['product_id']?>);"><i class="fa fa-times"></i></a>
                                                                 </div>
                                                             </li>
                                                             <?php 
@@ -198,7 +198,7 @@
                                                             }?>
                                                             <li>
                                                                 <h3>total</h3>
-                                                                <h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> <?=$finalTotal?></h4>
+                                                                <h4><span>₹</span> <?=$finalTotal?></h4>
                                                             </li>
                                                         </ul>
                                                     </div>

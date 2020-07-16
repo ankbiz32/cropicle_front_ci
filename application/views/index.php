@@ -361,7 +361,7 @@
                                             <div class="org_product_image"><img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>"></div>
                                             <h5><?=$pr->item_name?></h4>
 											<h5>
-												<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;<?=$pr->item_price_customer?>
+											₹&nbsp;<?=$pr->item_price_customer?>
 												/kg
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h3>
@@ -378,7 +378,7 @@
                                         <div class="content_block">
                                             <div class="product_price_box"> 
                                                 <h5><?=$pr->item_name?></h5>            
-                                                <h5><span><i class="fa fa-inr" aria-hidden="true"></i></span><?=$pr->item_price_customer?><small>/kg </small></h5>   
+                                                <h5><span>₹</span><?=$pr->item_price_customer?><small>/kg </small></h5>   
                                             </div>
                                             <p>Fruits & Veggies</p>
                                              <!-- <div class="rating_section">

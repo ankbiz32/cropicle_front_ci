@@ -65,10 +65,10 @@ class Commons extends MY_Controller {
 									</div>
 								</div>
 								<div class="cart_block">
-									<h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> '.$row["price"].'</h4>
+									<h4><span>₹</span> '.$row["price"].'</h4>
 								</div>
 								<div class="cart_block">
-									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-trash"></i></a>
+									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
 								</div>
 							</li>
 							
@@ -80,7 +80,7 @@ class Commons extends MY_Controller {
 					$cartstr.= '
 						<li>
 							<h3>total</h3>
-							<h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> '.$finalTotal.'</h4>
+							<h4><span>₹</span> '.$finalTotal.'</h4>
 						</li>
 					</ul>
 					</div>
@@ -149,10 +149,10 @@ class Commons extends MY_Controller {
 								</div>
 							</div>
 							<div class="cart_block">
-								<h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> '.$row["price"].'</h4>
+								<h4><span>₹</span> '.$row["price"].'</h4>
 							</div>
 							<div class="cart_block">
-								<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-trash"></i></a>
+								<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
 							</div>
 						</li>
 						
@@ -163,7 +163,7 @@ class Commons extends MY_Controller {
 					$cartstr.= '
 						<li>
 							<h3>total</h3>
-							<h4><span><i class="fa fa-inr" aria-hidden="true"></i></span> '.$finalTotal.'</h4>
+							<h4><span>₹</span> '.$finalTotal.'</h4>
 						</li>
 					</ul>
 					</div>
@@ -177,7 +177,7 @@ class Commons extends MY_Controller {
 						</div>
 					';
 				}
-				$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems));
+				$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems,"finalTotal"=>$finalTotal));
 				$this->output
 				->set_status_header(200)
 				->set_content_type('application/json', 'utf-8')
@@ -208,115 +208,71 @@ class Commons extends MY_Controller {
 			{
 				$product_id = $this->input->post("product_id");
 				$quantity = $this->input->post("quantity");
-				$productData = $this->product_model->get_product(array("id"=>$product_id, 'is_active'=>BOOL_TRUE,'is_deleted'=>BOOL_FALSE));
+				$productData = $this->fetch->getItemInfo($product_id,'items_master');
 				if(!empty($productData)){
-					if($productData["quantity"] > 0  and $productData["quantity"] >= $productData["min_selling_quantity"]){
-						
-						if($quantity < $productData["min_selling_quantity"]){
-							$response = array("status"=>400,"msg"=>"Minimum Quantity to buy is ".$productData["min_selling_quantity"]);
-							$this->output
-							->set_status_header(200)
-							->set_content_type('application/json', 'utf-8')
-							->set_output(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
-							->_display();				
-							exit;
-						}
-						
-						//$quantity = (isset($cart[$product_id]["quantity"]) and !empty($cart[$product_id]["quantity"]))?$quantity:1;
-						$quantity = ($quantity <= $productData["quantity"])?$quantity:$productData["quantity"];
-						$price = $productData["price"];
-						$actual_price = $price;
-						
-						if(!empty($productData["has_discount"])){
-							$newPrice = 0;
-							if($productData["discount_type"]==DISCOUNT_TYPE_FLAT){
-								$dp = $productData["discount_rate"];
-								$newPrice = $productData["price"] - $productData["discount_rate"];
-							}
-							else if($productData["discount_type"]==DISCOUNT_TYPE_PERCENT){
-								$dp = ($productData["price"] / 100) * $productData["discount_rate"];
-								$newPrice = $productData["price"] - $dp;
-							}
-							$price = $newPrice;
-						}
-						$total = ($quantity * $price);
-						$cart[$productData["id"]] = array(
-							"product_id" => $productData["id"],
-							"name" => $productData["name"],
-							"image" => $productData["primary_image"],
-							"quantity" => $quantity,
-							"actual_price"=>$actual_price,
-							"discount_type"=>$productData["discount_type"],
-							"discount_rate"=>$productData["discount_rate"],
-							"discount"=>$dp,
-							"price" => $price,
-							"total" => $total,
-						);
-						$this->session->set_userdata("cart",$cart);
-						$cartstr = "";
-						$finalTotal = 0;
-						$totalItems = count($cart);
-						if(!empty($cart)){
-							foreach($cart as $row){
-								$cartstr.='
-								<div class="cart_item">
-								<div class="cart_img">
-									<a href="#"><img src="'.base_url("/assets/images/products/thumbs/".$row["image"]).'" alt=""></a>
-								</div>
-								<div class="cart_info">
-									<a href="#">'.$row["name"].'</a>
-									<span class="quantity">Qty: '.$row["quantity"].'</span>
-									<span class="price_cart"><i class="fa fa-inr"></i> '.$row["total"].'</span>
-								</div>
-								<div class="cart_remove">
-									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="ion-android-close"></i></a>
-								</div>
-								</div>
-								';
-								$finalTotal=$finalTotal+$row["total"];
-							}
-						}
-						
-						$cartstr.= '
-						<div class="mini_cart_table">
-						<div class="cart_total">
-						<span>Sub total:</span>
-						<span class="price"><i class="fa fa-inr"></i> '.$finalTotal.'</span>
-						</div>
-						<div class="cart_total mt-10">
-						<span>total:</span>
-						<span class="price"><i class="fa fa-inr"></i> '.$finalTotal.'</span>
-						</div>
-						</div>
-
-						<div class="mini_cart_footer">
-						<div class="cart_button">
-						<a href="'.site_url("/products/cart").'">View cart</a>
-						</div>
-						<div class="cart_button">
-						<a href="'.site_url("/products/checkout").'">Checkout</a>
-						</div>
-
-						</div>
+					$price = $productData->item_price_customer;
+					$actual_price = $price;
+					$total = ($quantity * $price);
+					$cart[$productData->id] = array(
+						"product_id" => $productData->id,
+						"name" => $productData->item_name,
+						"image" => $productData->item_img,
+						"quantity" => $quantity,
+						"price" => $price,
+						"total" => $total,
+						"actual_price"=>$actual_price,
+					);
+					$this->session->set_userdata("cart",$cart);
+					$cartstr = "";
+					$finalTotal = 0;
+					$totalItems = count($cart);
+					if(!empty($cart)){
+						$cartstr.='
+						<div class="cart_section">
+						<p class="mb-2">you have <span>'.$totalItems.'</span> items in your cart</p>
+							<ul class="mini_cart_items">
 						';
-						$response = array("status"=>200,"msg"=>"Cart Updated","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems, "quantity"=>$quantity, "total"=>$total, "finalTotal"=>$finalTotal));
-						$this->output
-						->set_status_header(200)
-						->set_content_type('application/json', 'utf-8')
-						->set_output(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
-						->_display();				
-						exit;
-					}
-					else{
-						$response = array("status"=>400,"msg"=>"Stock not available");
-						$this->output
-						->set_status_header(200)
-						->set_content_type('application/json', 'utf-8')
-						->set_output(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
-						->_display();				
-						exit;
+						foreach($cart as $row){
+							$cartstr.='
+							<li>
+								<div class="cart_block">
+									<img src="'.base_url("/assets/images/".$row["image"]).'" alt="image" />
+								</div>
+								<div class="cart_block">
+									<h5>'.$row["name"].'</h5>
+									<div class="item_quantity">
+										<input type="text" value="'.$row["quantity"].'Kg" class="quantity" disabled />
+									</div>
+								</div>
+								<div class="cart_block">
+									<h4><span>₹</span> '.$row["price"].'</h4>
+								</div>
+								<div class="cart_block">
+									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
+								</div>
+							</li>
+							
+							';
+							$finalTotal=$finalTotal+$row["total"];
+						}
 					}
 					
+					$cartstr.= '
+						<li>
+							<h3>total</h3>
+							<h4><span>₹</span> '.$finalTotal.'</h4>
+						</li>
+					</ul>
+					</div>
+					<a href="'.site_url("cart").'" class="cart_action_btn">check out</a>
+					';
+					$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems, "quantity"=>$quantity, "total"=>$total, "finalTotal"=>$finalTotal));
+					$this->output
+					->set_status_header(200)
+					->set_content_type('application/json', 'utf-8')
+					->set_output(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
+					->_display();				
+					exit;
 				}
 				else{
 					$response = array("status"=>404,"msg"=>"Product not found!");

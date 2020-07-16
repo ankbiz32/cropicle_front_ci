@@ -608,20 +608,20 @@ Assigned to: Theme Forest
 			});
 		},
 		Quantity: function(){
-			var quantity=0;
-			$('.quantity_plus').on('click', function(e){
-				e.preventDefault();
-				var quantity = parseInt($(this).siblings('.quantity').val());
-				$(this).siblings('.quantity').val(quantity + 1);            
+			// var quantity=0;
+			// $('.quantity_plus').on('click', function(e){
+			// 	e.preventDefault();
+			// 	var quantity = parseInt($(this).siblings('.demand_quantity').val());
+			// 	$(this).siblings('.demand_quantity').val(quantity + 1);            
 
-			});
-			$('.quantity_minus').on('click', function(e){
-				e.preventDefault();
-				var quantity = parseInt($(this).siblings('.quantity').val());
-				if(quantity>0){
-					$(this).siblings('.quantity').val(quantity - 1);
-				}
-			});				
+			// });
+			// $('.quantity_minus').on('click', function(e){
+			// 	e.preventDefault();
+			// 	var quantity = parseInt($(this).siblings('.demand_quantity').val());
+			// 	if(quantity>0){
+			// 		$(this).siblings('.demand_quantity').val(quantity - 1);
+			// 	}
+			// });				
 		},
 		ScrollDown: function() {
 			$(".scroll_down").on('click', function(){

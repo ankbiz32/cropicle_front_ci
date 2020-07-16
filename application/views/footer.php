@@ -264,12 +264,14 @@
   //  Sweet alert for normal response
     var base_url = '<?=base_url()?>';
       $(document).ready(function(){
-          const Toast = Swal.mixin({
+        const Alert = Swal.mixin({
               toast: false,
-              position: 'center',
+              position: 'top',
               showConfirmButton: false,
               timer: 3000
           });
+
+          
 
           <?php if($this->session->flashdata('success') || $message = $this->session->flashdata('failed')):
               $class = $this->session->flashdata('success') ? 'success' : 'error';
@@ -305,8 +307,38 @@
         })
 
   }
+
+  
+    $('.quantity_plus').on('click', function(e){
+        e.preventDefault();
+        var quantity = parseInt($(this).siblings('.demand_quantity').val());
+        var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
+        $(this).siblings('.demand_quantity').val(quantity + 1);  
+        var quantity = parseInt($(this).siblings('.demand_quantity').val());
+
+        if(product_id && quantity > 0){
+            // alert(quantity+", "+product_id);
+            updateCart(product_id, quantity);
+        }          
+
+    });
+
+    $('.quantity_minus').on('click', function(e){
+        e.preventDefault();
+        var quantity = parseInt($(this).siblings('.demand_quantity').val());
+        var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
+        if(quantity>1){
+            $(this).siblings('.demand_quantity').val(quantity - 1);
+            var quantity = parseInt($(this).siblings('.demand_quantity').val());
+            if(product_id && quantity > 0){
+                // alert(quantity+", "+product_id);
+                updateCart(product_id, quantity);
+            } 
+        }
+    });	
     
 </script>
+
 
 <?php if(isset($prods)){?>
     <script>
