@@ -25,6 +25,19 @@ class Home extends MY_Controller {
 		}
 	}
 
+	public function Cart()
+	{	
+		$this->redirectIfNotLoggedIn();
+		$loc=$this->fetch->getActiveInfo('locations_master');
+		$this->load->view('header',['title' => 'Demand Cart',
+									'loc'=>$loc
+								]
+							);
+		$this->load->view('cart');
+		$this->load->view('footer');
+		$this->load->view('cart_scripts');
+	}
+
 	public function About()
 	{
 		$loc=$this->fetch->getActiveInfo('locations_master');

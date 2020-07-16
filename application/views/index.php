@@ -349,8 +349,11 @@
 						<?php }?>
                         <div class="product_items_section">
                             <ul class="dynamic-products">
-							<?php if(!empty($prods)){?>
-								<?php foreach($prods as $pr){?>
+							<?php if(!empty($prods)){ 
+								$cart = $this->session->userdata("cart");
+								$cart = !empty($cart)?$cart:array();
+								foreach($prods as $pr){
+								?>
                                 <li>
                                     <div class="product_item_block">
                                         <div class="org_product_block">
@@ -363,14 +366,14 @@
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h3>
 											<?php if(isset($this->session->user)){
-												
-												$isAdded = (isset($cart[$pr->id]) and ($cart[$pr->id]["quantity"]>0))?true:false;
-											?>
-												<a href="javascript:;" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><?php echo (!empty($isAdded))?'Added':'Add to demand'; ?></a>
-
-
-												<!-- <a href="javascript:;">Add to demand</a> -->
-											<?php }?>
+												if(isset($cart[$pr->id])){?>
+													<a href="javascript:;" class="btnAddtoCart<?php echo $pr->id; ?>">Added</a>
+												<?php }
+												else{
+												?>
+													<a href="javascript:;" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>">Add to demand</a>
+												<?php }
+											}?>
                                         </div>
                                         <div class="content_block">
                                             <div class="product_price_box"> 
