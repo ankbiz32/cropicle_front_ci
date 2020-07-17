@@ -195,7 +195,7 @@
                                                             <?php foreach($cart as $row){?>
                                                             <li>
                                                                 <div class="cart_block">
-                                                                    <img src="https://via.placeholder.com/60x60" alt="image" />
+                                                                    <img src="<?=base_url("assets/images/".$row["image"])?>" alt="image" />
                                                                 </div>
                                                                 <div class="cart_block">
                                                                     <h5><?=$row['name']?></h5>

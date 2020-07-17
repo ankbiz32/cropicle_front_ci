@@ -92,7 +92,13 @@ class Home extends MY_Controller {
 	{
 		$this->session->set_userdata(['location_id' =>  $id]);
 		$res=$this->fetch->fetchProds($id);
-		$location=$this->fetch->getInfoById($id,'locations_master')->area;
+		$location=$this->fetch->getInfoById($id,'locations_master');
+		if(!empty($location)){
+			$location=$location->area;
+		}
+		else{
+			$location='Uranus';
+		}
 		$this->session->set_userdata(['location_name' =>  $location]);
 		// echo'<pre>';var_dump($res['items']);exit;
 		if($res){
