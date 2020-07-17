@@ -32,6 +32,7 @@
                         checkOTP();
                     }
                     else{
+                        $('#regSubmit').text('Next');
 						Alert.fire({icon:'error',title: 'Number already registered !'});
                         // alert('Data error');
                     }
