@@ -127,9 +127,9 @@
                             </div>
                         </div>
                         <?php if(isset($this->session->user)){?>
-                        <div class="clv_menu col-md-11 ml-auto">
+                        <div class="clv_menu col-md-11 ml-auto px-sm-3 px-0">
                         <?php }else{?>
-                        <div class="clv_menu col-md-8 ml-auto">
+                        <div class="clv_menu col-md-8 ml-auto px-sm-3 px-0">
                         <?php }?>
                             <div class="clv_menu_nav">
                                 <ul>
@@ -141,23 +141,40 @@
                                             <a href="<?=base_url('profile')?>"><?=strlen($this->session->user->name)>6?substr($this->session->user->name,0,6).'...':$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
                                             <ul>
                                                 <li><a href="<?=base_url('profile')?>">See profile</a></li>
+                                                <li><a href="<?=base_url('demands')?>">My demands</a></li>
                                                 <li><a href="<?=base_url('logout')?>">Logout</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="<?=base_url()?>demands" class="d-md-none d-block">My demands</a></li>
                                         <li><a href="<?=base_url()?>logout" class="d-md-none d-block">Logout</a></li>
                                     <?php }?>
                                 </ul>
                             </div>
-                            <div class="cart_nav">
+                            <div class="cart_nav col px-0">
                                 <ul class="">
-                                    <li class="ml-2">
+									<li class="menu_toggle ml-0 ml-sm-5" style="float:left">
+										<span>
+											<?xml version="1.0" encoding="iso-8859-1"?>
+											<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												 viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve" width="20px" height="20px">
+											<g>
+												<g>
+													<path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"/>
+													<path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"/>
+													<path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"/>
+												</g>
+											</g>
+											</svg>
+										</span>
+									</li>
+                                    <li class="ml-0 ml-sm-2">
                                         <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>10?substr($this->session->location_name,0,10).'...':$this->session->location_name):'Select area'?></a>
                                     </li>
                                     <?php if(isset($this->session->user)){
                                             $cart = $this->session->userdata("cart");
                                             $cart = !empty($cart)?$cart:array();
                                         ?>
-                                        <li>
+                                        <li class="pr-2 pr-sm-0">
                                             <a class="cart_toggle" href="javascript:;">
                                                 <svg 
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -183,11 +200,11 @@
                                                                 <div class="cart_block">
                                                                     <h5><?=$row['name']?></h5>
                                                                     <div class="item_quantity">
-                                                                        <input type="text" value="1kg" class="quantity" disabled />
+                                                                        <input type="text" value="<?=$row['quantity']?>Kg" class="quantity" disabled />
                                                                     </div>
                                                                 </div>
                                                                 <div class="cart_block">
-                                                                    <h4><span>₹</span> <?=$row['price']?></h4>
+                                                                    <h4><span>₹</span> <?=$row['quantity']*$row['price']?></h4>
                                                                 </div>
                                                                 <div class="cart_block">
                                                                     <a href="javascript:void(0);" onclick="removeCartItem(<?=$row['product_id']?>);"><i class="fa fa-times"></i></a>
@@ -202,7 +219,7 @@
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <a href="<?php echo site_url("/cart");?>" class="cart_action_btn">check out</a>
+                                                    <a href="<?php echo site_url("/cart");?>" class="cart_action_btn">Go to cart</a>
                                                     <?php
                                                         $finalTotal=$finalTotal+$row["total"];
                                                     } else {
@@ -214,21 +231,6 @@
                                             </div>
                                         </li>
                                     <?php }?>
-									<li class="menu_toggle ml-5" style="float:left">
-										<span>
-											<?xml version="1.0" encoding="iso-8859-1"?>
-											<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												 viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve" width="20px" height="20px">
-											<g>
-												<g>
-													<path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"/>
-													<path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"/>
-													<path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"/>
-												</g>
-											</g>
-											</svg>
-										</span>
-									</li>
                                 </ul>
                             </div>
                         </div> 

@@ -499,7 +499,7 @@ ul{
     line-height: 18px;
     text-align: center;
     background-color: #ffffff;
-    color: #fec007;
+    color: #333;
     display: inline-block;
     font-size: 10px;
     position: absolute;
@@ -605,16 +605,25 @@ ul{
 .item_quantity > a{
 	position: absolute;
 	top: 50%;
-	left: 20px;
+	left: -20px;
 	display: inline-block;
 	transform: translateY(-50%);
 	font-size: 20px;
 	font-weight: 600;
 	color: #fec007;
+	padding: 5px 16px;
+	border: 1px solid rgb(246, 190, 26);
+	border-radius: 100%;
+	transition: 0.3s;
+}
+.item_quantity > a:hover{
+	color: white;
+	background-color:rgb(246, 190, 26); ;
 }
 .item_quantity > a:last-child{
+	padding: 5px 15px;
 	left: auto;
-	right: 20px;
+	right: -20px;
 }
 .clv_cart_box > .cart_section > ul > li > .cart_block > h4{
 	font-size: 16px;
@@ -5637,17 +5646,16 @@ ul{
 	font-size: 20px;
 }
 .org_product_block a{
-	min-width: 170px;
-	height: 50px;
-	line-height: 50px;
+	padding: 5px 10px;
+	font-size: 12px;
 	color: #ffffff;
 	background-color: #222222;
 	border-radius: 30px;
-	text-transform: capitalize;
-	display: inline-block;
+	opacity: 0.7;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .org_product_block a:hover{
+	opacity: 1;
 	background-color: #27ae93;
 }
 /*Organic Product End*/
@@ -7747,6 +7755,7 @@ ul{
 	padding: 0px 0px 10px;
 	margin-bottom: 0;
 	z-index: 1;
+	position: relative;
 }
 .product_items_section ul li .org_product_block .org_product_image > img{
 	width: 100%;
@@ -7756,11 +7765,13 @@ ul{
 }
 .product_items_section ul li .org_product_block a{
 	position: absolute;
-    top: calc(100% - 90px);
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-	visibility: hidden;
+    top: 10px;
+    right: 10px;
+    /* top: calc(100% - 90px);
+    left: 50%; */
+    /* transform: translateX(-50%); */
+    /* opacity: 0;
+	visibility: hidden; */
 	transition: none;
 }
 .product_items_section ul li .org_product_block:hover{
@@ -8097,7 +8108,7 @@ ul{
     top: 50%;
     right: 0;
     content: "";
-    margin-top: -11px;
+	margin-top: -11px;
 }
 .quantity_wrapper > .input-group > span.quantity_plus:before{
 	left: 0;
@@ -8425,7 +8436,7 @@ ul{
 	width: 20%;
 }
 .woocommerce-cart .cart_table tr:nth-child(2) td:first-child{
-	padding-top: 51px; 
+	/* padding-top: 51px;  */
 }
 .woocommerce-cart .cart_table tr td{
 	padding: 19px 0px 21px;
@@ -9229,6 +9240,12 @@ ul{
 	bottom: 100px;
 	z-index: 10;
 }
+.cart_toggle_float{
+	position: fixed;
+	right: 80px;
+	bottom: 100px;
+	z-index: 10;
+}
 .profile_toggle > a{
 	display: flex;
 	align-items: center;
@@ -9239,6 +9256,35 @@ ul{
 	background-color: #fec007;
 	box-shadow: 0 0 0 0 rgba(254, 192, 7, 0.6);
 	animation: pulse4 2s infinite;
+}
+.cart_toggle_float > a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #fec007;
+	box-shadow: 0 0 0 0 rgba(254, 192, 7, 0.6);
+	animation: pulse4 2s infinite;
+	color: white;
+	position: relative;
+}
+
+ .cart_toggle_float > a > span{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+	line-height: 28px;
+	font-weight: 600;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333;
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
 }
 @keyframes pulse4 {
 	0% {
@@ -9253,7 +9299,7 @@ ul{
 		-moz-box-shadow: 0 0 0 0 rgba(254, 192, 7, 0);
 		box-shadow: 0 0 0 0 rgba(254, 192, 7, 0);
 	}
-  }
+}
 /********************************************************
 37. Profile Toggle Start
 *******************************************************/  
@@ -11422,9 +11468,37 @@ ul{
 	}
 	.clv_right_header .clv_menu .cart_nav ul > li > .clv_cart_box {
 		position: absolute;
-		right: 600%;
-		/* transform: translateX(50%); */
+		right: 680%;
 	}
+	.org_product_block h5{
+		font-size: 14px;
+	}
+	.profile_toggle{
+		right: 40px;
+		bottom: 50px;
+	}
+	.cart_toggle_float{
+		position: fixed;
+		right: 40px;
+		bottom: 50px;
+	}
+	.profile_toggle > a{
+		width: 50px;
+		height: 50px;
+	}
+	.profile_toggle > a > img{
+		width: 30px;
+	}
+	.cart_toggle_float > a{
+		width: 50px;
+		height: 50px;
+	}
+	.cart_nav > ul{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
 }
 @media (max-width: 320px){
 	.clv_right_header .clv_menu .cart_nav ul > li > .clv_cart_box{

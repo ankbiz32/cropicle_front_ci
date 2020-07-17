@@ -32,11 +32,12 @@
                         checkOTP();
                     }
                     else{
-                        alert('success error');
+						Alert.fire({icon:'error',title: 'Number already registered !'});
+                        // alert('Data error');
                     }
                 },
                 error: function(){
-                    alert('error');
+                    Alert.fire({icon:'error',title: 'Server error !'});
                 }
             });
         }
@@ -96,5 +97,37 @@
         });
     });
 
+    $('.checkout-button').click(function() {
+        $(`
+            <form method="POST" action="`+loc+`save-demand">
+                <div class="row mt-0 mb-0 pt-4 form_block pl-1" style="border-top:2px solid #ddd">
+                    <textarea class="col-sm-6 form_field" placeholder="Enter any additional remaks" maxlength="300" name="cust_remarks" row="5"></textarea>
+                </div>
+                <div class="row mt-1 pr-0 form_block pl-1">
+                    <p class="text-right col-sm-6 p-0" style="font-size:14px; color:#aaa">*Max 300 characs.</p>
+                </div>
+                <button type="submit" class="clv_btn checkout-button" id="chkoutbtn">Send demand</button>
+            </form>
+        `).insertBefore('.checkout_btn_block');
 
-   ;
+        $(this).remove();
+    });
+
+    $('.demandDetails').click(function(){
+        var id=$(this).data('id');
+        $.ajax({
+            url: 'Home/demandDetails',
+            type:'post',
+            data: {id: id},
+            beforeSend : function(){
+                $('#demandModal .modal-body').html('Loading...');
+                $('#demandModal').modal('show');
+            },
+            success: function(response){
+                $('#demandModal .modal-body').html(response);
+            },
+            error: function(response){
+                $('#demandModal .modal-body').html('Error !');
+            }
+        });
+    });

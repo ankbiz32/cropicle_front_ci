@@ -358,20 +358,21 @@
                                     <div class="product_item_block">
                                         <div class="org_product_block">
                                             <!-- <span class="product_label">30% off</span> -->
-                                            <div class="org_product_image"><img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>"></div>
-                                            <h5><?=$pr->item_name?></h4>
+                                            <div class="org_product_image">
+												<img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>">
+											</div>
+                                            <h5><?=$pr->item_name?></h5>
 											<h5>
-											₹&nbsp;<?=$pr->item_price_customer?>
-												/kg
+												₹ &nbsp;<?=$pr->item_price_customer?>/kg
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
-											</h3>
+											</h5>
 											<?php if(isset($this->session->user)){
 												if(isset($cart[$pr->id])){?>
-													<a href="javascript:;" class="btnAddtoCart<?php echo $pr->id; ?>">Added</a>
+													<a href="javascript:;" class="bg-success btnAddtoCart<?php echo $pr->id; ?>">Added</a>
 												<?php }
 												else{
 												?>
-													<a href="javascript:;" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>">Add to demand</a>
+													<a href="javascript:;" title="Add to demand" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><i class="fa fa-plus"></i></a>
 												<?php }
 											}?>
                                         </div>

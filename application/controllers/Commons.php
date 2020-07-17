@@ -65,7 +65,7 @@ class Commons extends MY_Controller {
 									</div>
 								</div>
 								<div class="cart_block">
-									<h4><span>₹</span> '.$row["price"].'</h4>
+									<h4><span>₹</span> '.$row["quantity"]*$row["price"].'</h4>
 								</div>
 								<div class="cart_block">
 									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
@@ -84,7 +84,7 @@ class Commons extends MY_Controller {
 						</li>
 					</ul>
 					</div>
-					<a href="'.site_url("cart").'" class="cart_action_btn">check out</a>
+					<a href="'.site_url("cart").'" class="cart_action_btn">Go to cart</a>
 					';
 					$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems));
 					$this->output
@@ -149,7 +149,7 @@ class Commons extends MY_Controller {
 								</div>
 							</div>
 							<div class="cart_block">
-								<h4><span>₹</span> '.$row["price"].'</h4>
+								<h4><span>₹</span> '.$row["quantity"]*$row["price"].'</h4>
 							</div>
 							<div class="cart_block">
 								<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
@@ -167,7 +167,7 @@ class Commons extends MY_Controller {
 						</li>
 					</ul>
 					</div>
-					<a href="'.site_url("cart").'" class="cart_action_btn">check out</a>
+					<a href="'.site_url("cart").'" class="cart_action_btn">Go to cart</a>
 					';
 				}
 				else{
@@ -245,7 +245,7 @@ class Commons extends MY_Controller {
 									</div>
 								</div>
 								<div class="cart_block">
-									<h4><span>₹</span> '.$row["price"].'</h4>
+									<h4><span>₹</span> '.$row["quantity"]*$row["price"].'</h4>
 								</div>
 								<div class="cart_block">
 									<a href="javascript:void(0);" onclick="removeCartItem('. $row["product_id"].');"><i class="fa fa-times"></i></a>
@@ -264,7 +264,7 @@ class Commons extends MY_Controller {
 						</li>
 					</ul>
 					</div>
-					<a href="'.site_url("cart").'" class="cart_action_btn">check out</a>
+					<a href="'.site_url("cart").'" class="cart_action_btn">Go to cart</a>
 					';
 					$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems, "quantity"=>$quantity, "total"=>$total, "finalTotal"=>$finalTotal));
 					$this->output

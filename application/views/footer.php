@@ -226,10 +226,20 @@
             </span>
         </div>
     </div>
-
+    <?php if(isset($this->session->user)){
+        $cart = $this->session->userdata("cart");
+        $cart = !empty($cart)?$cart:array();
+    }?>
     <?php if(!isset($this->session->user)){?>
         <!--Profile Toggle-->
         <div class="profile_toggle"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/login.gif" alt=""></a></div>
+    <?php } else{?>
+        <div class="cart_toggle_float">
+            <a href="<?=base_url('cart')?>">
+                <i class="fa fa-shopping-bag fa-lg"></i>
+                <span><?=!empty($cart)?sizeof($cart):'0'?></span>
+            </a>
+        </div>
     <?php }?>
 </div>
 <!--Main js file Style-->
@@ -264,9 +274,9 @@
   //  Sweet alert for normal response
     var base_url = '<?=base_url()?>';
       $(document).ready(function(){
-        const Alert = Swal.mixin({
+        const Toast = Swal.mixin({
               toast: false,
-              position: 'top',
+              position: 'center',
               showConfirmButton: false,
               timer: 3000
           });

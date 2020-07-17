@@ -61,17 +61,22 @@ class Login extends MY_Controller {
             return false;
         }
         else{
-            $data=$this->input->post();
-            $data['password']=password_hash($data['password'], PASSWORD_DEFAULT);
-            $data['role_id']=3;
-            $this->load->model('AddModel', 'add');
-            if($id=$this->add->saveInfo('users',$data) ){
-                $_SESSION["regID"] = $id;
-                $_SESSION["vno"] = rand(1000,9999);
-                echo $_SESSION["vno"];
-                return true;
-            }else{
+            if($this->fetch->record_count('users','mobile_no',$this->input->post('mobile_no'))>0){
                 return false;
+            }
+            else{
+                $data=$this->input->post();
+                $data['password']=password_hash($data['password'], PASSWORD_DEFAULT);
+                $data['role_id']=3;
+                $this->load->model('AddModel', 'add');
+                if($id=$this->add->saveInfo('users',$data) ){
+                    $_SESSION["regID"] = $id;
+                    $_SESSION["vno"] = rand(1000,9999);
+                    echo $_SESSION["vno"];
+                    return true;
+                }else{
+                    return false;
+                }
             }
         }
     }
