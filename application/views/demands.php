@@ -54,7 +54,9 @@
                             </td>
                             <td>
                                 <div class="pro_price">
-                                    <?=$row->status=='PENDING'?'<h6 class="text-warning">Pending</h6>':'<h6 class="text-success">Approved</h6>'?></h6>
+                                    <?=$row->status=='PENDING'?'<h6 class="text-warning">PENDING</h6>':NULL?>
+                                    <?=$row->status=='APPROVED'?'<h6 class="text-success">APPROVED</h6>':NULL?>
+                                    <?=$row->status=='REJECTED'?'<h6 class="text-danger">REJECTED</h6>':NULL?>
                                 </div>
                             </td>
                             <td>
