@@ -110,7 +110,7 @@ ul{
 }
 .clv_heading h3{
 	font-size: 40px;
-	color: #fec007;
+	color: #FFCC00;
 	font-weight: 700;
 	text-transform: capitalize;
 }
@@ -142,7 +142,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_btn:hover{
-	color: #fec007;
+	color: #FFCC00;
 }
 .clv_btn::before{
 	content: '';
@@ -153,7 +153,7 @@ ul{
 	height: 100%;
 	z-index: -1;
 	border-radius: 30px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -178,7 +178,7 @@ ul{
 	-moz-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
-	border: 1px solid #fec007;
+	border: 1px solid #FFCC00;
 	-webkit-transform: scale(1.2,1.2);
 	transform: scale(1.2,1.2);
 }
@@ -246,18 +246,19 @@ ul{
 }
 .clv_right_header .clv_address .address_block{
 	position: relative;
-	text-align: left;
+	text-align: right;
+	/* text-align: left; */
 	display: inline-block;
 	width: 100%;
 }
 .clv_right_header .clv_address .address_block span.addr_icon{
 	transform: rotate(45deg);
 	vertical-align: middle;
-	width: 35px;
-	height: 35px;
-	color: #fec007;
-	font-size: 18px;
-	float: left;
+	width: 28px;
+	height: 28px;
+	color: #FFCC00;
+	font-size: 14px;
+	/* float: left; */
 	margin-right: 11px;
 	display: inline-block;
 	border-radius: 7px;
@@ -274,11 +275,12 @@ ul{
 	margin: 0;
 	color: #707070;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 35px;
+	display: inline;
 } 
 .clv_right_header .clv_menu {
-    background-color: #fec007;
+    background-color: #FFCC00;
     display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -327,7 +329,7 @@ ul{
     min-width: 150px;
     background-color: white;
 	border-radius: 0px 0px 10px 10px;
-	border-bottom: 3px solid #fec007;
+	border-bottom: 3px solid #FFCC00;
 	box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.06);
     z-index: 999;
 	opacity: 0;
@@ -356,7 +358,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_right_header .clv_menu .clv_menu_nav > ul > li > ul > li > a:hover{
-	color: #fec007;
+	color: #FFCC00;
 }
 .clv_right_header .clv_menu .clv_menu_nav > ul > li > ul > li > a:after{
 	display: none;
@@ -445,7 +447,7 @@ ul{
 	font-weight: 600;
 	margin-bottom: 20px;
 	text-transform: capitalize;
-	color: #fec007;
+	color: #FFCC00;
 }
 .search_box .search_close {
     position: absolute;
@@ -484,7 +486,7 @@ ul{
 	text-transform: capitalize;
 	font-size: 20px;
 	line-height: 70px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	padding: 0px 50px;
 	border-radius: 0px 50px 50px 0px;
 	display: inline-block;
@@ -536,7 +538,7 @@ ul{
 	justify-content: center;
 	width: 100%;
 	height: 50px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 500;
@@ -610,7 +612,7 @@ ul{
 	transform: translateY(-50%);
 	font-size: 20px;
 	font-weight: 600;
-	color: #fec007;
+	color: #FFCC00;
 	padding: 5px 16px;
 	border: 1px solid rgb(246, 190, 26);
 	border-radius: 100%;
@@ -668,7 +670,7 @@ ul{
 }
 .index_v1 .clv_rev_slider .rev-btn:hover{
 	background-color: transparent !important;
-	color: #fec007 !important;
+	color: #FFCC00 !important;
 }
 .index_v1 .clv_rev_slider .erinyen.tparrows{
 	border: 2px solid #ffffff;
@@ -678,7 +680,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .index_v1 .clv_rev_slider .erinyen.tparrows:hover{
-	border-color: #fec007;
+	border-color: #FFCC00;
 	background: none;
 }
 .index_v1 .clv_rev_slider .erinyen.tparrows:before{
@@ -687,7 +689,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .index_v1 .clv_rev_slider .erinyen.tparrows:hover:before{
-	color: #fec007;
+	color: #FFCC00;
 }
 .clv_banner_slider{
 	position: relative;
@@ -771,7 +773,7 @@ ul{
 .clv_banner_slider .clv_slide .clv_slide_inner h3{
 	font-size: 20px;
 	font-weight: 700;
-	color: #fec007;
+	color: #FFCC00;
 	text-transform: capitalize;
 	letter-spacing: 3px;
 }
@@ -809,8 +811,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_banner_slider .slider_arrow:hover{
-    border-color: #fec007;
-    color: #fec007;
+    border-color: #FFCC00;
+    color: #FFCC00;
 }
 .clv_banner_slider .slider_arrow.right_arrow{
 	left: auto;
@@ -827,7 +829,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_banner_slider .slider_arrow:hover > svg > path{
-	fill: #fec007;
+	fill: #FFCC00;
 }
  /********************************************************
 3. slider end
@@ -860,7 +862,7 @@ ul{
 }
 .clv_about_wrapper .about_content .about_heading h2 > span{
 	font-weight: 700;
-	color: #fec007;
+	color: #FFCC00;
 }
 .clv_about_wrapper .about_content .about_heading h6{
 	font-size: 18px;
@@ -890,7 +892,7 @@ ul{
     height: 50px;
     margin-right: 13px;
     font-size: 16px;
-    background-color: #fec007;
+    background-color: #FFCC00;
     display: inline-block;
     border-radius: 100%;
     position: relative;
@@ -1018,7 +1020,7 @@ ul{
 .about_farm_wrapper .about_content .about_heading h6{
 	margin: 20px 0px 10px; 
 	font-size: 20px;
-	color: #fec007;
+	color: #FFCC00;
 	font-weight: 500;
 }
 .about_farm_wrapper .about_content .clv_btn{
@@ -1037,7 +1039,7 @@ ul{
     border-radius: 10px;
     margin: 0 auto;
     margin-top: -80px;
-    background-color: #fec007;
+    background-color: #FFCC00;
     padding: 30px 50px;
     text-align: center;
     position: relative;
@@ -1118,22 +1120,22 @@ ul{
 .clv_service_wrapper .service_block:hover:before{
 	width: 90px;
 	height: 60px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .clv_service_wrapper .service_block:hover:after{
 	width: 60px;
 	height: 90px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .clv_service_wrapper .service_block:hover span:before{
 	width: 60px;
 	height: 90px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .clv_service_wrapper .service_block:hover span:after{
 	width: 90px;
 	height: 60px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .clv_service_wrapper .service_block .service_icon{
 	margin-bottom: 14px;
@@ -1192,7 +1194,7 @@ ul{
 	position: absolute;
 	top: -40px;
 	left: -40px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	border-radius: 100%;
 }
 .testimonial_slide .bg_quote{
@@ -1248,7 +1250,7 @@ ul{
     z-index: 1;
 }
 .testimonial_slider .slider_arrow:hover{
-	color: #fec007;
+	color: #FFCC00;
 }
 .testimonial_slider .slider_arrow.left_arrow{
 	right: 180px;
@@ -1301,7 +1303,7 @@ ul{
 .shop_slider .shop_slide > h6{
 	font-size: 26px;
 	font-weight: 700;
-	color: #fec007;
+	color: #FFCC00;
 	text-transform: capitalize;
 }
 .shop_slider .shop_slide:hover > h6, .shop_slider .shop_slide:hover > h5{
@@ -1379,7 +1381,7 @@ ul{
 	font-size: 16px;
 	border: 1px solid transparent;
 	background-color: #ffffff;
-	color: #fec007;
+	color: #FFCC00;
 	position: relative;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
@@ -1406,8 +1408,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_shop_wrapper .shop_slider .slider_arrow:hover{
-    border-color: #fec007;
-    color: #fec007;
+    border-color: #FFCC00;
+    color: #FFCC00;
 }
 .clv_shop_wrapper .shop_slider .slider_arrow.right_arrow{
 	left: auto;
@@ -1423,7 +1425,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_shop_wrapper .shop_slider .slider_arrow:hover > svg > path{
-	fill: #fec007;
+	fill: #FFCC00;
 }
 /********************************************************
 9. shop end
@@ -1475,7 +1477,7 @@ ul{
 .blog_slide .blog_content .blog_date{
 	font-size: 18px;
 	font-weight: 600;
-	color: #fec007;
+	color: #FFCC00;
 	margin-bottom: 6px;
 	text-transform: capitalize;
 }
@@ -1492,7 +1494,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .blog_slide .blog_content .blog_title:hover > a{
-	color: #fec007;
+	color: #FFCC00;
 }
 .blog_slide .blog_content .blog_user{
 	display: flex;
@@ -1528,7 +1530,7 @@ ul{
 	transform: translateY(-50%);
 }
 .blog_slide .blog_content .blog_user .comment_block span{
-	color: #fec007;
+	color: #FFCC00;
 }
 .blog_slide .blog_content > a{
 	text-transform: capitalize;
@@ -1536,7 +1538,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .blog_slide .blog_content > a:hover{
-	color: #fec007;
+	color: #FFCC00;
 	letter-spacing: 1px;
 }
 .blog_slide .blog_content > p{
@@ -1560,8 +1562,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_blog_wrapper .blog_slider .slider_arrow:hover{
-    border-color: #fec007;
-    color: #fec007;
+    border-color: #FFCC00;
+    color: #FFCC00;
 }
 .clv_blog_wrapper .blog_slider .slider_arrow.right_arrow{
 	left: auto;
@@ -1577,7 +1579,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_blog_wrapper .blog_slider .slider_arrow:hover > svg > path{
-	fill: #fec007;
+	fill: #FFCC00;
 }
 /********************************************************
 10. blog end
@@ -1658,7 +1660,7 @@ ul{
 }
 .gallery_slider .swiper-pagination-bullet.swiper-pagination-bullet-active{
 	width: 20px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	border-radius: 10px;
 }
 /********************************************************
@@ -1748,7 +1750,7 @@ ul{
 	font-weight: 600;
 }
 .clv_team_wrapper .team_section .team_block .team_details .team_name p{
-	color: #fec007;
+	color: #FFCC00;
 	margin-bottom: 5px;
 	text-transform: capitalize;
 }
@@ -1757,7 +1759,7 @@ ul{
     width: 50px;
     height: 2px;
 	opacity: 0;
-    background-color: #fec007;
+    background-color: #FFCC00;
     margin: 15px auto 10px;
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
@@ -1783,8 +1785,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .partner_slider .partner_slide .partner_image:hover{
-	border-color: #fec007;	
-	background-color: #fec007;	
+	border-color: #FFCC00;	
+	background-color: #FFCC00;	
 }
 .partner_slider .partner_slide .partner_image svg path{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;	
@@ -1810,8 +1812,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_partner_wrapper .partner_slider .slider_arrow:hover{
-    border-color: #fec007;
-    color: #fec007;
+    border-color: #FFCC00;
+    color: #FFCC00;
 }
 .clv_partner_wrapper .partner_slider .slider_arrow.right_arrow{
 	left: auto;
@@ -1827,7 +1829,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_partner_wrapper .partner_slider .slider_arrow:hover > svg > path{
-	fill: #fec007;
+	fill: #FFCC00;
 }
 /********************************************************
 13. partner end
@@ -1839,7 +1841,7 @@ ul{
 	padding: 38px 60px 55px;
 	display: flex;
 	align-items: center;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	border-radius: 20px;
 	margin-top: 100px;
 	margin-bottom: -100px;
@@ -1931,7 +1933,7 @@ ul{
 }
 .clv_footer_wrapper .footer_block h6{
 	text-transform: uppercase;
-	color: #fec007;
+	color: #FFCC00;
 	font-family: 'Lato', sans-serif;
 	font-weight: 600;
 	margin-bottom:8px;
@@ -1964,7 +1966,7 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .clv_footer_wrapper .footer_block .useful_links > li > a:hover{
-	color: #fec007;
+	color: #FFCC00;
 }
 .clv_footer_wrapper .footer_block .useful_links > li > a > span{
 	margin-right: 10px;
@@ -2016,7 +2018,7 @@ ul{
 	font-size: 16px;
 }
 .clv_copyright_wrapper > p > a{
-	color: #fec007;
+	color: #FFCC00;
 }
 /********************************************************
 16. copyright end
@@ -2154,7 +2156,7 @@ ul{
 	line-height: 70px;
     top: 0;
     font-size: 20px;
-    color: #fec007;
+    color: #FFCC00;
     display: block;
     line-height: 70px;
     text-align: center;
@@ -2819,7 +2821,7 @@ ul{
 	transform: translateY(-50%);
 }
 .blog_section .blog_user .comment_block span{
-	color: #fec007;
+	color: #FFCC00;
 	font-size: 22px;
 }
 .blog_section .agri_blog_content > p {
@@ -2905,7 +2907,7 @@ ul{
 	transform: translateY(-50%);
 }
 .right_blog_block .blog_user .comment_block span{
-	color: #fec007;
+	color: #FFCC00;
 	font-size: 22px;
 }
 .right_blog_block .right_blog_content > a {
@@ -3116,7 +3118,7 @@ ul{
 .agri_social_links > li > a:hover{
 	border-color: #ffffff;
 	background-color: #ffffff;
-	color: #fec007;
+	color: #FFCC00;
 }
 /*Agriculture Footer End*/
 /********************************************************
@@ -6861,16 +6863,16 @@ ul{
 	padding-top: 125px;
 } 
 .about_page .clv_about_product .about_product_contect .about_product_contact{
-	background-color: #fec007;
+	background-color: #FFCC00;
 } 
 .about_page .clv_about_product .about_product_contect .about_product_contact > span{
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .about_page .clv_about_product .about_product_image:after{
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .about_page .clv_about_product .about_product_contect > h6{
-	color: #fec007;
+	color: #FFCC00;
 }
 /*Breadcrumb Start*/
 .breadcrumb_wrapper{
@@ -6905,7 +6907,7 @@ ul{
 	bottom: -25px;
 	transform: translateX(-50%);
 	padding: 14px 20px;
-    background-color: #fec007;
+    background-color: #FFCC00;
     border-radius: 30px;
 	z-index: 1;
 }
@@ -6946,10 +6948,10 @@ ul{
 	padding-top: 125px
 }
 .service_page .clv_features_wrapper .feature_block h3:before, .service_page .clv_features_wrapper .feature_block h3:after{
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .service_page .garden_service2_section .service2_block h3:before, .service_page  .garden_service2_section .service2_block h3:after{
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .service_page .garden_service2_section .service2_block:hover h3:before, .service_page .garden_service2_section .service2_block:hover h3:after {
     background-color: rgba(255,255,255,1);
@@ -7014,8 +7016,8 @@ ul{
 .blog_pagination_section ul li:first-child a:hover, .blog_pagination_section ul li:last-child a:hover {
     width: 120px;
     border-radius: 40px;
-    background-color: #fec007;
-    border-color: #fec007;
+    background-color: #FFCC00;
+    border-color: #FFCC00;
     color: #ffffff;
 }
 .blog_pagination_section ul li.blog_page_arrow:first-child a span, .blog_pagination_section ul li.blog_page_arrow:last-child a span{
@@ -7080,7 +7082,7 @@ ul{
     content: "";
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-left: 4px solid #fec007;
+    border-left: 4px solid #FFCC00;
     position: absolute;
     top: 50%;
     left: 0;
@@ -7134,8 +7136,8 @@ ul{
 	transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
 .sidebar_tags ul li a:hover{
-	background-color: #fec007;
-	border-color: #fec007;
+	background-color: #FFCC00;
+	border-color: #FFCC00;
 	color: #ffffff;
 }
 .sidebar_test_slider{
@@ -7143,7 +7145,7 @@ ul{
 	position: relative;
 	width: 100%;
 	border-radius: 10px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	padding: 30px 20px 36px;
 	text-align: center;
 }
@@ -7239,7 +7241,7 @@ ul{
 	z-index: -1;
 }
 .author_message_box{
-	background-color: #fec007;
+	background-color: #FFCC00;
 	border-radius: 10px;
 	padding: 20px;
 	display: flex;
@@ -7338,7 +7340,7 @@ ul{
 	margin-right: 10px;
 }
 .comment_header .comment_name > span{
-	color: #fec007;
+	color: #FFCC00;
 	margin-right: 10px;
 }
 .comment_header > a {
@@ -7442,22 +7444,22 @@ ul{
 .contact_block:hover:before{
 	width: 90px;
 	height: 60px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .contact_block:hover:after{
 	width: 60px;
 	height: 90px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .contact_block:hover span:before{
 	width: 60px;
 	height: 90px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .contact_block:hover span:after{
 	width: 90px;
 	height: 60px;
-	border-color: #fec007;
+	border-color: #FFCC00;
 }
 .contact_block .contact_icon{
 	margin-bottom: 15px;
@@ -7479,7 +7481,7 @@ ul{
 	transform: translateX(-50%);
 	width: 104px;
 	height: 1px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .contact_block h4:after{
 	width: 56px;
@@ -7540,7 +7542,7 @@ ul{
 }
 .tollfree_block{
 	border-radius: 10px;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	padding: 22px 20px 19px;
 	text-align: center;
 	margin-top: 30px;
@@ -7610,7 +7612,7 @@ ul{
     left: 2px;
     transform: translateY(-50%);
     padding: 3px;
-	background: #fec007;
+	background: #FFCC00;
 	opacity: 0;
 	visibility: hidden;
 	border-radius: 2px;
@@ -7632,15 +7634,15 @@ ul{
     width: 100%;
 }
 .Range_slider .ui-widget.ui-widget-content{
-	border-color: #fec007;
+	border-color: #FFCC00;
 	height: 2px;
 }
 .Range_slider .ui-slider .ui-slider-range{
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .Range_slider .ui-state-default{
-	border: 1px solid #fec007;
-	background: #fec007;
+	border: 1px solid #FFCC00;
+	background: #FFCC00;
 	outline: none;
     border-radius: 50%;
 	top: -8px;
@@ -7735,7 +7737,7 @@ ul{
 	
 }
 .list_view_toggle > li > a.active > svg path{
-	fill: #fec007;
+	fill: #FFCC00;
 }
 .product_items_section{
 	margin-top: 18px;
@@ -7866,7 +7868,7 @@ ul{
 	margin-bottom: 20px;
 }
 .content_block > .rating_section span{
-	color: #fec007;
+	color: #FFCC00;
 	margin-right: 10px;
 }
 .content_block > .rating_section > ul > li{
@@ -7877,7 +7879,7 @@ ul{
 	color: #7c7c7c;
 }
 .content_block > .rating_section > ul > li > a.active{
-	color: #fec007;
+	color: #FFCC00;
 }
 .content_block > .rating_section{
 	margin-bottom: 20px;
@@ -7913,7 +7915,7 @@ ul{
 	text-transform: capitalize;
 }
 .content_block > .product_code > li > p span{
-	color: #fec007;
+	color: #FFCC00;
 }
 /********************************************************
 28. product Page end
@@ -7946,7 +7948,7 @@ ul{
 	max-width: 100%;
 }
 .fd_pro_thumnail .swiper-slide.swiper-slide-active .fd_pro_img_thumnail img{
-	border: 2px solid #fec007;
+	border: 2px solid #FFCC00;
 }
 .product_single_details{
 	margin-top: 20px;
@@ -7964,7 +7966,7 @@ ul{
     margin-bottom: 10px;
 }
 .product_single_details .rating_section > span{
-	color: #fec007;
+	color: #FFCC00;
     margin-right: 10px;
 }
 .product_single_details > .rating_section > p {
@@ -7976,7 +7978,7 @@ ul{
 	display: inline-block;
 }
 .product_single_details > .rating_section > ul > li > a.active {
-    color: #fec007;
+    color: #FFCC00;
 }
 .product_single_details > .rating_section > ul > li > a {
     color: #7c7c7c;
@@ -8007,7 +8009,7 @@ ul{
     text-transform: capitalize;
 }
 .product_single_details > .product_code > li > p span {
-    color: #fec007;
+    color: #FFCC00;
 }
 .product_prices {
     display: flex;
@@ -8027,7 +8029,7 @@ ul{
     margin-right: 10px;
 }
 .product_prices span.product_discount {
-    color: #fec007;
+    color: #FFCC00;
 }
 .product_delivery p{
 	display: flex;
@@ -8037,7 +8039,7 @@ ul{
 	margin-right: 10px;
     font-size: 18px;
 	position: relative;
-	color: #fec007;
+	color: #FFCC00;
 }
 .product_delivery p input{
 	border: none;
@@ -8050,7 +8052,7 @@ ul{
 .product_delivery p a.pin_check{
 	padding-left: 11px;
 	font-size: 18px;
-	color: #fec007;
+	color: #FFCC00;
 	text-transform: capitalize;
 	display: inline-block;
 	font-weight: 600;
@@ -8073,7 +8075,7 @@ ul{
 }
 .pro_cod span{
 	margin-right: 10px;
-	color: #fec007;
+	color: #FFCC00;
 }
 .quantity_wrapper {
 	width: 130px;
@@ -8091,7 +8093,7 @@ ul{
 	line-height: 50px;
 	position: relative;
 	font-size: 26px; 
-	color: #fec007;
+	color: #FFCC00;
 	cursor: pointer;
 }
 .quantity_wrapper > .input-group > input{
@@ -8144,7 +8146,7 @@ ul{
 }
 .product_detail_tab > ul > li > a.active{
 	color: #ffffff;
-	background-color: #fec007;
+	background-color: #FFCC00;
 }
 .additional_info{
 	width: 86%;
@@ -8289,7 +8291,7 @@ ul{
 	-moz-transition: all 0.3s ease-in-out;
 }
 .checkout_submit > a:hover{
-	color: #fec007;
+	color: #FFCC00;
 }
 .checkout_submit > a > span{
 	font-size: 18px;
@@ -8352,7 +8354,7 @@ ul{
 }
 .cart_summery_block > a{
 	text-transform: capitalize;
-	color: #fec007;
+	color: #FFCC00;
 	text-align: center;
 	font-size: 18px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -8516,7 +8518,7 @@ ul{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8535,7 +8537,7 @@ ul{
 }
 .user_profile_section .checkout_heading > a{
 	text-transform: capitalize;
-	color: #fec007;
+	color: #FFCC00;
 }
 .user_profile_section .checkout_heading > a > span{
 	margin-right: 5px;
@@ -8575,7 +8577,7 @@ ul{
 	line-height: 458px;
 	text-transform: capitalize;
 	font-weight: 700;
-	color: #fec007;
+	color: #FFCC00;
 }
 .error_content{
 	text-align: center;
@@ -8738,7 +8740,7 @@ ul{
 .thankyou_wrapper > .thankyou_inner > h3{
 	font-size: 22px;
 	text-transform: capitalize;
-	color: #fec007;
+	color: #FFCC00;
 	letter-spacing: 5px;
 	margin-bottom: 8px;
 }
@@ -8875,7 +8877,7 @@ ul{
 	color: #ffffff;
 }
 .signup_wrapper > .signup_inner > .signup_details > .clv_btn{
-	color: #fec007;
+	color: #FFCC00;
 }
 .signup_wrapper > .signup_inner > .signup_details > .clv_btn:hover{
 	color: #ffffff;
@@ -8912,7 +8914,7 @@ ul{
 }
 .signup_wrapper > .signup_inner > .signup_details > ul > li > a:hover{
 	background-color: #ffffff;
-	color: #fec007;
+	color: #FFCC00;
 }
 .signup_wrapper > .signup_inner > .signup_form_section{
 	width: 60%;
@@ -8937,10 +8939,10 @@ ul{
 	margin-top: 10px;
 }
 .signup_wrapper > .signup_inner > .signup_form_section > .clv_btn::before{
-	background-color: #fec007 !important;
+	background-color: #FFCC00 !important;
 }
 .signup_wrapper > .signup_inner > .signup_form_section > .clv_btn::after{
-	border-color: #fec007 !important;
+	border-color: #FFCC00 !important;
 }
 .social_button_section{
 	text-align: center;
@@ -9108,7 +9110,7 @@ ul{
 	color: #ffffff;
 }
 .signin_wrapper > .signup_inner > .signup_details > .clv_btn{
-	color: #fec007;
+	color: #FFCC00;
 }
 .signin_wrapper > .signup_inner > .signup_details > .clv_btn:hover{
 	color: #ffffff;
@@ -9145,7 +9147,7 @@ ul{
 }
 .signin_wrapper > .signup_inner > .signup_details > ul > li > a:hover{
 	background-color: #ffffff;
-	color: #fec007;
+	color: #FFCC00;
 }
 .signin_wrapper > .signup_inner > .signup_form_section{
 	width: 60%;
@@ -9253,7 +9255,7 @@ ul{
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	box-shadow: 0 0 0 0 rgba(254, 192, 7, 0.6);
 	animation: pulse4 2s infinite;
 }
@@ -9264,7 +9266,7 @@ ul{
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
-	background-color: #fec007;
+	background-color: #FFCC00;
 	box-shadow: 0 0 0 0 rgba(254, 192, 7, 0.6);
 	animation: pulse4 2s infinite;
 	color: white;
@@ -9635,7 +9637,7 @@ ul{
 		left: 0;
 		top: 0;
 		bottom: 0;
-		background-color: #fec007;
+		background-color: #FFCC00;
 		flex-direction: column;
 		border-radius: 0;
 		width: 250px;
@@ -9676,13 +9678,13 @@ ul{
 		padding: 39px 0px;
 	}
 	.clv_right_header .clv_menu .cart_nav > ul > li > a{
-		color: #fec007;
+		color: #FFCC00;
 	}
 	.clv_right_header .clv_menu .cart_nav > ul > li > a > svg > path{
 		fill: #000000;
 	}
 	.clv_right_header .clv_menu .cart_nav ul > li > a.cart_toggle > span{
-		background-color: #fec007;
+		background-color: #FFCC00;
     	color: #ffffff;
 	}
 	.clv_right_header .clv_menu .clv_menu_nav > ul > li{
@@ -11497,6 +11499,10 @@ ul{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	.clv_logo a img , .footer_logo a img{
+		height: 40px !important;
+		padding-top: 10px;
 	}
 	
 }

@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/form-validation.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/style.css">
 	<!-- Favicon Link -->
-	<link rel="shortcut icon" type="image/png" href="<?=base_url('assets/')?>images/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="<?=base_url('assets/')?>images/fav-icon/favicon-32x32.png">
 </head>
 <script>
     var loc="<?=base_url()?>";
@@ -40,67 +40,67 @@
 <div class="clv_main_wrapper index_v">
     <div class="clv_header">
         <div class="container"> 
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="clv_left_header"> 
+            <div class="row" style="align-items:center;">
+                <div class="col-lg-4 col-sm-4">
+                    <div class="clv_left_header py-0"> 
                         <div class="clv_logo">
-                            <a href="<?=base_url()?>"><img src="<?=base_url('assets/')?>images/logo.png" alt="Cropicle" /></a>
+                            <a href="<?=base_url()?>"><img src="<?=base_url('assets/')?>images/logo.png" alt="Cropicle" height="50" /></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <div class="clv_right_header">
-                        <div class="clv_address">
+                        <div class="clv_address py-2 pb-3">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-sm-4">
                                     <div class="address_block">
                                         <span class="addr_icon">
                                             <svg 
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
                                                 width="12px" height="16px">
-                                            <defs>
-                                            <filter id="Filter_0">
-                                                <feFlood flood-color="rgb(254, 192, 7)" flood-opacity="1" result="floodOut" />
-                                                <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
-                                                <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
-                                            </filter>
+                                                <defs>
+                                                <filter id="Filter_0">
+                                                    <feFlood flood-color="rgb(254, 192, 7)" flood-opacity="1" result="floodOut" />
+                                                    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                                                    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                                                </filter>
 
-                                            </defs>
-                                            <g filter="url(#Filter_0)">
-                                            <path fill-rule="evenodd"  fill="rgb(83, 175, 30)"
-                                                d="M5.530,-0.004 C2.497,-0.004 0.029,2.434 0.029,5.431 C0.029,9.148 4.951,14.609 5.161,14.839 C5.358,15.055 5.702,15.054 5.898,14.839 C6.108,14.609 11.029,9.148 11.029,5.431 C11.029,2.434 8.562,-0.004 5.530,-0.004 ZM5.530,8.165 C4.004,8.165 2.762,6.937 2.762,5.431 C2.762,3.923 4.004,2.696 5.530,2.696 C7.055,2.696 8.297,3.923 8.297,5.431 C8.297,6.937 7.055,8.165 5.530,8.165 Z"/>
-                                            </g>
+                                                </defs>
+                                                <g filter="url(#Filter_0)">
+                                                <path fill-rule="evenodd"  fill="rgb(83, 175, 30)"
+                                                    d="M5.530,-0.004 C2.497,-0.004 0.029,2.434 0.029,5.431 C0.029,9.148 4.951,14.609 5.161,14.839 C5.358,15.055 5.702,15.054 5.898,14.839 C6.108,14.609 11.029,9.148 11.029,5.431 C11.029,2.434 8.562,-0.004 5.530,-0.004 ZM5.530,8.165 C4.004,8.165 2.762,6.937 2.762,5.431 C2.762,3.923 4.004,2.696 5.530,2.696 C7.055,2.696 8.297,3.923 8.297,5.431 C8.297,6.937 7.055,8.165 5.530,8.165 Z"/>
+                                                </g>
                                             </svg>
                                         </span>
-                                        <p>Nagpur</p>
+                                        <p>Laxmi Nagar, Nagpur</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4">
                                     <div class="address_block">
                                         <span class="addr_icon">
                                             <svg 
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
                                                 width="16px" height="15px">
-                                            <defs>
-                                            <filter id="Filter_0">
-                                                <feFlood flood-color="rgb(254, 192, 7)" flood-opacity="1" result="floodOut" />
-                                                <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
-                                                <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
-                                            </filter>
+                                                <defs>
+                                                <filter id="Filter_0">
+                                                    <feFlood flood-color="rgb(254, 192, 7)" flood-opacity="1" result="floodOut" />
+                                                    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                                                    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                                                </filter>
 
-                                            </defs>
-                                            <g filter="url(#Filter_0)">
-                                            <path fill-rule="evenodd"  fill="rgb(0, 0, 0)"
-                                                d="M13.866,7.234 C13.607,5.720 12.892,4.343 11.802,3.254 C10.653,2.108 9.197,1.379 7.592,1.155 L7.754,-0.003 C9.613,0.254 11.296,1.095 12.626,2.426 C13.888,3.689 14.716,5.282 15.019,7.037 L13.866,7.234 ZM10.537,4.459 C11.296,5.220 11.796,6.178 11.977,7.238 L10.824,7.434 C10.684,6.617 10.300,5.872 9.713,5.286 C9.091,4.665 8.304,4.274 7.439,4.151 L7.601,2.995 C8.719,3.150 9.734,3.657 10.537,4.459 ZM4.909,8.180 C5.709,9.161 6.611,10.032 7.689,10.710 C7.920,10.853 8.176,10.959 8.416,11.090 C8.538,11.159 8.623,11.137 8.722,11.033 C9.088,10.660 9.459,10.290 9.831,9.922 C10.318,9.439 10.931,9.439 11.421,9.922 C12.017,10.516 12.614,11.109 13.207,11.706 C13.704,12.206 13.701,12.816 13.201,13.323 C12.864,13.664 12.505,13.987 12.186,14.344 C11.721,14.865 11.140,15.034 10.471,14.996 C9.500,14.942 8.607,14.622 7.745,14.203 C5.831,13.272 4.194,11.983 2.823,10.354 C1.808,9.148 0.971,7.834 0.421,6.353 C0.153,5.638 -0.038,4.905 0.022,4.127 C0.059,3.649 0.237,3.241 0.590,2.907 C0.971,2.544 1.330,2.168 1.705,1.798 C2.192,1.317 2.804,1.317 3.295,1.795 C3.598,2.093 3.894,2.394 4.194,2.694 C4.485,2.988 4.775,3.274 5.065,3.569 C5.578,4.083 5.578,4.683 5.069,5.194 C4.703,5.564 4.341,5.931 3.969,6.290 C3.872,6.388 3.863,6.466 3.913,6.585 C4.160,7.172 4.513,7.694 4.909,8.180 Z"/>
-                                            </g>
+                                                </defs>
+                                                <g filter="url(#Filter_0)">
+                                                <path fill-rule="evenodd"  fill="rgb(0, 0, 0)"
+                                                    d="M13.866,7.234 C13.607,5.720 12.892,4.343 11.802,3.254 C10.653,2.108 9.197,1.379 7.592,1.155 L7.754,-0.003 C9.613,0.254 11.296,1.095 12.626,2.426 C13.888,3.689 14.716,5.282 15.019,7.037 L13.866,7.234 ZM10.537,4.459 C11.296,5.220 11.796,6.178 11.977,7.238 L10.824,7.434 C10.684,6.617 10.300,5.872 9.713,5.286 C9.091,4.665 8.304,4.274 7.439,4.151 L7.601,2.995 C8.719,3.150 9.734,3.657 10.537,4.459 ZM4.909,8.180 C5.709,9.161 6.611,10.032 7.689,10.710 C7.920,10.853 8.176,10.959 8.416,11.090 C8.538,11.159 8.623,11.137 8.722,11.033 C9.088,10.660 9.459,10.290 9.831,9.922 C10.318,9.439 10.931,9.439 11.421,9.922 C12.017,10.516 12.614,11.109 13.207,11.706 C13.704,12.206 13.701,12.816 13.201,13.323 C12.864,13.664 12.505,13.987 12.186,14.344 C11.721,14.865 11.140,15.034 10.471,14.996 C9.500,14.942 8.607,14.622 7.745,14.203 C5.831,13.272 4.194,11.983 2.823,10.354 C1.808,9.148 0.971,7.834 0.421,6.353 C0.153,5.638 -0.038,4.905 0.022,4.127 C0.059,3.649 0.237,3.241 0.590,2.907 C0.971,2.544 1.330,2.168 1.705,1.798 C2.192,1.317 2.804,1.317 3.295,1.795 C3.598,2.093 3.894,2.394 4.194,2.694 C4.485,2.988 4.775,3.274 5.065,3.569 C5.578,4.083 5.578,4.683 5.069,5.194 C4.703,5.564 4.341,5.931 3.969,6.290 C3.872,6.388 3.863,6.466 3.913,6.585 C4.160,7.172 4.513,7.694 4.909,8.180 Z"/>
+                                                </g>
                                             </svg>
                                         </span>
-                                        <p>( +61 ) 1800-1234-1245</p>
+                                        <p>( +91 ) 1800-1234-1245</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-sm-4">
                                     <div class="address_block">
                                         <span class="addr_icon">
                                             <svg 
@@ -127,26 +127,26 @@
                             </div>
                         </div>
                         <?php if(isset($this->session->user)){?>
-                        <div class="clv_menu col-md-11 ml-auto px-sm-3 px-0">
+                        <div class="clv_menu col-sm-11 ml-auto px-sm-3 px-0">
                         <?php }else{?>
-                        <div class="clv_menu col-md-8 ml-auto px-sm-3 px-0">
+                        <div class="clv_menu col-sm-8 ml-auto px-sm-3 px-0">
                         <?php }?>
                             <div class="clv_menu_nav">
                                 <ul>
-                                    <li><a href="<?=base_url()?>">Home</a></li>
-                                    <li><a href="<?=base_url()?>about">How it works ?</a></li>
-                                    <li><a href="<?=base_url()?>contact">Contact us</a></li>
+                                    <li class="py-1"><a href="<?=base_url()?>" class="">Home</a></li>
+                                    <li class="py-1"><a href="<?=base_url()?>about">How it works ?</a></li>
+                                    <li class="py-1"><a href="<?=base_url()?>contact">Contact us</a></li>
                                     <?php if(isset($this->session->user)){?>
-                                        <li>
-                                            <a href="<?=base_url('profile')?>"><?=strlen($this->session->user->name)>6?substr($this->session->user->name,0,6).'...':$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
-                                            <ul>
-                                                <li><a href="<?=base_url('profile')?>">See profile</a></li>
-                                                <li><a href="<?=base_url('demands')?>">My demands</a></li>
-                                                <li><a href="<?=base_url('logout')?>">Logout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="<?=base_url()?>demands" class="d-md-none d-block">My demands</a></li>
-                                        <li><a href="<?=base_url()?>logout" class="d-md-none d-block">Logout</a></li>
+                                    <li class="py-1">
+                                        <a href="<?=base_url('profile')?>"><?=strlen($this->session->user->name)>6?substr($this->session->user->name,0,6).'...':$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
+                                        <ul>
+                                            <li><a href="<?=base_url('profile')?>">See profile</a></li>
+                                            <li><a href="<?=base_url('demands')?>">My demands</a></li>
+                                            <li><a href="<?=base_url('logout')?>">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="py-1"><a href="<?=base_url()?>demands" class="d-md-none d-block">My demands</a></li>
+                                    <li class="py-1"><a href="<?=base_url()?>logout" class="d-md-none d-block">Logout</a></li>
                                     <?php }?>
                                 </ul>
                             </div>
@@ -154,20 +154,19 @@
                                 <ul class="">
 									<li class="menu_toggle ml-0 ml-sm-5" style="float:left">
 										<span>
-											<?xml version="1.0" encoding="iso-8859-1"?>
 											<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 viewBox="0 0 53 53" style="enable-background:new 0 0 53 53;" xml:space="preserve" width="20px" height="20px">
-											<g>
-												<g>
-													<path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"/>
-													<path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"/>
-													<path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"/>
-												</g>
-											</g>
+                                                <g>
+                                                    <g>
+                                                        <path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"/>
+                                                        <path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"/>
+                                                        <path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"/>
+                                                    </g>
+                                                </g>
 											</svg>
 										</span>
 									</li>
-                                    <li class="ml-0 ml-sm-2">
+                                    <li class="ml-0 ml-sm-2 py-1">
                                         <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>10?substr($this->session->location_name,0,10).'...':$this->session->location_name):'Select area'?></a>
                                     </li>
                                     <?php if(isset($this->session->user)){

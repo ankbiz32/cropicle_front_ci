@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-3 col-lg-3">
                     <div class="footer_block">
-                        <div class="footer_logo"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/footer_logo.png" alt="image" /></a></div>
+                        <div class="footer_logo"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/badge_logo.png" height="55" alt="image" /></a></div>
                         <p>Lorem ipsum dolor sit amet  onsectetadip isicing elit, sed do eiusmod tempordidunt ut labore et dolaliqua.</p>
                         <h6>call now</h6>
                         <h3>+91 1800-124-224</h3>
@@ -62,7 +62,7 @@
     </div>
     <!--Copyright-->
     <div class="clv_copyright_wrapper">
-        <p>copyright &copy; 2019 <a href="javascript:;">Cropicle.</a> all right reserved.</p>
+        <p>copyright &copy; 2020 <a href="javascript:;">Cropicle.</a> all right reserved.</p>
     </div>
 	<!--Popup-->
 	<div class="search_box">
@@ -81,7 +81,6 @@
 			</div>
 		</div>
 		<span class="search_close">
-			<?xml version="1.0" encoding="iso-8859-1"?>
 			<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				 viewBox="0 0 47.971 47.971" style="enable-background:new 0 0 47.971 47.971;" xml:space="preserve"  width="30px" height="30px">
 			<g>
@@ -99,7 +98,7 @@
         <div class="signup_inner">
             <div class="signup_details">
                 <div class="site_logo">
-                    <a href="#"> <img src="<?=base_url('assets/')?>images/logo_white.png" alt="image"></a>
+                    <a href="#"> <img src="<?=base_url('assets/')?>images/logo_white.png" height="40" alt="image"></a>
                 </div>
                 <h3>welcome to Cropicle!</h3>
                 <p>Consectetur adipisicing elit sed do eiusmod por incididunt uttelabore et dolore magna aliqu.</p>
@@ -135,7 +134,6 @@
                     </a>
                 </div>
                 <span class="success_close">
-                    <?xml version="1.0" encoding="iso-8859-1"?>
                     <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve" width="11px" height="11px" >
                     <g>
@@ -154,7 +152,7 @@
         <div class="signup_inner">
             <div class="signup_details">
                 <div class="site_logo">
-                    <a href="<?=base_url()?>"> <img src="<?=base_url('assets/')?>images/logo_white.png" alt="image"></a>
+                    <a href="<?=base_url()?>"> <img src="<?=base_url('assets/')?>images/logo_white.png" height="40" alt="image"></a>
                 </div>
                 <h3>welcome to Cropicle!</h3>
                 <p>Consectetur adipisicing elit sed do eiusmod por incididunt uttelabore et dolore magna aliqu.</p>
@@ -189,7 +187,6 @@
                     </a>
                 </div>
                 <span class="success_close">
-                    <?xml version="1.0" encoding="iso-8859-1"?>
                     <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve" width="11px" height="11px" >
                     <g>
@@ -213,7 +210,6 @@
             <p>Your order has been successfully processed! Please direct any questions you have to the store owner. Thanks for shopping</p>
             <a href="javascript:;" class="clv_btn">continue browsing</a>
             <span class="success_close">
-                <?xml version="1.0" encoding="iso-8859-1"?>
                 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve" width="11px" height="11px" >
                 <g>
@@ -226,6 +222,7 @@
             </span>
         </div>
     </div>
+
     <?php if(isset($this->session->user)){
         $cart = $this->session->userdata("cart");
         $cart = !empty($cart)?$cart:array();

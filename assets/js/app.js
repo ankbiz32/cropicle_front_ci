@@ -102,7 +102,7 @@
         $(`
             <form method="POST" action="`+loc+`save-demand">
                 <div class="row mt-0 mb-0 pt-4 form_block pl-1" style="border-top:2px solid #ddd">
-                    <textarea class="col-sm-6 form_field" placeholder="Enter any additional remaks" maxlength="300" name="cust_remarks" row="5"></textarea>
+                    <textarea class="col-sm-6 form_field" placeholder="Enter any additional requirements or message" maxlength="300" name="cust_remarks" row="5"></textarea>
                 </div>
                 <div class="row mt-1 pr-0 form_block pl-1">
                     <p class="text-right col-sm-6 p-0" style="font-size:14px; color:#aaa">*Max 300 characs.</p>
