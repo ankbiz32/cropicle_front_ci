@@ -13,6 +13,7 @@ class GetModel extends CI_Model{
                         ->get()
                         ->result();
         if(!empty($users)){
+            $items=array();
             $hawker_count=sizeof($users);
             $orders=array();
             foreach($users as $u){
