@@ -105,8 +105,8 @@ class Home extends MY_Controller {
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',
 										'loc'=>$loc,
-										'prods'=>$res['items'],
 										'location'=>$location,
+										'prods'=>$res['items'],
 										'hawker_count'=>$res['hawker_count']
 									]
 								);

@@ -13,7 +13,6 @@ class GetModel extends CI_Model{
                         ->get()
                         ->result();
         if(!empty($users)){
-            $items=array();
             $hawker_count=sizeof($users);
             $orders=array();
             foreach($users as $u){
@@ -25,7 +24,7 @@ class GetModel extends CI_Model{
                 $arr2=array();
                 foreach($orders as $o){
                     if(!empty($o)){
-                        if($o->updated_by_hawker==0){
+                        if($o->updated_by_hawker=='0'){
                             $prms=['order_id'=>$o->id];
                             $arr[]=$this->getOrderDetailsForLoc('order_details',$prms);
                         }
@@ -44,7 +43,7 @@ class GetModel extends CI_Model{
                 $merged3= array_merge($merged,$merged2);
                 $merged3= array_unique($merged3,SORT_REGULAR);
               
-                foreach($merged as $mer){
+                foreach($merged3 as $mer){
                     $items[]=$this->getItemInfo($mer->item_id,'items_master');
                 }
                 $result['hawker_count']=$hawker_count;
