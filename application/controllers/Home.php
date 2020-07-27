@@ -97,7 +97,7 @@ class Home extends MY_Controller {
 			$location=$location->area;
 		}
 		else{
-			$location='Uranus';
+			$location='Select area';
 		}
 		$this->session->set_userdata(['location_name' =>  $location]);
 		// echo'<pre>';var_dump($res['items']);exit;
