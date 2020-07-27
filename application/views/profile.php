@@ -28,7 +28,6 @@
                         <input type="file" id="user_profile" class="user_profile_img" name="img">
                         <label for="user_profile">
                             <span>
-                                <?xml version="1.0" encoding="iso-8859-1"?>
                                 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                         width="20px" height="20px" viewBox="0 0 485.219 485.22" style="enable-background:new 0 0 485.219 485.22;"
                                         xml:space="preserve">
@@ -52,7 +51,6 @@
                     <h3>basic information</h3>
                     <a href="javascript:;">
                         <span>
-                            <?xml version="1.0" encoding="iso-8859-1"?>
                             <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     width="12px" height="12px" viewBox="0 0 485.219 485.22" style="enable-background:new 0 0 485.219 485.22;"
                                     xml:space="preserve">
