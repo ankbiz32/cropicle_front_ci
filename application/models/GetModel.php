@@ -34,11 +34,22 @@ class GetModel extends CI_Model{
                         }
                     }
                 }
-                $merged = call_user_func_array('array_merge', $arr);
-                $merged = array_unique($merged,SORT_REGULAR);
-
-                $merged2= call_user_func_array('array_merge', $arr2);
-                $merged2= array_unique($merged2,SORT_REGULAR);
+               // echo'<pre>';var_dump($arr);exit;
+                if($arr){
+                    $merged = call_user_func_array('array_merge', $arr);
+                    $merged = array_unique($merged,SORT_REGULAR);
+                }
+                else{
+                    $merged = array();
+                }
+                
+                if($arr2){
+                    $merged2= call_user_func_array('array_merge', $arr2);
+                    $merged2= array_unique($merged2,SORT_REGULAR);
+                }
+                else{
+                    $merged2 = array();
+                }
 
                 $merged3= array_merge($merged,$merged2);
                 $merged3= array_unique($merged3,SORT_REGULAR);
