@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'Home';
 $route['404_override'] = 'Error404';
 $route['about'] = 'Home/About';
+$route['home'] = 'Home/afterGoogleLogin';
 $route['contact'] = 'Home/Contact';
 $route['location/(:num)'] = 'Home/fetchItems/$1';
 $route['profile'] = 'Home/Profile';

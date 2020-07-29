@@ -9,13 +9,98 @@ class Home extends MY_Controller {
 	}
 
 	public function index()
-	{	
+	{
+		$redirect=base_url();
+
+		include_once "application/libraries/vendor/autoload.php";
+
+		$google_client = new Google_Client();
+
+		$google_client->setClientId('446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
+		$google_client->setClientSecret('hNNrfN2zCEzZQTousMkQ2Lne'); 
+		$google_client->setRedirectUri($redirect);
+
+		$google_client->addScope('email');
+		$google_client->addScope('profile');
+
+		if(isset($_GET["code"]))
+		{
+			$token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+
+			if(!isset($token["error"]))
+			{
+				
+				$this->load->model('Auth_model','auth');
+
+				$google_client->setAccessToken($token['access_token']);
+
+				$this->session->set_userdata('access_token', $token['access_token']);
+
+				$google_service = new Google_Service_Oauth2($google_client);
+
+				$data = $google_service->userinfo->get();
+
+				$current_datetime = date('Y-m-d H:i:s');
+
+				$check=array(
+					'login_oauth_uid' => $data['id'],
+					'role_id' => 3
+				);
+				$registered=$this->auth->Is_already_register($check);
+				if($registered){
+					$loc_arr=$this->fetch->getInfoByColId('user_id',$registered->id,'user_info');
+					$this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
+					
+					$loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
+					$this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+
+					$this->session->set_userdata('user', $registered);
+				}
+				else{
+					//insert data
+					$user_data = array(
+						'login_oauth_uid' => $data['id'],
+						'name' => $data['name'],
+						'email'  => $data['email'],
+						'role_id'  => 3,
+						'is_active'  => 1,
+						'created'  => $current_datetime
+					);
+					$new_id=$this->auth->Insert_user_data($user_data);
+					if($new_id){
+						$user_data2 = array(
+							'user_id' => $new_id,
+							'profile_img' => 'user.png'
+						);
+						$id=$this->save->saveInfo('user_info',$user_data2);
+					}
+
+					$data=$this->fetch->getInfoByColId('login_oauth_uid',$data['id'],'users');
+					$this->session->set_userdata('user', $data);
+				}
+			}
+		}
+
+		redirect('home');
+	}
+
+	public function afterGoogleLogin()
+	{
+
 		if(isset($this->session->location_id)){
 			$this->fetchItems($this->session->location_id);
 		}
 		else{
+			
+			if(!$this->session->userdata('user')){
+				$auth_url=$this->getOAutLoginhUrl();
+			}
+			else{
+				$auth_url="#";
+			}
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',
+										'auth_url'=>$auth_url,
 										'loc'=>$loc
 									]
 								);
@@ -23,6 +108,7 @@ class Home extends MY_Controller {
 			$this->load->view('footer');
 			$this->load->view('cart_scripts');
 		}
+		
 	}
 
 	public function Cart()
@@ -40,8 +126,15 @@ class Home extends MY_Controller {
 
 	public function About()
 	{
+		if(!$this->session->userdata('access_token')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$location='Select area';
+		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
+									'auth_url'=>$auth_url,
 									'loc'=>$loc
 								]
 							);
@@ -51,8 +144,15 @@ class Home extends MY_Controller {
 
 	public function Contact()
 	{
+		if(!$this->session->userdata('access_token')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$location='Select area';
+		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
+									'auth_url'=>$auth_url,
 									'loc'=>$loc
 								]
 							);
@@ -90,6 +190,14 @@ class Home extends MY_Controller {
 
 	public function fetchItems($id)
 	{
+
+		if(!$this->session->userdata('user')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$auth_url="#";
+		}
+
 		$this->session->set_userdata(['location_id' =>  $id]);
 		$res=$this->fetch->fetchProds($id);
 		$location=$this->fetch->getInfoById($id,'locations_master');
@@ -107,6 +215,7 @@ class Home extends MY_Controller {
 										'loc'=>$loc,
 										'location'=>$location,
 										'prods'=>$res['items'],
+										'auth_url'=>$auth_url,
 										'hawker_count'=>$res['hawker_count']
 									]
 								);
@@ -117,12 +226,30 @@ class Home extends MY_Controller {
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',
 										'loc'=>$loc,
+										'auth_url'=>$auth_url,
 										'location'=>$location
 									]
 								);
 			$this->load->view('index.php');
 			$this->load->view('footer');
 		}
+	}
+
+	public function getOAutLoginhUrl(){
+			$redirect=base_url();
+	
+			include_once "application/libraries/vendor/autoload.php";
+	
+			$google_client = new Google_Client();
+	
+			$google_client->setClientId('446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
+			$google_client->setClientSecret('hNNrfN2zCEzZQTousMkQ2Lne'); 
+			$google_client->setRedirectUri($redirect);
+	
+			$google_client->addScope('email');
+			$google_client->addScope('profile');
+			$url = $google_client->createAuthUrl();
+			return $url;
 	}
 
 

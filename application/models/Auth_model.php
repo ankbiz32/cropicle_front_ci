@@ -33,6 +33,37 @@ class Auth_model extends CI_Model {
             return false;
         }
     }
+
+
+    // Google Login methods
+
+    function Is_already_register($prms)
+    {
+        // echo $id;exit;
+        $this->db->where($prms);
+        $query = $this->db->get('users');
+        if($query->num_rows() > 0)
+        {
+            return $query->row();
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function Update_user_data($data, $id)
+    {
+        $this->db->where('login_oauth_uid', $id);
+        $this->db->update('users', $data);
+    }
+
+
+    function Insert_user_data($data)
+    {
+        $this->db->insert('users', $data);
+        return $this->db->insert_id();
+    }
     
     
 }

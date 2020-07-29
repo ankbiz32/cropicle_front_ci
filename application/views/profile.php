@@ -24,7 +24,7 @@
             <div class="user_profile_section">
                 <div class="profile_image_block">
                     <div class="user_profile_img">
-                        <img src="<?=base_url('assets/images/').$profile->profile_img?>" alt="<?=isset($this->session->user)?$this->session->user->name:''?>">
+                        <img src="<?=base_url('assets/images/').$profile->profile_img?>" alt="<?=isset($this->session->user)?$this->session->user->name:''?>" style="object-fit:cover; object-position:center;">
                         <input type="file" id="user_profile" class="user_profile_img" name="img">
                         <label for="user_profile">
                             <span>
@@ -81,13 +81,14 @@
                         <div class="col-md-6">
                             <div class="form_block">
                                 <h6>Contact no.</h6>
-                                <input type="text" class="form_field bg-light" placeholder="Example: 9876543210" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" readonly required>
+                                <input type="text" name="mobile_no" placeholder="Example: 9876543210" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" 
+                                <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field"':'class="form_field bg-light" readonly'?> required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form_block">
                                 <h6>Email</h6>
-                                <input type="email" class="form_field" placeholder="John@example.com" value="<?=$profile->email?>" name="email" required>
+                                <input type="email" placeholder="John@example.com" value="<?=$this->session->user->email?>" name="email" <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field bg-light" readonly':' class="form_field"'?>  required>
                             </div>
                         </div>
                         <div class="col-md-6">

@@ -50,17 +50,20 @@ class Edit extends MY_Controller {
     {
         $data = $this->input->post();
         $data2['name']= $data['name'];
+        $data2['mobile_no']= $data['mobile_no'];
+        $data2['email']= $data['email'];
         unset($data['name']);
+        unset($data['mobile_no']);
+        unset($data['email']);
         // echo '<pre>';var_dump($data, $data2);exit;
-        if(isset($data['mobile_no'])){
-            unset($data['mobile_no']);
-        }
         $data['modified'] = date('Y-m-d H:i:s');
         $data2['modified'] = date('Y-m-d H:i:s');
         $status= $this->edit->updateInfoById('user_info',$data,'user_id',$this->session->user->id);
         $status= $this->edit->updateInfoById('users',$data2,'id',$this->session->user->id);
         if($status){
             $this->session->user->name=$data2['name'];
+            $this->session->user->mobile_no=$data2['mobile_no'];
+            $this->session->user->email=$data2['email'];
             $this->session->location_id=$data['location_id'];
             $l= $this->fetch->getInfoByColId('id',$data['location_id'],'locations_master');
             $this->session->location_name=$l->area;

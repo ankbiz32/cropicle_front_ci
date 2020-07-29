@@ -123,14 +123,15 @@
                     <input type="password" class="form_field requried" id="pwd" name="password" placeholder="Password" requried>
                 </div>
                 <button type="submit" id="regSubmit" class="clv_btn">Next</button>
-                <div class="social_button_section">
-                    <a href="javascript:;" class="fb_btn">
+                <p class="text-center mt-3">Or sign in with</p>
+                <div class="social_button_section mt-1">
+                    <!-- <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
                         <span>facebook</span>
-                    </a>
-                    <a href="javascript:;" class="google_btn">
+                    </a> -->
+                    <a href="<?=$auth_url?>" class="google_btn mx-auto">
                         <span><img src="<?=base_url('assets/')?>images/google.png" alt="image"></span>
-                        <span>google+</span>
+                        <span>google</span>
                     </a>
                 </div>
                 <span class="success_close">
@@ -176,14 +177,15 @@
                     </div>
                     <button type="submit" class="clv_btn">sign in</button>
                 </form>
-                <div class="social_button_section">
-                    <a href="javascript:;" class="fb_btn">
+                <p class="text-center mt-3">Or sign in with</p>
+                <div class="social_button_section mt-1">
+                    <!-- <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
                         <span>facebook</span>
-                    </a>
-                    <a href="javascript:;" class="google_btn">
+                    </a> -->
+                    <a href="<?=$auth_url?>" class="google_btn mx-auto">
                         <span><img src="<?=base_url('assets/')?>images/google.png" alt="image"></span>
-                        <span>google+</span>
+                        <span>google</span>
                     </a>
                 </div>
                 <span class="success_close">
