@@ -86,4 +86,5 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 // Custom Constants
-defined('TXN_PWD')        OR define('TXN_PWD', '502Ank'); // Root file upload login password
+defined('G_AUTH_ID')     OR define('G_AUTH_ID', '446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
+defined('G_AUTH_KEY')    OR define('G_AUTH_KEY', 'hNNrfN2zCEzZQTousMkQ2Lne');

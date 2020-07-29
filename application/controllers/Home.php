@@ -16,8 +16,8 @@ class Home extends MY_Controller {
 
 		$google_client = new Google_Client();
 
-		$google_client->setClientId('446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
-		$google_client->setClientSecret('hNNrfN2zCEzZQTousMkQ2Lne'); 
+		$google_client->setClientId(G_AUTH_ID);
+		$google_client->setClientSecret(G_AUTH_KEY);
 		$google_client->setRedirectUri($redirect);
 
 		$google_client->addScope('email');
