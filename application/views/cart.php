@@ -17,10 +17,10 @@
             </ul>
         </div>
     </div>
-    <?php if(isset($this->session->user)){
+    <?php
         $cart = $this->session->userdata("cart");
         $cart = !empty($cart)?$cart:array();
-    }?>
+    ?>
     
     <!--Cart Single-->
     <div class="cart_single_wrapper clv_section">
@@ -100,17 +100,23 @@
                         
                     </tr>
                 </table>
-                <div class="checkout_btn_block mt-3">
-                    <a href="javascript:;" class="clv_btn checkout-button">Next</a>
-                </div>
-                <?php } else{?>
+                    <?php if(isset($this->session->user)){?>
+                        <div class="checkout_btn_block mt-3">
+                            <a href="javascript:;" class="clv_btn checkout-button">Next</a>
+                        </div>
+                    <?php } else{?>
+                        <div class="checkout_btn_block mt-3">
+                            <a href="javascript:;" class="clv_btn pop_signin">Login to create demand</a>
+                        </div>
+                    <?php }
+                 } else{?>
                     <h4>Cart is empty</h4>
                 <?php }?>
             </div>
         </div>
     </div>
     <script>
-        var loc="<?=base_url()?>"
+        var loc="<?=base_url()?>";
     </script>
 
    

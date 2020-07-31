@@ -48,13 +48,21 @@ class Home extends MY_Controller {
 				);
 				$registered=$this->auth->Is_already_register($check);
 				if($registered){
-					$loc_arr=$this->fetch->getInfoByColId('user_id',$registered->id,'user_info');
-					$this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
-					
-					$loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
-					$this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+
+					if(!isset($this->session->location_id)){
+						$loc_arr=$this->fetch->getInfoByColId('user_id',$this->session->user->id,'user_info');
+						$this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
+						
+						$loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
+						$this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+					}
 
 					$this->session->set_userdata('user', $registered);
+					$this->session->set_flashdata('success','You are now logged in !');
+					
+					if(isset($this->session->cart)){
+						redirect('cart');
+					}
 				}
 				else{
 					//insert data
@@ -75,10 +83,27 @@ class Home extends MY_Controller {
 						$id=$this->save->saveInfo('user_info',$user_data2);
 					}
 
+					
+					if(!isset($this->session->location_id)){
+						$loc_arr=$this->fetch->getInfoByColId('user_id',$this->session->user->id,'user_info');
+						$this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
+						
+						$loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
+						$this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+					}
+
 					$data=$this->fetch->getInfoByColId('login_oauth_uid',$data['id'],'users');
 					$this->session->set_userdata('user', $data);
+					$this->session->set_flashdata('success','You are now logged in !');
 				}
 			}
+		}
+
+		if($this->session->flashdata('success')){
+			$this->session->set_flashdata('success',$this->session->flashdata('success'));
+		}
+		if($this->session->flashdata('failed')){
+			$this->session->set_flashdata('failed',$this->session->flashdata('failed'));
 		}
 
 		redirect('home');
@@ -98,8 +123,9 @@ class Home extends MY_Controller {
 			else{
 				$auth_url="#";
 			}
+
 			$loc=$this->fetch->getActiveInfo('locations_master');
-			$this->load->view('header',['title' => 'Home',
+			$this->load->view('header',['title' => $this->session->location_id.'Home',
 										'auth_url'=>$auth_url,
 										'loc'=>$loc
 									]
@@ -113,24 +139,47 @@ class Home extends MY_Controller {
 
 	public function Cart()
 	{	
-		$this->redirectIfNotLoggedIn();
+		$profile="";
+		if(!$this->session->userdata('user')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$auth_url="#";
+			$profile=$this->fetch->getInfoByColId('user_id',$this->session->user->id, 'user_info');
+		}
+		if(isset($this->session->location_id)){
+			$location=$this->fetch->getInfoById($this->session->location_id,'locations_master');
+			if(!empty($location)){
+				$location=$location->area;
+			}
+			else{
+				$location='Select area';
+			}
+		}
+		else{
+			$location='Select area';
+		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Demand Cart',
-									'loc'=>$loc
+									'loc'=>$loc,
+									'profile'=>$profile,
+									'location'=>$location,
+									'auth_url'=>$auth_url
 								]
 							);
 		$this->load->view('cart');
 		$this->load->view('footer');
 		$this->load->view('cart_scripts');
+		$this->load->view('demand_scripts');
 	}
 
 	public function About()
 	{
-		if(!$this->session->userdata('access_token')){
+		if(!$this->session->userdata('user')){
 			$auth_url=$this->getOAutLoginhUrl();
 		}
 		else{
-			$location='Select area';
+			$auth_url="#";
 		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
@@ -148,7 +197,7 @@ class Home extends MY_Controller {
 			$auth_url=$this->getOAutLoginhUrl();
 		}
 		else{
-			$location='Select area';
+			$auth_url="#";
 		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
@@ -198,6 +247,54 @@ class Home extends MY_Controller {
 			$auth_url="#";
 		}
 
+		$location=$this->fetch->getInfoById($id,'locations_master');
+		if(!empty($location)){
+			$location=$location->area;
+		}
+		else{
+			$location='Select area';
+		}
+		$this->session->set_userdata(['location_id' =>  $id]);
+		$this->session->set_userdata(['location_name' =>  $location]);
+		$res=$this->fetch->getInfoParams('items_master',['is_active'=>1]);
+		$hawker_count=$this->fetch->hawkerCount($id);
+		// echo'<pre>';var_dump($res['items']);exit;
+		if($res){
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'loc'=>$loc,
+										'auth_url'=>$auth_url,
+										'location'=>$location,
+										'prods'=>$res,
+										'hawker_count'=>$hawker_count
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+			$this->load->view('cart_scripts');
+		}else{
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'loc'=>$loc,
+										'auth_url'=>$auth_url,
+										'location'=>$location
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+		}
+	}
+
+	public function fetchItems_old($id)
+	{
+
+		if(!$this->session->userdata('user')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$auth_url="#";
+		}
+
 		$this->session->set_userdata(['location_id' =>  $id]);
 		$res=$this->fetch->fetchProds($id);
 		$location=$this->fetch->getInfoById($id,'locations_master');
@@ -213,9 +310,9 @@ class Home extends MY_Controller {
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',
 										'loc'=>$loc,
+										'auth_url'=>$auth_url,
 										'location'=>$location,
 										'prods'=>$res['items'],
-										'auth_url'=>$auth_url,
 										'hawker_count'=>$res['hawker_count']
 									]
 								);
@@ -261,14 +358,24 @@ class Home extends MY_Controller {
 		foreach($items as $i){
 			$amt+=$i['quantity']*$i['price'];
 		}
+		$info=[
+				'email'=>$this->input->post('email'),
+				'mobile_no'=>$this->input->post('mobile_no')
+			];
 		$data=['user_id'=>$this->session->user->id,
 				'demand_amount'=>$amt,
+				'location_id'=>$this->input->post('location_id'),
+				'address'=>$this->input->post('address'),
 				'customer_remarks'=>$this->input->post('cust_remarks'),
 				'status'=>'PENDING'
 			];
 		// echo 'in save <pre>';var_dump($data,$items,$this->input->post());exit;
 		
 		$this->db->trans_start();
+		
+			$this->load->model('EditModel','edit');
+			$uid= $this->edit->updateInfo($info,$this->session->user->id,'users');
+
 			$did= $this->save->saveInfo('customer_demands',$data);
 			if($did){
 				foreach($items as $i){

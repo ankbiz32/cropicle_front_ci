@@ -118,7 +118,6 @@ class GetModel extends CI_Model{
         return $items;
     }
 
-    // Fetch info
     public function getItemInfo($id,$table)
     {
         return $this->db->select('id, item_name, item_price_customer, item_img')
@@ -127,11 +126,23 @@ class GetModel extends CI_Model{
                     ->get($table)
                     ->row();
     }
-
-    // Fetch info
+    
     public function getInfo($table)
     {
         return $this->db->get($table)->result();
+    }
+
+    public function hawkerCount($loc_id)
+    { 
+        $users= $this->db->select('ui.user_id')
+                        ->from('user_info ui')
+                        ->join('users u','u.id=ui.user_id','LEFT')
+                        ->where('u.role_id',2)
+                        ->where('u.is_active',1)
+                        ->where('ui.location_id',$loc_id)
+                        ->get()
+                        ->result();
+       return sizeof($users);
     }
 
 

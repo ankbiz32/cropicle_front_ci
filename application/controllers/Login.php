@@ -33,14 +33,21 @@ class Login extends MY_Controller {
             if($user = $this->auth->authenticate($this->input->post()) ){
                 $this->session->set_userdata(['user' =>  $user]);
 
-                $loc_arr=$this->fetch->getInfoByColId('user_id',$this->session->user->id,'user_info');
-                $this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
-                
-                $loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
-                $this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+                if(!isset($this->session->location_id)){
+                    $loc_arr=$this->fetch->getInfoByColId('user_id',$this->session->user->id,'user_info');
+                    $this->session->set_userdata(['location_id' =>  $loc_arr->location_id]);
+                    
+                    $loc_info_arr=$this->fetch->getInfoByColId('id',$this->session->location_id,'locations_master');
+                    $this->session->set_userdata(['location_name' =>  $loc_info_arr->area]);
+                }
 
                 $this->session->set_flashdata('success','You are now logged in !');
-                redirect('Home');
+                if(isset($this->session->cart)){
+                    redirect('cart');
+                }
+                else{
+                    redirect('Home');
+                }
                 // $this->redirectIfLoggedIn();
             }else{
                 $this->session->set_flashdata('failed','Invalid Mobile no. or Password');
@@ -94,7 +101,7 @@ class Login extends MY_Controller {
 
             unset($_SESSION["regID"]);
             unset($_SESSION["vno"]);
-            $this->session->set_flashdata('success','You have successfully registered with Cropicle !');
+            $this->session->set_flashdata('success','You have successfully registered with Cropicle. Please login !');
             redirect('Home');
         }else{
             unset($_SESSION["regID"]);

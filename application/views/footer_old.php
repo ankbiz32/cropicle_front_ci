@@ -113,8 +113,22 @@
             <form class="signup_form_section regForm" action="register">
                 <h4>create account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
-                <p class="text-center mt-3">Sign up with</p>
+                <div class="form_block">
+                    <input type="text" class="form_field required" name="name" placeholder="Name" requried>
+                </div>
+                <div class="form_block">
+                    <input type="text" class="form_field requried digits" name="mobile_no" maxlength="10" placeholder="10 digit Mobile no" requried>
+                </div>
+                <div class="form_block">
+                    <input type="password" class="form_field requried" id="pwd" name="password" placeholder="Password" requried>
+                </div>
+                <button type="submit" id="regSubmit" class="clv_btn">Next</button>
+                <p class="text-center mt-3">Or sign in with</p>
                 <div class="social_button_section mt-1">
+                    <!-- <a href="javascript:;" class="fb_btn">
+                        <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
+                        <span>facebook</span>
+                    </a> -->
                     <a href="<?=$auth_url?>" class="google_btn mx-auto">
                         <span><img src="<?=base_url('assets/')?>images/google.png" alt="image"></span>
                         <span>google</span>

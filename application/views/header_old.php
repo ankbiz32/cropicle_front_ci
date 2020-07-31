@@ -52,7 +52,7 @@
                     <div class="clv_right_header">
                         <div class="clv_address py-2 pb-3">
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm-4">
                                     <div class="address_block">
                                         <span class="addr_icon">
                                             <svg 
@@ -73,11 +73,31 @@
                                                 </g>
                                             </svg>
                                         </span>
-                                        <p>
-                                            <a class="search_toggle" href="javascript:;">
-                                                &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>25?substr($this->session->location_name,0,25).'...':$this->session->location_name):'Select area'?>
-                                            </a>
-                                        </p>
+                                        <p>Laxmi Nagar, Nagpur</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="address_block">
+                                        <span class="addr_icon">
+                                            <svg 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                width="16px" height="15px">
+                                                <defs>
+                                                <filter id="Filter_0">
+                                                    <feFlood flood-color="rgb(254, 192, 7)" flood-opacity="1" result="floodOut" />
+                                                    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                                                    <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                                                </filter>
+
+                                                </defs>
+                                                <g filter="url(#Filter_0)">
+                                                <path fill-rule="evenodd"  fill="rgb(0, 0, 0)"
+                                                    d="M13.866,7.234 C13.607,5.720 12.892,4.343 11.802,3.254 C10.653,2.108 9.197,1.379 7.592,1.155 L7.754,-0.003 C9.613,0.254 11.296,1.095 12.626,2.426 C13.888,3.689 14.716,5.282 15.019,7.037 L13.866,7.234 ZM10.537,4.459 C11.296,5.220 11.796,6.178 11.977,7.238 L10.824,7.434 C10.684,6.617 10.300,5.872 9.713,5.286 C9.091,4.665 8.304,4.274 7.439,4.151 L7.601,2.995 C8.719,3.150 9.734,3.657 10.537,4.459 ZM4.909,8.180 C5.709,9.161 6.611,10.032 7.689,10.710 C7.920,10.853 8.176,10.959 8.416,11.090 C8.538,11.159 8.623,11.137 8.722,11.033 C9.088,10.660 9.459,10.290 9.831,9.922 C10.318,9.439 10.931,9.439 11.421,9.922 C12.017,10.516 12.614,11.109 13.207,11.706 C13.704,12.206 13.701,12.816 13.201,13.323 C12.864,13.664 12.505,13.987 12.186,14.344 C11.721,14.865 11.140,15.034 10.471,14.996 C9.500,14.942 8.607,14.622 7.745,14.203 C5.831,13.272 4.194,11.983 2.823,10.354 C1.808,9.148 0.971,7.834 0.421,6.353 C0.153,5.638 -0.038,4.905 0.022,4.127 C0.059,3.649 0.237,3.241 0.590,2.907 C0.971,2.544 1.330,2.168 1.705,1.798 C2.192,1.317 2.804,1.317 3.295,1.795 C3.598,2.093 3.894,2.394 4.194,2.694 C4.485,2.988 4.775,3.274 5.065,3.569 C5.578,4.083 5.578,4.683 5.069,5.194 C4.703,5.564 4.341,5.931 3.969,6.290 C3.872,6.388 3.863,6.466 3.913,6.585 C4.160,7.172 4.513,7.694 4.909,8.180 Z"/>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <p>( +91 ) 1800-1234-1245</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -107,11 +127,11 @@
                             </div>
                         </div>
                         <?php if(isset($this->session->user)){?>
-                        <div class="clv_menu col-sm-9 ml-auto px-sm-3 px-0">
+                        <div class="clv_menu col-sm-11 ml-auto px-sm-3 px-0">
                         <?php }else{?>
                         <div class="clv_menu col-sm-8 ml-auto px-sm-3 px-0">
                         <?php }?>
-                            <div class="clv_menu_nav px-0">
+                            <div class="clv_menu_nav">
                                 <ul>
                                     <li class="py-1"><a href="<?=base_url()?>" class="">Home</a></li>
                                     <li class="py-1"><a href="<?=base_url()?>about">How it works ?</a></li>
@@ -127,16 +147,10 @@
                                     </li>
                                     <li class="py-1"><a href="<?=base_url()?>demands" class="d-md-none d-block">My demands</a></li>
                                     <li class="py-1"><a href="<?=base_url()?>logout" class="d-md-none d-block">Logout</a></li>
-                                    <?php } else{?>
-                                        <li class="ml-2 ml-sm-0 py-1">
-                                            <a class="pop_signin" href="javascript:;">
-                                                Login
-                                            </a>
-                                        </li> 
                                     <?php }?>
                                 </ul>
                             </div>
-                            <div class="cart_nav px-0">
+                            <div class="cart_nav col px-0">
                                 <ul class="">
 									<li class="menu_toggle ml-0 ml-sm-5" style="float:left">
 										<span>
@@ -152,14 +166,11 @@
 											</svg>
 										</span>
 									</li>
-                                    <!-- <li class="ml-0 ml-sm-2 py-1">
-                                        <a class="search_toggle" href="javascript:;">
-                                            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 
-                                            &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>10?substr($this->session->location_name,0,10).'...':$this->session->location_name):'Select area'?>
-                                        </a>
-                                    </li> -->
-                                    <?php
-                                        $cart = $this->session->userdata("cart");
+                                    <li class="ml-0 ml-sm-2 py-1">
+                                        <a class="search_toggle" href="javascript:;"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>10?substr($this->session->location_name,0,10).'...':$this->session->location_name):'Select area'?></a>
+                                    </li>
+                                    <?php if(isset($this->session->user)){
+                                            $cart = $this->session->userdata("cart");
                                             $cart = !empty($cart)?$cart:array();
                                         ?>
                                         <li class="pr-2 pr-sm-0">
@@ -218,7 +229,7 @@
                                                     <?php  }?>
                                             </div>
                                         </li>
-                                    
+                                    <?php }?>
                                 </ul>
                             </div>
                         </div> 

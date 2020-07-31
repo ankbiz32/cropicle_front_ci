@@ -1,265 +1,8 @@
 
-	<!--Revolution Slider-->
-	<div class="clv_rev_slider">
-		<div id="rev_slider_1164_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="exploration-header" data-source="gallery" style="background-color:transparent;padding:0px;">
-			<!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
-				<div id="rev_slider_1164_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
-			<ul>	<!-- SLIDE  -->
-				<li data-index="rs-3204" data-transition="slideoververtical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="2000" data-fsslotamount="7" data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-					<!-- MAIN IMAGE -->
-					<img src="<?=base_url('assets/')?>images/1.jpg"  alt="image"  data-lazyload="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-					<!-- LAYERS -->
-			
-					<!-- LAYER NR. 1 -->
-					<div class="tp-caption  " 
-						 id="slide-3204-layer-1" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['262','252','195','185']" 
-									data-fontsize="['20','20','20','20']"
-						data-lineheight="['22','22','22','22']"
-						data-width="['700','700','700','700']"
-						data-height="none"
-						data-whitespace="normal"
-			     
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 5; white-space: nowrap; font-size: 20px; font-weight: 700; color: #1fa12e; display: inline-block;font-family:'Source Sans Pro', sans-serif;letter-spacing:3px;">A New Way To Invest In Agriculture</div>
-			
-						<div class="tp-caption tp-shape tp-shapewrapper " 
-						id="slide-3204-layer-2" 
-						data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-								data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-										   data-width="full"
-							   data-height="full"
-							   data-whitespace="normal"
-					
-							   data-type="shape" 
-							   data-basealign="slide" 
-							   data-responsive_offset="off" 
-							   data-responsive="off"
-							   data-frames='[{"delay":10,"speed":2000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-							   data-textAlign="['inherit','inherit','inherit','inherit']"
-							   data-paddingtop="[0,0,0,0]"
-							   data-paddingright="[0,0,0,0]"
-							   data-paddingbottom="[0,0,0,0]"
-							   data-paddingleft="[0,0,0,0]"
-
-							   style="z-index: 1;background-color:rgba(0,0,0,0.70);"> </div>
-			
-					<!-- LAYER NR. 3 -->
-					<div class="tp-caption  " 
-						 id="slide-3204-layer-3" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['302','352','235','225']" 
-									data-width="['100%','100%','100%','100%']"
-									data-fontsize="['82','82','60','60']"
-								data-lineheight="['82','82','60','60']"
-						data-height="none"
-						data-whitespace="normal"
-			 
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 7; font-size: 82px; line-height: 81px; font-weight: 300; color: rgba(255, 255, 255, 1); display: block;font-family:'Source Sans Pro', sans-serif;">Experience The Real</div>
-
-					<!-- LAYER NR. 4 -->
-					<div class="tp-caption  " 
-						 id="slide-3204-layer-4" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','118','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['382','272','305','295']" 
-									data-width="['100%','100%','100%','100%']"
-									data-fontsize="['82','82','60','60']"
-								data-lineheight="['82','82','60','60']"
-						data-height="none"
-						data-whitespace="normal"
-			 
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 7; font-size: 82px; line-height: 82px; font-weight: 700; color: rgba(255, 255, 255, 1); display: block;font-family:'Source Sans Pro', sans-serif;">Agriculture</div>
-
-					<!-- LAYER NR. 5 -->
-					<a class="tp-caption rev-btn clv_btn" 
-						href="javascript:;"
-						 id="slide-3204-layer-5" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['489','550','385','376']" 
-									data-fontweight="['500','500','500','500']"
-						data-width="none"
-						data-height="none"
-						data-whitespace="nowrap"
-			 
-						data-type="button" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":800,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[45,45,45,45]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[45,45,45,45]"
-			
-						style="z-index: 8; white-space: nowrap;">Read more</a>
-					
-					<!-- LAYER NR. 2 -->
-					
-					</li>
-				<!-- SLIDE  -->
-				<li data-index="rs-3205" data-transition="slideoververtical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-					<!-- MAIN IMAGE -->
-					<img src="<?=base_url('assets/')?>images/2.jpg"  alt="image"  data-lazyload="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-					<!-- LAYERS -->
-			
-					<!-- LAYER NR. 5 -->
-					<div class="tp-caption  " 
-						 id="slide-3205-layer-1" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['262','252','195','185']" 
-									data-fontsize="['20','20','20','20']"
-						data-lineheight="['22','22','22','22']"
-						data-width="['700','700','700','700']"
-						data-height="none"
-						data-whitespace="normal"
-			     
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 5; white-space: nowrap; font-size: 20px; font-weight: 700; color: #1fa12e; display: inline-block;font-family:'Source Sans Pro', sans-serif;letter-spacing:3px;">A New Way To Trade </div>
-			
-					<!-- LAYER NR. 6 -->
-					<div class="tp-caption tp-shape tp-shapewrapper " 
-						 id="slide-3205-layer-2" 
-						 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-								 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-											data-width="full"
-								data-height="full"
-								data-whitespace="normal"
-					 
-								data-type="shape" 
-								data-basealign="slide" 
-								data-responsive_offset="off" 
-								data-responsive="off"
-								data-frames='[{"delay":10,"speed":2000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-								data-textAlign="['inherit','inherit','inherit','inherit']"
-								data-paddingtop="[0,0,0,0]"
-								data-paddingright="[0,0,0,0]"
-								data-paddingbottom="[0,0,0,0]"
-								data-paddingleft="[0,0,0,0]"
-
-								style="z-index: 1;background-color:rgba(0,0,0,0.70);"> </div>
-			
-					<!-- LAYER NR. 7 -->
-					<div class="tp-caption  " 
-						 id="slide-3205-layer-3" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['302','352','235','225']" 
-									data-width="['100%','100%','100%','100%']"
-									data-width="['100%','100%','100%','100%']"
-									data-fontsize="['82','82','60','60']"
-						data-height="none"
-						data-whitespace="normal"
-			 
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 7; font-size: 82px; line-height: 81px; font-weight: 300; color: rgba(255, 255, 255, 1); display: block;font-family:'Source Sans Pro', sans-serif;">Experience Real</div>
-					
-						<!-- LAYER NR. 8 -->
-					<div class="tp-caption  " 
-						 id="slide-3205-layer-4" 
-						 data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						 data-y="['top','top','top','top']" data-voffset="['382','272','305','295']" 
-									data-width="['100%','100%','100%','100%']"
-									data-fontsize="['82','82','60','60']"
-								data-lineheight="['82','82','60','60']"
-						data-height="none"
-						data-whitespace="normal"
-			 
-						data-type="text" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[0,0,0,0]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[0,0,0,0]"
-			
-						style="z-index: 7; font-size: 82px; line-height: 82px; font-weight: 700; color: rgba(255, 255, 255, 1); display: block;font-family:'Source Sans Pro', sans-serif;">Trading</div>
-					<!-- LAYER NR. 9 -->
-					<a class="tp-caption rev-btn clv_btn" 
-						href="javascript:;"
-						id="slide-3205-layer-5" 
-						data-x="['left','left','left','left']" data-hoffset="['364','114','76','26']" 
-						data-y="['top','top','top','top']" data-voffset="['489','550','385','376']" 
-						data-fontweight="['500','500','500','500']"
-						data-width="none"
-						data-height="none"
-						data-whitespace="nowrap"
-						data-type="button" 
-						data-basealign="slide" 
-						data-responsive_offset="on" 
-						data-responsive="off"
-						data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":800,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-						data-textAlign="['left','left','left','left']"
-						data-paddingtop="[0,0,0,0]"
-						data-paddingright="[45,45,45,45]"
-						data-paddingbottom="[0,0,0,0]"
-						data-paddingleft="[45,45,45,45]"
-						style="z-index: 8; white-space: nowrap;">Read more</a>
-				</li>
-				
-			</ul>
-			<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
-			</div><!-- END REVOLUTION SLIDER -->
-	</div>
 
 	<!--Shop-->
 	<?php if(!isset($this->session->location_id)){?>
-	<div class="clv_shop_wrapper clv_section" id="prods">
+	<div class="clv_shop_wrapper clv_section bg-light" id="prods">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-6">
@@ -274,7 +17,7 @@
 		</div>
 	</div>
 	<?php } else{?>
-	<div class="clv_shop_wrapper clv_section" id="prods">
+	<div class="clv_shop_wrapper clv_section bg-light" id="prods">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-6">
@@ -366,15 +109,13 @@
 												₹ &nbsp;<?=$pr->item_price_customer?>/kg
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h5>
-											<?php if(isset($this->session->user)){
-												if(isset($cart[$pr->id])){?>
+											<?php if(isset($cart[$pr->id])){?>
 													<a href="javascript:;" class="bg-success btnAddtoCart<?php echo $pr->id; ?>">Added</a>
 												<?php }
 												else{
 												?>
 													<a href="javascript:;" title="Add to demand" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><i class="fa fa-plus"></i></a>
-												<?php }
-											}?>
+											<?php }?>
                                         </div>
                                         <div class="content_block">
                                             <div class="product_price_box"> 
@@ -439,5 +180,82 @@
 		</div>
 	</div>
 	<?php }?>
+
+	<div class="garden_service2_wrapper clv_section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 col-md-6">
+						<div class="clv_heading">
+							<h3>How it works ?</h3>
+							<div class="clv_underline"><img src="<?=base_url('assets/')?>images/underline3.png" alt="image" /></div>
+							<p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.
+								We also provide the number of availabe hawkers who are registered with cropicle in your area.
+								You can even create demands to directly order from cropicle. Read below to see how it works.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="garden_service2_section">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service4.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 1</h3>
+									<p>Select you area/location to see the available fruits & veggies.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service5.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 2</h3>
+									<p>Start adding the items that you want to order.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service6.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 3</h3>
+									<p>Go to the cart and select the quantities of the items according to your need.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service7.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 4</h3>
+									<p>Login or Register if not already done.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service8.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 5</h3>
+									<p>Provide little additional detail for delivery purposes.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service2_block">
+								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service9.png" alt="image" /></div>
+								<div class="service2_content">
+									<h3>Step 6</h3>
+									<p>Congratulations! You just created a demand which will be fulfilled soon.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 

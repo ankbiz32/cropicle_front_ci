@@ -123,6 +123,29 @@ ul{
 .clv_heading > .clv_underline{
 	margin: 7px 0px;
 }
+.back_btn, .back_btn:focus{
+	min-width: 170px;
+	height: 50px;
+	line-height: 50px;
+	display: inline-block;
+	outline: none;
+	border: 1px solid #FFCC00;
+	background: none;
+	cursor: pointer;
+	text-align: center;
+	text-transform: capitalize;
+	border-radius: 30px;
+	font-size: 16px;
+	color: #FFCC00;
+	position: relative;
+	z-index:1;
+	transition: 0.3s;
+}
+.back_btn:hover{
+	border: 1px solid #FFCC00;
+	background-color: #FFCC00;
+	color: white;
+}
 .clv_btn, .clv_btn:focus{
 	min-width: 170px;
 	height: 50px;
@@ -10409,7 +10432,7 @@ ul{
 	}
 }
 @media (max-width: 767px){
-	.clv_btn, .clv_btn:focus{
+	.clv_btn, .clv_btn:focus, .back_btn, .back_btn:focus{
 		min-width: 150px;
 		height: 45px;
 		line-height: 45px;
