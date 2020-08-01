@@ -1,1 +1,2 @@
-/application/config/constants.php
+application/config/*
+!application/config/constants.php
