@@ -85,6 +85,27 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-// Custom Constants
-defined('G_AUTH_ID')     OR define('G_AUTH_ID', '446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
-defined('G_AUTH_KEY')    OR define('G_AUTH_KEY', 'hNNrfN2zCEzZQTousMkQ2Lne');sasa
+// CUSTOM CONSTANTS
+
+
+//--  for local testing --
+// my gauth keys
+
+// defined('G_AUTH_ID')     OR define('G_AUTH_ID', '446631172258-v76pcjs3924gt1n4a1f2eq816i40buav.apps.googleusercontent.com');
+// defined('G_AUTH_KEY')    OR define('G_AUTH_KEY', 'hNNrfN2zCEzZQTousMkQ2Lne');
+
+// defined('MAIN_DOMAIN')      OR define('MAIN_DOMAIN', 'http://localhost/cropicle/');
+// defined('KART_DOMAIN')      OR define('KART_DOMAIN', 'http://localhost/kart.cropicle/');
+
+
+
+
+//--  For production --
+// Cropicle gauth key
+
+defined('G_AUTH_ID')     OR define('G_AUTH_ID', '1015618903654-19g5sul4ehaue1r6qnla099r3onvs02n.apps.googleusercontent.com');
+defined('G_AUTH_KEY')    OR define('G_AUTH_KEY', 'Jn5lMtL3La5wK7X_DVoz_vY6');
+
+defined('MAIN_DOMAIN')      OR define('MAIN_DOMAIN', 'https://cropicle.com/');
+defined('KART_DOMAIN')      OR define('KART_DOMAIN', 'https://kart.cropicle.com/');
+

@@ -102,7 +102,7 @@
                                         <div class="org_product_block">
                                             <!-- <span class="product_label">30% off</span> -->
                                             <div class="org_product_image">
-												<img src="<?=base_url('assets/')?>images/<?=$pr->item_img?>" alt="<?=$pr->item_name?>">
+												<img src="<?=KART_DOMAIN?>assets/images/items/<?=$pr->item_img?>" alt="<?=$pr->item_name?>">
 											</div>
                                             <h5><?=$pr->item_name?></h5>
 											<h5>
