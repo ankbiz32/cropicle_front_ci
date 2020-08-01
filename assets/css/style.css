@@ -11527,6 +11527,9 @@ ul{
 		height: 40px !important;
 		padding-top: 10px;
 	}
+	.cart_nav{
+		flex:1;
+	}
 	
 }
 @media (max-width: 320px){
