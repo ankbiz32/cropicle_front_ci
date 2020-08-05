@@ -46,7 +46,7 @@
                     <tr class="productRow<?=$row['product_id']?>">
                         <td>
                             <div class="product_img">
-                                <img src="<?=base_url('assets/images/').$row['image']?>" alt="image" height="60" width="60" style="object-fit:cover;">
+                                <img src="<?=KART_DOMAIN.'assets/images/items/'.$row['image']?>" alt="image" height="60" width="60" style="object-fit:cover;">
                                 <h6><?=$row['name']?></h6>
                             </div>
                         </td>
