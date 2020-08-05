@@ -110,11 +110,11 @@
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h5>
 											<?php if(isset($cart[$pr->id])){?>
-													<a href="javascript:;" class="bg-success btnAddtoCart<?php echo $pr->id; ?>">Added</a>
+													<a href="<?=base_url('cart')?>" class="bg-success btnAddtoCart<?php echo $pr->id; ?>"><i class='fa fa-check'></i>&nbsp; Added</a>
 												<?php }
 												else{
 												?>
-													<a href="javascript:;" title="Add to demand" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><i class="fa fa-plus"></i></a>
+													<a href="javascript:;" title="Add to demand" onclick="addToCart(<?=$pr->id?>, 1);" class="btnAddtoCart<?php echo $pr->id; ?>"><i class="fa fa-plus"></i>&nbsp; Add</a>
 											<?php }?>
                                         </div>
                                         <div class="content_block">

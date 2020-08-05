@@ -1,4 +1,5 @@
 <script>
+
 	const Alert = Swal.mixin({
 		toast: true,
 		position: 'top-right',
@@ -17,7 +18,10 @@
         			"product_id":product_id,
         			"quantity":quantity,
         		},
-        		cache: false,
+				cache: false,
+				beforeSend: function(){
+        			$(".btnAddtoCart"+product_id).html("<i class='fa fa-spin fa-spinner'></i>&nbsp; Adding");
+				},
         		success: function(resp) {
         			if(resp.status == '200'){
         				//alert("Added to cart");
@@ -26,12 +30,14 @@
         				$(".clv_cart_box").html(resp.data.content);
         				$(".clv_cart_box").css('height','350px');
         				$(".btnAddtoCart"+product_id).attr("onclick","");
+        				$(".btnAddtoCart"+product_id).attr("href","<?=base_url('cart')?>");
         				$(".btnAddtoCart"+product_id).removeAttr("title");
         				$(".btnAddtoCart"+product_id).addClass("bg-success");
-        				$(".btnAddtoCart"+product_id).html("Added");
+        				$(".btnAddtoCart"+product_id).html("<i class='fa fa-check'></i>&nbsp; Added");
 						Alert.fire({icon: 'success',title: 'Added to cart'});
         			}
         			else{
+        				$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
 						Alert.fire({icon: 'error',title: resp.msg});
         				// alert(resp.msg);
         			}
@@ -68,7 +74,8 @@
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
 						$(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1)");
 						$(".btnAddtoCart"+product_id).attr("title","Add to demand");
-						$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>");
+						$(".btnAddtoCart"+product_id).attr("href","javascript:;");
+						$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
 						$(".btnAddtoCart"+product_id).removeClass("bg-success");
 						Alert.fire({icon: 'success',title: 'Item removed from cart'});
 						// alert("Item removed from cart");

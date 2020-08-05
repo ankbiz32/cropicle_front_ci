@@ -1,9 +1,9 @@
 <script>
-
+	var submitted=false;
     <?php if(isset($this->session->cart)){?>
 			$('.checkout-button').click(function() {
 				$(`
-					<form class="row"  method="POST" action="`+loc+`save-demand">
+					<form class="row" id="demand-form"  method="POST" action="`+loc+`save-demand">
 						<div class="col-md-6">
 							<div class="form_block">
 								<h6>Name</h6>
@@ -20,7 +20,7 @@
 						<div class="col-md-6">
 							<div class="form_block">
 								<h6>Email</h6>
-								<input type="email" value="<?=$this->session->user->email?>" name="email" <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field bg-light" readonly':' class="form_field"'?>  required>
+								<input type="email" value="<?=$this->session->user->email?>" name="email" <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field bg-light" readonly':' class="form_field"'?>>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -39,7 +39,7 @@
 						<div class="col-md-6">
 							<div class="form_block">
 								<h6>Address</h6>
-								<textarea class="form_field" name="address" required><?=$profile->address?></textarea>
+								<textarea class="form_field" name="address" placeholder="Enter full address" required><?=$profile->address?></textarea>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -50,7 +50,7 @@
 						</div>
 						<div class="col mt-1 pr-0 text-center text-sm-left">
 							<a class="back_btn mr-1 mr-sm-2 mb-sm-0 mb-2" href="cart">Back to cart</a>
-							<button type="submit" class="clv_btn checkout-button" id="chkoutbtn">Send demand</button>
+							<button type="button" onclick="submit_handler()" class="clv_btn checkout-button" id="chkoutbtn">Send demand</button>
 						</div>
 					</form>
 				`).insertBefore('.checkout_btn_block');
@@ -59,6 +59,16 @@
 				$(".cart_table").remove();
 			});
 	<?php } ?>
+
+	function submit_handler(){
+		if(!submitted){
+			if($('#demand-form').valid()){
+				submitted=true;
+				$('#chkoutbtn').html('submitting &nbsp; <i class="fa fa-spinner fa-spin"></i>');
+				$('#demand-form').submit();
+			}
+		}
+	}
 
 	// $('.checkout-button').click(function() {
 	// 	$(`

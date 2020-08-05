@@ -306,11 +306,22 @@
   
     $('.quantity_plus').on('click', function(e){
         e.preventDefault();
-        var quantity = parseInt($(this).siblings('.demand_quantity').val());
+        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
         var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
-        $(this).siblings('.demand_quantity').val(quantity + 1);  
-        var quantity = parseInt($(this).siblings('.demand_quantity').val());
-
+        $(this).siblings('.demand_quantity').val(quantity + 0.25);  
+        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
+        if(quantity==0.5){
+            $(this).parent().siblings("span.half").css('visibility','visible');
+            $(this).parent().siblings("span.pav").css('visibility','hidden');
+        }
+        else if(quantity==0.25){
+            $(this).parent().siblings("span.half").css('visibility','hidden');
+            $(this).parent().siblings("span.pav").css('visibility','visible');
+        }
+        else{
+            $(this).parent().siblings("span.half").css('visibility','hidden');
+            $(this).parent().siblings("span.pav").css('visibility','hidden');
+        }
         if(product_id && quantity > 0){
             // alert(quantity+", "+product_id);
             updateCart(product_id, quantity);
@@ -320,11 +331,23 @@
 
     $('.quantity_minus').on('click', function(e){
         e.preventDefault();
-        var quantity = parseInt($(this).siblings('.demand_quantity').val());
+        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
         var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
-        if(quantity>1){
-            $(this).siblings('.demand_quantity').val(quantity - 1);
-            var quantity = parseInt($(this).siblings('.demand_quantity').val());
+        if(quantity>0.25){
+            $(this).siblings('.demand_quantity').val(quantity - 0.25);
+            var quantity = parseFloat($(this).siblings('.demand_quantity').val()); 
+            if(quantity==0.5){
+                $(this).parent().siblings("span.half").css('visibility','visible');
+                $(this).parent().siblings("span.pav").css('visibility','hidden');
+            }
+            else if(quantity==0.25){
+                $(this).parent().siblings("span.half").css('visibility','hidden');
+                $(this).parent().siblings("span.pav").css('visibility','visible');
+            }
+            else{
+                $(this).parent().siblings("span.half").css('visibility','hidden');
+                $(this).parent().siblings("span.pav").css('visibility','hidden');
+            }
             if(product_id && quantity > 0){
                 // alert(quantity+", "+product_id);
                 updateCart(product_id, quantity);

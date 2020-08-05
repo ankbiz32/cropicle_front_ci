@@ -36,7 +36,7 @@
                 <table class="table-responsive cart_table woocommerce-cart-form__contents">
                     <tr>
                         <th>items</th>
-                        <th>price</th>
+                        <th>price / kg</th>
                         <th>quantity (in kg)</th>
                         <th>total</th>
                         <th>remove</th>
@@ -68,7 +68,10 @@
                                         data-product_id="<?=$row['product_id'];?>">
 
                                 <a href="javascript:;" class="quantity_plus">+</a>
+                                <!-- <span class="half">1/2</span> -->
                             </div>
+                            <span class="pav">1 Pav</span>
+                            <span class="half">1/2</span>
                         </td>
                         
                         <td>

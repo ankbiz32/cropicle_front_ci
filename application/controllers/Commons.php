@@ -19,7 +19,7 @@ class Commons extends MY_Controller {
 
 	
 	public function addToCart(){
-        // echo 'ff';exit;
+		// echo 'ff';exit;
 		$cart = $this->session->userdata("cart");
 		$cart = !empty($cart)?$cart:array();
 		if($this->input->post()){
