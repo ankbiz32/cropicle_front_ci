@@ -77,6 +77,9 @@
 						$(".btnAddtoCart"+product_id).attr("href","javascript:;");
 						$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
 						$(".btnAddtoCart"+product_id).removeClass("bg-success");
+						if(!resp.data.totalItems){
+							$('.checkout_btn_block').remove();
+						}
 						Alert.fire({icon: 'success',title: 'Item removed from cart'});
 						// alert("Item removed from cart");
 					}
