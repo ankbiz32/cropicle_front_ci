@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/range.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/nice-select.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/form-validation.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/select2.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url('assets/')?>css/style.css">
 	<!-- Favicon Link -->
 	<link rel="shortcut icon" type="image/png" href="<?=base_url('assets/')?>images/fav-icon/favicon-32x32.png">

@@ -249,12 +249,17 @@
 <script src="<?=base_url('assets/')?>js/revolution.extension.video.min.js"></script>
 <script src="<?=base_url('assets/')?>js/custom.js"></script>
 <script src="<?=base_url('assets/')?>js/jquery.validate.min.js"></script>
+<script src="<?=base_url('assets/')?>js/select2.min.js"></script>
 <script src="<?=base_url('assets/')?>js/app.js"></script>
 <!-- Sweet alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
 <script>
+
+    $(document).ready(function() {
+        $('#loc-select').select2();
+    });
 
   //  Sweet alert for normal response
     var base_url = '<?=base_url()?>';
