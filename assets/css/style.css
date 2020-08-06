@@ -8444,7 +8444,7 @@ ul{
 .woocommerce-cart .cart_table .demand_quantity{
 	position: relative;
 	/* background-color: red; */
-	z-index: -1 !important;
+	/* z-index: -1 !important; */
 }
 .woocommerce-cart .cart_table tr{
 	border-bottom: 1px solid #f7f7f7;

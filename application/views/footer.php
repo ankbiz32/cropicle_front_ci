@@ -354,7 +354,17 @@
             } 
         }
     });	
-    
+
+
+    // $("select.demand_quantity").change(function(){
+    //     var quantity = $(this).children("option:selected").val();
+    //     var product_id = $(this).data("product_id");
+    //     if(product_id && quantity > 0){
+    //         // alert(quantity+", "+product_id);
+    //         updateCart(product_id, quantity);
+    //     }
+    // });
+    // $("select.demand_quantity").niceSelect();
 </script>
 
 
@@ -364,6 +374,7 @@
         elmnt.scrollIntoView();
     </script>
 <?php }?>
+
 
 </body>
 </html>
