@@ -179,7 +179,7 @@
                                                     $finalTotal = 0;
                                                     if(!empty($cart)){?>
                                                     <div class="cart_section">
-                                                        <p class="mb-2">you have <span>3</span> items in your cart</p>
+                                                        <p class="mb-2">you have <span><?=sizeof($cart)?></span> items in your cart</p>
                                                         <ul class="mini_cart_items">
                                                             <?php foreach($cart as $row){?>
                                                             <li>
