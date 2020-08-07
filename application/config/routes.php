@@ -58,6 +58,7 @@ $route['404_override'] = 'Error404';
 $route['about'] = 'Home/About';
 $route['home'] = 'Home/afterGoogleLogin';
 $route['contact'] = 'Home/Contact';
+$route['gallery'] = 'Home/Gallery';
 $route['location/(:num)'] = 'Home/fetchItems/$1';
 $route['profile'] = 'Home/Profile';
 $route['demands'] = 'Home/userDemands';

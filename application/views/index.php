@@ -26,8 +26,11 @@
 						<div class="clv_underline"><img src="<?=base_url('assets/')?>images/agri_underline2.png" alt="image" /></div>
 						<h4 class="text text-sm-sm mt-4">
 							<strong>
-								<span id="hawker-count">
+								<!-- <span id="hawker-count">
 									<?=isset($hawker_count)?$hawker_count:'0'?><?=isset($hawker_count)?($hawker_count==1?' hawker':' hawkers'):' hawkers'?>
+								</span> -->
+								<span id="hawker-count">
+									1 Hawker 
 								</span>
 							</strong> 
 							available in&nbsp;
@@ -181,81 +184,98 @@
 	</div>
 	<?php }?>
 
-	<div class="garden_service2_wrapper clv_section">
+</div>
+<div class="clv_main_wrapper gallery_page">
+	
+	<div class="clv_gallery_wrapper clv_section">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-6 col-md-6">
 						<div class="clv_heading">
-							<h3>How it works ?</h3>
-							<div class="clv_underline"><img src="<?=base_url('assets/')?>images/underline3.png" alt="image" /></div>
-							<p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.
-								We also provide the number of availabe hawkers who are registered with cropicle in your area.
-								You can even create demands to directly order from cropicle. Read below to see how it works.
-							</p>
+							<h3>our gallery</h3>
+							<div class="clv_underline"><img src="<?=base_url()?>assets/images/underline3.png" alt="image" /></div>
+							<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dole magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
 						</div>
 					</div>
 				</div>
-				<div class="garden_service2_section">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service4.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 1</h3>
-									<p>Select you area/location to see the available fruits & veggies.</p>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="gallery_slide">
+							<div class="gallery_grid">
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
 								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x500" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x310" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div>
+								<div class="gallery_grid_item">
+									<div class="gallery_image">
+										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<div class="gallery_overlay">	
+											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+										</div>
+									</div>
+								</div> 
 							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service5.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 2</h3>
-									<p>Start adding the items that you want to order.</p>
-								</div>
-							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service6.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 3</h3>
-									<p>Go to the cart and select the quantities of the items according to your need.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service7.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 4</h3>
-									<p>Login or Register if not already done.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service8.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 5</h3>
-									<p>Provide little additional detail for delivery purposes.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="service2_block">
-								<div class="service2_image"><img src="<?=base_url('assets/')?>images/garden_service9.png" alt="image" /></div>
-								<div class="service2_content">
-									<h3>Step 6</h3>
-									<p>Congratulations! You just created a demand which will be fulfilled soon.</p>
-								</div>
+						<div class="col-md-12">
+							<div class="load_more_btn">
+								<a href="<?=base_url()?>gallery" class="clv_btn">view more</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 

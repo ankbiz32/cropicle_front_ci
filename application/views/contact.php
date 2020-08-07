@@ -27,8 +27,7 @@
                         <span></span>
                         <div class="contact_icon"><img src="<?=base_url('assets/')?>images/contact_icon1.png" alt="image" /></div>
                         <h4>contact us</h4>
-                        <p>+1-202-555-0101</p>
-                        <p>+1-202-555-0132</p>
+                        <p>+91 9021073372</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -36,17 +35,17 @@
                         <span></span>
                         <div class="contact_icon"><img src="<?=base_url('assets/')?>images/contact_icon2.png" alt="image" /></div>
                         <h4>email</h4>
-                        <p>agriculture@example.com</p>
-                        <p>Cropicle@example.in</p>
+                        <p>info.cropicle@gmail.com</p>
+                        <p>cropicle@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="contact_block">
                         <span></span>
-                        <div class="contact_icon"><img src="<?=base_url('assets/')?>images/contact_icon3.png" alt="image" /></div>
-                        <h4>address</h4>
-                        <p>8654 Bellevue Drive</p>
-                        <p>Rock Hill, SC 29730</p>
+                        <div class="contact_icon"><img src="<?=base_url('assets/')?>images/shiping_icon1.png" alt="image" /></div>
+                        <h4>For hawkers</h4>
+                        <p class="mb-2">Want to register as a hawker?</p>
+                        <a href="https://kart.cropicle.com/sign-up" target="_blank" class="clv_btn">Go here</a>
                     </div>
                 </div>
             </div>
@@ -76,12 +75,12 @@
                             </div>
                             <div class="col-md-6 col-lg-6">
                                 <div class="form_block">
-                                    <input type="text" name="email" class="form_field require" placeholder="Email" data-valid="email" data-error="Email should be valid." >
+                                    <input type="number" name="mobile_no" class="form_field require" placeholder="Mobile no." >
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-6">
                                 <div class="form_block">
-                                    <input type="text" name="subject" class="form_field require" placeholder="Subject" >
+                                    <input type="text" name="email" class="form_field require" placeholder="Email" data-valid="email" data-error="Email should be valid." >
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-12">
@@ -135,8 +134,8 @@
                             </ul>
                         </div>
                         <div class="tollfree_block">
-                            <h5>toll free number</h5>
-                            <h3>+1-202-555-0101</h3>
+                            <h5>Call us here</h5>
+                            <h3>+91 9021073372</h3>
                         </div>
                     </div>
                 </div>

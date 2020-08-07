@@ -102,7 +102,7 @@
                                             </g>
                                             </svg>
                                         </span>
-                                        <p>info@cropicle.com</p>
+                                        <p>info.cropicle@gmail.com</p>
                                     </div>
                                 </div>
                             </div>

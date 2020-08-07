@@ -5,23 +5,38 @@
                 <div class="col-md-3 col-lg-3">
                     <div class="footer_block">
                         <div class="footer_logo"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/badge_logo.png" height="55" alt="image" /></a></div>
-                        <p>Lorem ipsum dolor sit amet  onsectetadip isicing elit, sed do eiusmod tempordidunt ut labore et dolaliqua.</p>
+                        <p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.</p>
                         <h6>call now</h6>
-                        <h3>+91 1800-124-224</h3>
+                        <h3><a href="tel:919021073372" class="text-white">+91 9021073372</a></h3>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
                     <div class="footer_block">
                         <div class="footer_heading">
-                            <h4>services</h4>
+                            <h4>Links</h4>
                             <img src="<?=base_url('assets/')?>images/footer_underline.png" alt="image" />
                         </div>
                         <ul class="useful_links">
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Weed & Pest Control</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Grass Seeding</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Programs & Grants</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Poultry & Agricultural Products</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Education & event</a></li>
+                            <li><a href="about"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>About Us</a></li>
+                            <li><a href="about"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>How it works ?</a></li>
+                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Privacy Policy</a></li>
+                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Terms And Conditions</a></li>
+                            <li><a href="contact"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Support 24/7</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="footer_block">
+                        <div class="footer_heading">
+                            <h4>Contact Us</h4>
+                            <img src="<?=base_url('assets/')?>images/footer_underline.png" alt="image" />
+                        </div>
+                        <ul class="useful_links">
+                            <li><a href="tel:919021073372"><span><i class="fa fa-phone" aria-hidden="true"></i></span>+919021073372</a></li>
+                            <li><a href="mailto:info.cropicle@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>info.cropicle@gmail.com</a></li>
+                            <li><a href="mailto:cropicle@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>cropicle@gmail.com</a></li>
+                            <li><a href="https://www.facebook.com/Cropicle" target="_blank"><span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>Facebook</a></li>
+                            <li><a href="https://www.instagram.com/_cropicle" target="_blank"><span><i class="fa fa-instagram" aria-hidden="true"></i></span>Instagram</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,24 +56,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="footer_block">
-                        <div class="footer_heading">
-                            <h4>support</h4>
-                            <img src="<?=base_url('assets/')?>images/footer_underline.png" alt="image" />
-                        </div>
-                        <ul class="useful_links">
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>About Us</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Delivery Information</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Privacy Policy</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Terms And Conditions</a></li>
-                            <li><a href="javascript:;"><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>Support 24/7</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
-        <img class="foot_girl" src="https://via.placeholder.com/398x529" alt="image">
+        <!-- <img class="foot_girl" src="https://via.placeholder.com/398x529" alt="image"> -->
     </div>
     <!--Copyright-->
     <div class="clv_copyright_wrapper">
@@ -101,13 +101,13 @@
                     <a href="#"> <img src="<?=base_url('assets/')?>images/logo_white.png" height="40" alt="image"></a>
                 </div>
                 <h3>welcome to Cropicle!</h3>
-                <p>Consectetur adipisicing elit sed do eiusmod por incididunt uttelabore et dolore magna aliqu.</p>
+                <p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.</p>
                 <a href="javascript:;" class="clv_btn white_btn pop_signin">sign in</a>
                 <ul>
-                    <li><a href="javascript:;"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+                    <li><a href="https://www.facebook.com/Cropicle" target="_blank"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                    <li><a href="https://www.instagram.com/_cropicle" target="_blank"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a></li>
+                    <!-- <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li> -->
                 </ul>
             </div>
             <form class="signup_form_section regForm" action="register">
@@ -142,19 +142,19 @@
                     <a href="<?=base_url()?>"> <img src="<?=base_url('assets/')?>images/logo_white.png" height="40" alt="image"></a>
                 </div>
                 <h3>welcome to Cropicle!</h3>
-                <p>Consectetur adipisicing elit sed do eiusmod por incididunt uttelabore et dolore magna aliqu.</p>
+                <p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.</p>
                 <a href="javascript:;" class="clv_btn white_btn pop_signup">sign up</a>
                 <ul>
-                    <li><a href="javascript:;"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
-                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li>
+                    <li><a href="https://www.facebook.com/Cropicle" target="_blank"><span><i class="fa fa-facebook" aria-hidden="true"></i></span></a></li>
+                    <li><a href="https://www.instagram.com/_cropicle" target="_blank"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a></li>
+                    <!-- <li><a href="javascript:;"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a></li>
+                    <li><a href="javascript:;"><span><i class="fa fa-youtube-play" aria-hidden="true"></i></span></a></li> -->
                 </ul>
             </div>
             <div class="signup_form_section">
                 <h4>sign in account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
-                <form action="<?=base_url('Login/authenticate')?>" method="POST">
+                <!-- <form action="<?=base_url('Login/authenticate')?>" method="POST">
                     <div class="form_block">
                         <input type="text" maxlength="10" minlength="10" class="form_field" name="mob" placeholder="Mobile no">
                     </div>
@@ -162,8 +162,8 @@
                         <input type="password" class="form_field" name="pwd" placeholder="Password">
                     </div>
                     <button type="submit" class="clv_btn">sign in</button>
-                </form>
-                <p class="text-center mt-3">Or sign in with</p>
+                </form> -->
+                <p class="text-center mt-3">Sign in with</p>
                 <div class="social_button_section mt-1">
                     <!-- <a href="javascript:;" class="fb_btn">
                         <span><img src="<?=base_url('assets/')?>images/fb.png" alt="image"></span>
@@ -361,15 +361,15 @@
     });	
 
 
-    // $("select.demand_quantity").change(function(){
-    //     var quantity = $(this).children("option:selected").val();
-    //     var product_id = $(this).data("product_id");
-    //     if(product_id && quantity > 0){
-    //         // alert(quantity+", "+product_id);
-    //         updateCart(product_id, quantity);
-    //     }
-    // });
-    // $("select.demand_quantity").niceSelect();
+    $("select.demand_quantity").change(function(){
+        var quantity = $(this).children("option:selected").val();
+        var product_id = $(this).data("product_id");
+        if(product_id && quantity > 0){
+            // alert(quantity+", "+product_id);
+            updateCart(product_id, quantity);
+        }
+    });
+    $("select.demand_quantity").niceSelect();
 </script>
 
 

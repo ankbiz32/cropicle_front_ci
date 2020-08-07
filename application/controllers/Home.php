@@ -191,6 +191,24 @@ class Home extends MY_Controller {
 		$this->load->view('footer');
 	}
 
+	public function Gallery()
+	{
+		if(!$this->session->userdata('user')){
+			$auth_url=$this->getOAutLoginhUrl();
+		}
+		else{
+			$auth_url="#";
+		}
+		$loc=$this->fetch->getActiveInfo('locations_master');
+		$this->load->view('header',['title' => 'Home',
+									'auth_url'=>$auth_url,
+									'loc'=>$loc
+								]
+							);
+		$this->load->view('gallery');
+		$this->load->view('footer');
+	}
+
 	public function Contact()
 	{
 		if(!$this->session->userdata('access_token')){

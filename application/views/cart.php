@@ -55,7 +55,7 @@
                                 <h5>₹<?=$row['price']?></h5>
                             </div>
                         </td>
-
+<!-- 
                         <td>
                             <div class="item_quantity">
                                 <a href="javascript:;" class="quantity_minus">-</a>
@@ -72,9 +72,9 @@
                             </div>
                             <span class="pav">1 Pav</span>
                             <span class="half">1/2</span>
-                        </td>
+                        </td> -->
 
-                        <!-- <td>
+                        <td>
                             <div class="item_quantity">
                             <select id="product_quantity<?=$row["product_id"];?>" 
                                 name="product_quantity<?=$row["product_id"];?>"
@@ -90,7 +90,7 @@
                             </select>
 
                             </div>
-                        </td> -->
+                        </td>
                         
                         <td>
                             <div class="product_total<?=$row['product_id']?> pro_price">
