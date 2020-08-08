@@ -30,7 +30,7 @@ class Commons extends MY_Controller {
 			{
 				$product_id = $this->input->post("product_id");
 				$quantity = $this->input->post("quantity");
-				$productData = $this->fetch->getItemInfo($product_id,'items_master');
+				$productData = $this->fetch->getItemInfo2($product_id);
 				if(!empty($productData)){
 					$price = $productData->item_price_customer;
 					$total = ($quantity * $price);
@@ -40,6 +40,7 @@ class Commons extends MY_Controller {
 						"image" => $productData->item_img,
 						"quantity" => $quantity,
 						"price" => $price,
+						"unit" => $productData->unit_short_name,
 						"total" => $total,
 					);
 					$this->session->set_userdata("cart",$cart);
@@ -61,7 +62,7 @@ class Commons extends MY_Controller {
 								<div class="cart_block">
 									<h5>'.$row["name"].'</h5>
 									<div class="item_quantity">
-										<input type="text" value="'.$row["quantity"].'Kg" class="quantity" disabled />
+										<input type="text" value="'.$row["quantity"].' '.$row["unit"].'" class="quantity" disabled />
 									</div>
 								</div>
 								<div class="cart_block">
@@ -145,7 +146,7 @@ class Commons extends MY_Controller {
 							<div class="cart_block">
 								<h5>'.$row["name"].'</h5>
 								<div class="item_quantity">
-									<input type="text" value="'.$row["quantity"].'Kg" class="quantity" disabled />
+									<input type="text" value="'.$row["quantity"].' '.$row["unit"].'" class="quantity" disabled />
 								</div>
 							</div>
 							<div class="cart_block">
@@ -208,7 +209,7 @@ class Commons extends MY_Controller {
 			{
 				$product_id = $this->input->post("product_id");
 				$quantity = $this->input->post("quantity");
-				$productData = $this->fetch->getItemInfo($product_id,'items_master');
+				$productData = $this->fetch->getItemInfo2($product_id);
 				if(!empty($productData)){
 					$price = $productData->item_price_customer;
 					$actual_price = $price;
@@ -219,6 +220,7 @@ class Commons extends MY_Controller {
 						"image" => $productData->item_img,
 						"quantity" => $quantity,
 						"price" => $price,
+						"unit" => $productData->unit_short_name,
 						"total" => $total,
 						"actual_price"=>$actual_price,
 					);
@@ -241,7 +243,7 @@ class Commons extends MY_Controller {
 								<div class="cart_block">
 									<h5>'.$row["name"].'</h5>
 									<div class="item_quantity">
-										<input type="text" value="'.$row["quantity"].'Kg" class="quantity" disabled />
+										<input type="text" value="'.$row["quantity"].' '.$row["unit"].'" class="quantity" disabled />
 									</div>
 								</div>
 								<div class="cart_block">

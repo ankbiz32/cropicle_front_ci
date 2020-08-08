@@ -109,7 +109,7 @@
 											</div>
                                             <h5><?=$pr->item_name?></h5>
 											<h5>
-												₹ &nbsp;<?=$pr->item_price_customer?>/kg
+												₹ &nbsp;<?=$pr->item_price_customer?>/<?=$pr->unit_short_name?>
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h5>
 											<?php if(isset($cart[$pr->id])){?>
@@ -123,7 +123,7 @@
                                         <div class="content_block">
                                             <div class="product_price_box"> 
                                                 <h5><?=$pr->item_name?></h5>            
-                                                <h5><span>₹</span><?=$pr->item_price_customer?><small>/kg </small></h5>   
+                                                <h5><span>₹</span><?=$pr->item_price_customer?><small>/<?=$pr->unit_short_name?> </small></h5>   
                                             </div>
                                             <p>Fruits & Veggies</p>
                                              <!-- <div class="rating_section">

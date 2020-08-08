@@ -126,6 +126,17 @@ class GetModel extends CI_Model{
                     ->get($table)
                     ->row();
     }
+
+    public function getItemInfo2($id)
+    {
+        return $this->db->select('i.id, i.item_name, i.item_price_customer, i.item_img, u.unit_short_name')
+                        ->from('items_master i')
+                        ->join('units u', 'u.id = i.unit_id', 'LEFT')
+                        ->where('i.id',$id)
+                        ->where('i.is_active',1)
+                        ->get()
+                        ->row();
+    }
     
     public function getInfo($table)
     {
@@ -164,6 +175,16 @@ class GetModel extends CI_Model{
     {
         return $this->db->where($where)
                         ->get($table)
+                        ->result();
+    }
+
+    public function getAllItems()
+    {
+        return $this->db->select('i.*, u.unit_short_name ')
+                        ->from('items_master i')
+                        ->join('units u','u.id=i.unit_id','LEFT')
+                        ->where('i.is_active',1)
+                        ->get()
                         ->result();
     }
 

@@ -36,8 +36,8 @@
                 <table class="table-responsive cart_table woocommerce-cart-form__contents">
                     <tr>
                         <th>items</th>
-                        <th>price / kg</th>
-                        <th>quantity (in kg)</th>
+                        <th>price</th>
+                        <th>quantity</th>
                         <th>total</th>
                         <th>remove</th>
                     </tr>
@@ -52,7 +52,7 @@
                         </td>
                         <td>
                             <div class="pro_price">
-                                <h5>₹<?=$row['price']?></h5>
+                                <h5>₹<?=$row['price']?> / <?=$row['unit']?></h5>
                             </div>
                         </td>
 <!-- 
@@ -80,12 +80,17 @@
                                 name="product_quantity<?=$row["product_id"];?>"
                                 class="demand_quantity"
                                 data-product_id="<?=$row['product_id'];?>">
-
+                                <?php if($row['unit']=='kg' OR $row['unit']=='dzn'){?>
+                                <?php if($row['unit']=='kg'){?>
                                 <option <?=$row['quantity']==0.25?'selected':''?> value="0.25">1 pav</option>
-                                <option <?=$row['quantity']==0.5?'selected':''?> value="0.5">1/2 kg</option>
+                                <?php }?>
+                                <option <?=$row['quantity']==0.5?'selected':''?> value="0.5">1/2 </option>
+                                <?php }?>
                                 <option <?=$row['quantity']==1?'selected':''?> value="1">1</option>
                                 <option <?=$row['quantity']==2?'selected':''?> value="2">2</option>
                                 <option <?=$row['quantity']==3?'selected':''?> value="3">3</option>
+                                <option <?=$row['quantity']==4?'selected':''?> value="4">4</option>
+                                <option <?=$row['quantity']==5?'selected':''?> value="5">5</option>
                                 
                             </select>
 

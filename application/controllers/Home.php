@@ -274,9 +274,9 @@ class Home extends MY_Controller {
 		}
 		$this->session->set_userdata(['location_id' =>  $id]);
 		$this->session->set_userdata(['location_name' =>  $location]);
-		$res=$this->fetch->getInfoParams('items_master',['is_active'=>1]);
+		$res=$this->fetch->getAllItems();
 		$hawker_count=$this->fetch->hawkerCount($id);
-		// echo'<pre>';var_dump($res['items']);exit;
+		// echo'<pre>';var_dump($res);exit;
 		if($res){
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => 'Home',

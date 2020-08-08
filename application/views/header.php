@@ -189,7 +189,7 @@
                                                                 <div class="cart_block">
                                                                     <h5><?=$row['name']?></h5>
                                                                     <div class="item_quantity">
-                                                                        <input type="text" value="<?=$row['quantity']?>Kg" class="quantity" disabled />
+                                                                        <input type="text" value="<?=$row['quantity'].' '.$row['unit']?>" class="quantity" disabled />
                                                                     </div>
                                                                 </div>
                                                                 <div class="cart_block">
