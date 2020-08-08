@@ -446,8 +446,8 @@ class Home extends MY_Controller {
 			$response.='
 						<div class="col-12 p-0 my-2 d-flex">
 							<div class="col-3">'.$i->item_name.' -</div>
-							<div class="col-4">₹'.$i->item_price_customer.'/Kg</div>
-							<div class="col-2">'.$i->item_quantity.' Kg</div>
+							<div class="col-4">₹'.$i->item_price_customer.'/'.$i->unit_short_name.'</div>
+							<div class="col-2">'.$i->item_quantity.' '.$i->unit_short_name.'</div>
 							<div class="col-3">₹'.$i->item_price_customer*$i->item_quantity.'</div>
 						</div>';
 		}	

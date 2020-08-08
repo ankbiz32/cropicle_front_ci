@@ -108,9 +108,10 @@ class GetModel extends CI_Model{
         
     public function demandDetailsById($id)
     {
-        $items=$this->db->select('dd.item_quantity, dd.item_id, i.item_name, i.item_img, dd.item_price_customer')
+        $items=$this->db->select('dd.item_quantity, dd.item_id, i.item_name, i.item_img, u.unit_short_name, dd.item_price_customer')
                         ->from('customer_demand_details dd')
                         ->join('items_master i', 'i.id = dd.item_id', 'LEFT')
+                        ->join('units u', 'u.id = i.unit_id', 'LEFT')
                         // ->where('i.is_active','1')
                         ->where('dd.customer_demand_id',$id)
                         ->get()
