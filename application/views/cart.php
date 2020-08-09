@@ -91,6 +91,13 @@
                                 <option <?=$row['quantity']==3?'selected':''?> value="3">3</option>
                                 <option <?=$row['quantity']==4?'selected':''?> value="4">4</option>
                                 <option <?=$row['quantity']==5?'selected':''?> value="5">5</option>
+                                <?php if($row['unit']=='pc'){?>
+                                <option <?=$row['quantity']==6?'selected':''?> value="6">6</option>
+                                <option <?=$row['quantity']==7?'selected':''?> value="7">7</option>
+                                <option <?=$row['quantity']==8?'selected':''?> value="8">8</option>
+                                <option <?=$row['quantity']==9?'selected':''?> value="9">9</option>
+                                <option <?=$row['quantity']==10?'selected':''?> value="10">10</option>
+                                <?php }?>
                                 
                             </select>
 
