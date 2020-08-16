@@ -27,7 +27,7 @@
                         <span></span>
                         <div class="contact_icon"><img src="<?=base_url('assets/')?>images/contact_icon1.png" alt="image" /></div>
                         <h4>contact us</h4>
-                        <p>+91 9021073372</p>
+                        <p>+91 9322664790</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -135,7 +135,7 @@
                         </div>
                         <div class="tollfree_block">
                             <h5>Call us here</h5>
-                            <h3>+91 9021073372</h3>
+                            <h3>+91 9322664790</h3>
                         </div>
                     </div>
                 </div>

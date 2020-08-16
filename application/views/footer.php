@@ -7,7 +7,7 @@
                         <div class="footer_logo"><a href="javascript:;"><img src="<?=base_url('assets/')?>images/badge_logo.png" height="55" alt="image" /></a></div>
                         <p>Cropicle shows you all the available fruits & veggies available in your area with our special pricing.</p>
                         <h6>call now</h6>
-                        <h3><a href="tel:919021073372" class="text-white">+91 9021073372</a></h3>
+                        <h3><a href="tel:919322664790" class="text-white">+91 9322664790</a></h3>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
@@ -32,7 +32,7 @@
                             <img src="<?=base_url('assets/')?>images/footer_underline.png" alt="image" />
                         </div>
                         <ul class="useful_links">
-                            <li><a href="tel:919021073372"><span><i class="fa fa-phone" aria-hidden="true"></i></span>+919021073372</a></li>
+                            <li><a href="tel:919322664790"><span><i class="fa fa-phone" aria-hidden="true"></i></span>+919322664790</a></li>
                             <li><a href="mailto:info.cropicle@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>info.cropicle@gmail.com</a></li>
                             <li><a href="mailto:cropicle@gmail.com"><span><i class="fa fa-envelope" aria-hidden="true"></i></span>cropicle@gmail.com</a></li>
                             <li><a href="https://www.facebook.com/Cropicle" target="_blank"><span><i class="fa fa-facebook-square" aria-hidden="true"></i></span>Facebook</a></li>
