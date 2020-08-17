@@ -40,7 +40,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
+                <!-- <div class="col-md-3 col-lg-3">
                     <div class="footer_block">
                         <div class="footer_heading">
                             <h4>instagram</h4>
@@ -55,7 +55,7 @@
                             <li><a href="javascript:;"><img src="https://via.placeholder.com/83x83" alt="image" /></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- <img class="foot_girl" src="https://via.placeholder.com/398x529" alt="image"> -->

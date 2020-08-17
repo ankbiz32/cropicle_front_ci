@@ -194,7 +194,7 @@
 						<div class="clv_heading">
 							<h3>our gallery</h3>
 							<div class="clv_underline"><img src="<?=base_url()?>assets/images/underline3.png" alt="image" /></div>
-							<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dole magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+							<p>See the fresh veggies that are directly delivered to you from our farms.</p>
 						</div>
 					</div>
 				</div>
