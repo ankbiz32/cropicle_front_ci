@@ -2,7 +2,7 @@
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border-radius: 5px;
-  border: solid 1px #e8e8e8;
+  border: solid 1px #bbb;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
@@ -14,8 +14,8 @@
   height: 42px;
   line-height: 40px;
   outline: none;
-  padding-left: 18px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 22px;
   position: relative;
   text-align: left !important;
   -webkit-transition: all 0.2s ease-in-out;
@@ -57,9 +57,11 @@
   .nice-select.open .list {
     opacity: 1;
     pointer-events: auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     -webkit-transform: scale(1) translateY(0);
         -ms-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0); }
+            transform: scale(1) translateY(0); 
+  }
   .nice-select.disabled {
     border-color: #ededed;
     color: #999;
@@ -87,7 +89,7 @@
       line-height: 34px;
       min-height: 34px; }
   .nice-select .list {
-    max-height:120px;
+    max-height:142px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);

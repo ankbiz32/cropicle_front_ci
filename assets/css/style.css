@@ -7739,12 +7739,12 @@ ul{
     display: inline;
     font-size: 18px;
 }
-.nice-select{
+/* .nice-select{
 	height: 50px;
 	line-height: 50px;
 	font-size: 15px;
 	width: 100%;
-}
+} */
 .nice-select:active, .nice-select.open, .nice-select:focus{
 	border-color: #ebebeb;
 }
@@ -9297,6 +9297,33 @@ ul{
 	bottom: 100px;
 	z-index: 10;
 }
+.profile_toggle::after{
+	content:'Signup';
+	position: absolute;
+	left: 51%;
+	top: -12px;
+	font-size: 19px;
+	transform: translate(-50%, -100%);
+	border-radius: 5px;
+	font-weight: 600;
+	z-index: 11;
+	background-color: #FFCC00;
+	padding: 2px 8px;
+	cursor: pointer;
+}
+.profile_toggle:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: -11px;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-left-color: #FFCC00;
+	border-right: 0;
+	margin-top: -5px;
+	margin-right: -5px;
+}
 .cart_toggle_float{
 	position: fixed;
 	right: 80px;
@@ -9377,6 +9404,13 @@ ul{
 }
 .preloader_inner {
 	
+}
+
+.hide-sm{
+	/* display: none !important; */
+}
+.show-sm{
+	display: none !important;
 }
 /********************************************************
 38. Preloader End
@@ -11562,6 +11596,21 @@ ul{
 	.cart_nav{
 		flex:1;
 	}
+	.profile_toggle::after{
+		font-size: 14px;
+	}
+	.cart_table_section.woocommerce-cart.table-responsive{
+		padding-left: 0 !important;
+	}
+	.woocommerce-cart .cart_table tr th, .woocommerce-cart .cart_table tr td{
+		padding: 10px 15px 10px 15px;
+	}
+	.hide-sm{
+		display: none !important;
+	}
+	.show-sm{
+		display: initial !important;
+	}
 	
 }
 @media (max-width: 320px){
@@ -11640,6 +11689,9 @@ ul{
 
 }
 
+.text-black{
+	color: #000000 !important;
+}
 /********************************************************
 39. Responsive CSS End
 *******************************************************/  

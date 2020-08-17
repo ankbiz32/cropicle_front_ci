@@ -163,7 +163,7 @@
                                         $cart = $this->session->userdata("cart");
                                             $cart = !empty($cart)?$cart:array();
                                         ?>
-                                        <li class="pr-2 pr-sm-0">
+                                        <li class="pr-2 pr-sm-0 hide-sm">
                                             <a class="cart_toggle" href="javascript:;">
                                                 <svg 
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -218,6 +218,18 @@
                                                     </div>
                                                     <?php  }?>
                                             </div>
+                                        </li>
+
+                                        <li class="pr-2 pr-sm-0 show-sm">
+                                            <?php if($this->session->user){?>
+                                                <a class="profile_toggle text-dark" href="">
+                                                <i class="fa fa-user"></i> Profile
+                                                </a>
+                                            <?php } else{?>
+                                                <a class=" text-dark" href="javascript:;">
+                                                    <i class="fa fa-user"></i> Login
+                                                </a>
+                                            <?php }?>
                                         </li>
                                     
                                 </ul>

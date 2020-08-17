@@ -204,45 +204,45 @@
 							<div class="gallery_grid">
 								<div class="gallery_grid_item">
 									<div class="gallery_image">
-										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<img src="<?=base_url('assets/')?>images/0gall.jpg" alt="image" />
 										<div class="gallery_overlay">
-											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+											<a href="<?=base_url('assets/')?>images/0gall.jpg" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
 								</div>
 								<div class="gallery_grid_item">
 									<div class="gallery_image">
-										<img src="https://via.placeholder.com/370x500" alt="image" />
+										<img src="<?=base_url('assets/')?>images/3gall.jpg" alt="image" />
 										<div class="gallery_overlay">
-											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+											<a href="<?=base_url('assets/')?>images/3gall.jpg" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
 								</div>
 								<div class="gallery_grid_item">
 									<div class="gallery_image">
-										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<img src="<?=base_url('assets/')?>images/1gall.jpg" alt="image" />
 										<div class="gallery_overlay">
-											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+											<a href="<?=base_url('assets/')?>images/1gall.jpg" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
 								</div>
 								<div class="gallery_grid_item">
 									<div class="gallery_image">
-										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<img src="<?=base_url('assets/')?>images/2gall.jpg" alt="image" />
 										<div class="gallery_overlay">
-											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+											<a href="<?=base_url('assets/')?>images/2gall.jpg" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
 								</div>
 								<div class="gallery_grid_item">
 									<div class="gallery_image">
-										<img src="https://via.placeholder.com/370x260" alt="image" />
+										<img src="<?=base_url('assets/')?>images/4gall.jpg" alt="image" />
 										<div class="gallery_overlay">
-											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
+											<a href="<?=base_url('assets/')?>images/4gall.jpg" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
 								</div>
-								<div class="gallery_grid_item">
+								<!-- <div class="gallery_grid_item">
 									<div class="gallery_image">
 										<img src="https://via.placeholder.com/370x310" alt="image" />
 										<div class="gallery_overlay">
@@ -265,7 +265,7 @@
 											<a href="https://via.placeholder.com/550x550" class="view_image"><span><i class="fa fa-search" aria-hidden="true"></i></span></a>
 										</div>
 									</div>
-								</div> 
+								</div>  -->
 							</div>
 						</div>
 						</div>
