@@ -226,7 +226,7 @@
                                                 <i class="fa fa-user"></i> Profile
                                                 </a>
                                             <?php } else{?>
-                                                <a class=" text-dark" href="javascript:;">
+                                                <a class="profile_toggle2 text-dark" href="javascript:;">
                                                     <i class="fa fa-user"></i> Login
                                                 </a>
                                             <?php }?>

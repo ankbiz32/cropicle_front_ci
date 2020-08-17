@@ -944,6 +944,10 @@ $(document).ready(function(){
 		$('.signup_wrapper').toggleClass('open_signup');
 		$('.signin_wrapper').removeClass('open_signin');
 	});
+	$('.profile_toggle2').on('click', function(){
+		$('.signup_wrapper').toggleClass('open_signup');
+		$('.signin_wrapper').removeClass('open_signin');
+	});
 	$(document).on('click', function(){
 		$('.clv_right_header .clv_menu .clv_menu_nav').removeClass('nav_toggle');
 	});
