@@ -222,7 +222,7 @@
 
                                         <li class="pr-2 pr-sm-0 show-sm">
                                             <?php if($this->session->user){?>
-                                                <a class="profile_toggle text-dark" href="">
+                                                <a class="profile_toggle2 text-dark" href="">
                                                 <i class="fa fa-user"></i> Profile
                                                 </a>
                                             <?php } else{?>
