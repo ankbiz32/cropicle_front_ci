@@ -118,7 +118,7 @@
                         </td> -->
                         <td class="pl-0">
                             <a href="javascript:;" class="pro_remove text-danger" onclick="removeCartItem(<?=$row['product_id']?>);">
-                                <i class="fa fa-trash fa-lg"></i>
+                                <i class="fa fa-times fa-lg"></i>
                             </a>
                         </td>
                     </tr>
