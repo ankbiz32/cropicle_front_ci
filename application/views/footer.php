@@ -223,11 +223,25 @@
                 <?php
                     $cart = $this->session->userdata("cart");
                     $cart = !empty($cart)?$cart:array();
+                    $finalTotal=0;
+                    foreach($cart as $row){
+                        $finalTotal=$finalTotal+$row["total"];
+                    }
                 ?>
                 <span><?=!empty($cart)?sizeof($cart):'0'?></span>
             </a>
         </div>
 </div>
+
+<div class="row footer-cart bg-white">
+    <div class="col-6 py-2 text-center text-black">
+        Total = ₹<span class="finalTotal"><?=!empty($cart)?$finalTotal:'0'?></span>/-
+    </div>
+    <a class="col-6 bg-warning text-white py-2 text-center" href="<?=base_url('cart')?>">
+        Go to cart
+    </a>
+</div>
+
 <!--Main js file Style-->
 <script src="<?=base_url('assets/')?>js/jquery.js"></script>
 <script src="<?=base_url('assets/')?>js/bootstrap.min.js"></script>
@@ -310,56 +324,56 @@
   }
 
   
-    $('.quantity_plus').on('click', function(e){
-        e.preventDefault();
-        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
-        var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
-        $(this).siblings('.demand_quantity').val(quantity + 0.25);  
-        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
-        if(quantity==0.5){
-            $(this).parent().siblings("span.half").css('visibility','visible');
-            $(this).parent().siblings("span.pav").css('visibility','hidden');
-        }
-        else if(quantity==0.25){
-            $(this).parent().siblings("span.half").css('visibility','hidden');
-            $(this).parent().siblings("span.pav").css('visibility','visible');
-        }
-        else{
-            $(this).parent().siblings("span.half").css('visibility','hidden');
-            $(this).parent().siblings("span.pav").css('visibility','hidden');
-        }
-        if(product_id && quantity > 0){
-            // alert(quantity+", "+product_id);
-            updateCart(product_id, quantity);
-        }          
+    // $('.quantity_plus').on('click', function(e){
+    //     e.preventDefault();
+    //     var quantity = parseFloat($(this).siblings('.demand_quantity').val());
+    //     var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
+    //     $(this).siblings('.demand_quantity').val(quantity + 0.25);  
+    //     var quantity = parseFloat($(this).siblings('.demand_quantity').val());
+    //     if(quantity==0.5){
+    //         $(this).parent().siblings("span.half").css('visibility','visible');
+    //         $(this).parent().siblings("span.pav").css('visibility','hidden');
+    //     }
+    //     else if(quantity==0.25){
+    //         $(this).parent().siblings("span.half").css('visibility','hidden');
+    //         $(this).parent().siblings("span.pav").css('visibility','visible');
+    //     }
+    //     else{
+    //         $(this).parent().siblings("span.half").css('visibility','hidden');
+    //         $(this).parent().siblings("span.pav").css('visibility','hidden');
+    //     }
+    //     if(product_id && quantity > 0){
+    //         // alert(quantity+", "+product_id);
+    //         updateCart(product_id, quantity);
+    //     }          
 
-    });
+    // });
 
-    $('.quantity_minus').on('click', function(e){
-        e.preventDefault();
-        var quantity = parseFloat($(this).siblings('.demand_quantity').val());
-        var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
-        if(quantity>0.25){
-            $(this).siblings('.demand_quantity').val(quantity - 0.25);
-            var quantity = parseFloat($(this).siblings('.demand_quantity').val()); 
-            if(quantity==0.5){
-                $(this).parent().siblings("span.half").css('visibility','visible');
-                $(this).parent().siblings("span.pav").css('visibility','hidden');
-            }
-            else if(quantity==0.25){
-                $(this).parent().siblings("span.half").css('visibility','hidden');
-                $(this).parent().siblings("span.pav").css('visibility','visible');
-            }
-            else{
-                $(this).parent().siblings("span.half").css('visibility','hidden');
-                $(this).parent().siblings("span.pav").css('visibility','hidden');
-            }
-            if(product_id && quantity > 0){
-                // alert(quantity+", "+product_id);
-                updateCart(product_id, quantity);
-            } 
-        }
-    });	
+    // $('.quantity_minus').on('click', function(e){
+    //     e.preventDefault();
+    //     var quantity = parseFloat($(this).siblings('.demand_quantity').val());
+    //     var product_id = $(this).siblings('.demand_quantity').attr("data-product_id");
+    //     if(quantity>0.25){
+    //         $(this).siblings('.demand_quantity').val(quantity - 0.25);
+    //         var quantity = parseFloat($(this).siblings('.demand_quantity').val()); 
+    //         if(quantity==0.5){
+    //             $(this).parent().siblings("span.half").css('visibility','visible');
+    //             $(this).parent().siblings("span.pav").css('visibility','hidden');
+    //         }
+    //         else if(quantity==0.25){
+    //             $(this).parent().siblings("span.half").css('visibility','hidden');
+    //             $(this).parent().siblings("span.pav").css('visibility','visible');
+    //         }
+    //         else{
+    //             $(this).parent().siblings("span.half").css('visibility','hidden');
+    //             $(this).parent().siblings("span.pav").css('visibility','hidden');
+    //         }
+    //         if(product_id && quantity > 0){
+    //             // alert(quantity+", "+product_id);
+    //             updateCart(product_id, quantity);
+    //         } 
+    //     }
+    // });	
 
 
     $("select.demand_quantity").change(function(){

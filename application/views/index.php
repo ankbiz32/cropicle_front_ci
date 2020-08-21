@@ -34,7 +34,7 @@
 								</span>
 							</strong> 
 							available in&nbsp;
-							<span id="area-name" class="search_toggle text-success" style="cursor:pointer"> <i class="fa fa-map-marker fa-sm"></i> <?=isset($location)?$location:''?></span>
+							<span id="area-name" class="search_toggle text-success"  data-toggle="popover" title="Edit Area" style="cursor:pointer"> <i class="fa fa-map-marker fa-sm"></i> <?=isset($location)?$location:''?>  &nbsp;<sup style="font-size:14px;" class="text-dark"><i class="fa fa-pencil" ></i></sup></span>
 						</h4>
 					</div>
 					<?php if(isset($prods)){?>
@@ -52,9 +52,9 @@
                     <div class="product_list_section">
 						<?php if(isset($prods)){?>
                         <div class="product_list_filter">
-                            <ul>
+                            <ul class="d-flex">
                                 <li>
-                                    <p>showing <span><?=sizeof($prods)?></span> items</p>
+                                    <p class="text-left">showing <span><?=sizeof($prods)?></span> items</p>
                                 </li>
                                 <!-- <li>
                                     <select id="sort-select">
@@ -64,7 +64,7 @@
                                     </select>
                                 </li> -->
                                 <li>
-                                    <ul class="list_view_toggle">
+                                    <ul class="list_view_toggle ml-auto">
                                         <li><span>view style</span></li>
                                         <li>
                                             <a href="javascript:;" class="active grid_view">

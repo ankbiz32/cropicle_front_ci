@@ -27,7 +27,6 @@
         <div class="container">
             <div class="cart_table_section woocommerce-cart table-responsive">
                 <div class="table_heading pl-sm-0 pl-3">
-                    <h3>Demand cart</h3>
                     <h4><?=sizeof($cart)?> items in your cart</h4>
                 </div>
                 <?php if (!empty($cart)){ 
@@ -118,8 +117,8 @@
                             </div>
                         </td> -->
                         <td>
-                            <a href="javascript:;" class="pro_remove" onclick="removeCartItem(<?=$row['product_id']?>);">
-                                <i class="fa fa-times-circle fa-lg"></i> Remove
+                            <a href="javascript:;" class="pro_remove text-danger" onclick="removeCartItem(<?=$row['product_id']?>);">
+                                <i class="fa fa-trash fa-lg"></i>
                             </a>
                         </td>
                     </tr>

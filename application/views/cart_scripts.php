@@ -28,6 +28,7 @@
         				$(".cart_toggle span").html(resp.data.totalItems);
         				$(".cart_toggle_float span").html(resp.data.totalItems);
         				$(".clv_cart_box").html(resp.data.content);
+        				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
         				$(".clv_cart_box").css('height','350px');
         				$(".btnAddtoCart"+product_id).attr("onclick","");
         				$(".btnAddtoCart"+product_id).attr("href","<?=base_url('cart')?>");
@@ -72,6 +73,7 @@
 						$(".productRow"+product_id).remove();
 						$(".table_heading h4").html(resp.data.totalItems+' items in your cart');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
+        				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
 						$(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1)");
 						$(".btnAddtoCart"+product_id).attr("title","Add to demand");
 						$(".btnAddtoCart"+product_id).attr("href","javascript:;");
@@ -117,6 +119,7 @@
 						$(".clv_cart_box").html(resp.data.content);
 						$(".product_total"+product_id ).html('<small><h6><strong>Total:</strong> ₹'+resp.data.total+'/-</h6></small>');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
+        				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
 						Alert.fire({icon:'success',title: 'Cart updated'});
 					}
 					else{

@@ -87,7 +87,7 @@ class Commons extends MY_Controller {
 					</div>
 					<a href="'.site_url("cart").'" class="cart_action_btn">Go to cart</a>
 					';
-					$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems));
+					$response = array("status"=>200,"msg"=>"Added to cart","data"=>array("content"=>$cartstr,"totalItems"=>$totalItems,"finalTotal"=>$finalTotal));
 					$this->output
 					->set_status_header(200)
 					->set_content_type('application/json', 'utf-8')

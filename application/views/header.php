@@ -73,10 +73,11 @@
                                                     d="M5.530,-0.004 C2.497,-0.004 0.029,2.434 0.029,5.431 C0.029,9.148 4.951,14.609 5.161,14.839 C5.358,15.055 5.702,15.054 5.898,14.839 C6.108,14.609 11.029,9.148 11.029,5.431 C11.029,2.434 8.562,-0.004 5.530,-0.004 ZM5.530,8.165 C4.004,8.165 2.762,6.937 2.762,5.431 C2.762,3.923 4.004,2.696 5.530,2.696 C7.055,2.696 8.297,3.923 8.297,5.431 C8.297,6.937 7.055,8.165 5.530,8.165 Z"/>
                                                 </g>
                                             </svg>
+                                            &nbsp;
                                         </span>
                                         <p>
-                                            <a class="search_toggle" href="javascript:;">
-                                                &nbsp;<?=isset($this->session->location_id)?(strlen($this->session->location_name)>25?substr($this->session->location_name,0,25).'...':$this->session->location_name):'Select area'?>
+                                            <a class="search_toggle" href="javascript:;" style="border-bottom:1px dashed #666">
+                                                <?=isset($this->session->location_id)?(strlen($this->session->location_name)>25?substr($this->session->location_name,0,25).'... <sup style="font-size:10px;" class="text-dark"><i class="fa fa-pencil" ></i></sup>':$this->session->location_name).' <sup style="font-size:10px;" class="text-dark"><i class="fa fa-pencil" ></i></sup>':'Select area <sup style="font-size:10px;" class="text-dark"><i class="fa fa-pencil" ></i></sup>'?>
                                             </a>
                                         </p>
                                     </div>
@@ -121,6 +122,7 @@
                                     <li class="py-1">
                                         <a href="<?=base_url('profile')?>"><?=strlen($this->session->user->name)>6?substr($this->session->user->name,0,6).'...':$this->session->user->name?> <i class="fa fa-caret-down d-md-inline d-none"></i> </a>
                                         <ul>
+                                            <li><a href="<?=base_url('cart')?>">Cart</a></li>
                                             <li><a href="<?=base_url('profile')?>">See profile</a></li>
                                             <li><a href="<?=base_url('demands')?>">My demands</a></li>
                                             <li><a href="<?=base_url('logout')?>">Logout</a></li>
@@ -220,11 +222,18 @@
                                             </div>
                                         </li>
 
-                                        <li class="pr-2 pr-sm-0 show-sm">
+                                        <li class="pr-2 pr-sm-0 profile-drop show-sm position-relative">
                                             <?php if($this->session->user){?>
-                                                <a class="profile_toggle2 text-dark" href="">
-                                                <i class="fa fa-user"></i> Profile
-                                                </a>
+                                                <a class="text-dark" href="javascript:;">
+                                                    <i class="fa fa-user"></i> <?=strlen($this->session->user->name)>12?substr($this->session->user->name,0,12).'...':$this->session->user->name?> 
+                                                    <i class="fa fa-caret-down"></i>
+                                                </a> 
+                                                <div class="profile-dropdown-menu position-absolute">
+                                                    <a class="dropdown-item" href="<?=base_url('cart')?>">Cart</a>
+                                                    <a class="dropdown-item" href="<?=base_url('profile')?>">Profile</a>
+                                                    <a class="dropdown-item" href="<?=base_url('demands')?>">My demands</a>
+                                                    <a class="dropdown-item text-danger" href="<?=base_url('logout')?>">Logout</a>
+                                                </div>
                                             <?php } else{?>
                                                 <a class="profile_toggle2 text-dark" href="javascript:;">
                                                     <i class="fa fa-user"></i> Login
