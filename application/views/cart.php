@@ -38,7 +38,7 @@
                         <!-- <th>price</th> -->
                         <th>quantity</th>
                         <!-- <th>total</th> -->
-                        <th>remove</th>
+                        <th> </th>
                     </tr>
                     <?php foreach($cart as $row){    
                     ?>
@@ -47,8 +47,8 @@
                             <div class="product_img">
                                 <img src="<?=KART_DOMAIN.'assets/images/items/'.$row['image']?>" alt="image" height="60" width="60" style="object-fit:cover;">
                                 <div class="ml-2">
-                                    <h5 class="mb-1 text-black"><?=$row['name']?></h5>
-                                    <span class="text-secondary font-sm">₹<?=$row['price']?>/<?=$row['unit']?></span>
+                                    <h6 class="mb-1 text-black"><?=$row['name']?></h6>
+                                    <small><span class="text-secondary font-sm">₹<?=$row['price']?>/<?=$row['unit']?></span></small>
                                 </div>
                             </div>
                         </td>
@@ -107,7 +107,7 @@
                                 </select>
                             </div>
                             <div class="product_total<?=$row['product_id']?> pro_price mt-1">
-                                <small><h6 class=""><strong>Total:</strong> ₹<?=$row['total']?>/-</h6></small>
+                                <small><span class=""><strong>Total:</strong> ₹<?=$row['total']?>/-</span></small>
                             </div>
                         </td>
 <!--                         
@@ -116,7 +116,7 @@
                                 <h5>₹<?=$row['total']?></h5>
                             </div>
                         </td> -->
-                        <td>
+                        <td class="pl-0">
                             <a href="javascript:;" class="pro_remove text-danger" onclick="removeCartItem(<?=$row['product_id']?>);">
                                 <i class="fa fa-trash fa-lg"></i>
                             </a>

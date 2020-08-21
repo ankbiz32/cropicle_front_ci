@@ -25,6 +25,7 @@
         		success: function(resp) {
         			if(resp.status == '200'){
         				//alert("Added to cart");
+        				$(".footer-cart").addClass('visible');
         				$(".cart_toggle span").html(resp.data.totalItems);
         				$(".cart_toggle_float span").html(resp.data.totalItems);
         				$(".clv_cart_box").html(resp.data.content);

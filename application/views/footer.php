@@ -233,13 +233,19 @@
         </div>
 </div>
 
-<div class="row footer-cart bg-white">
-    <div class="col-6 py-2 text-center text-black">
+<div class="row footer-cart bg-white <?=isset($this->session->cart)?' visible':''?>">
+    <div class="col-6 py-3 text-center text-black">
         Total = ₹<span class="finalTotal"><?=!empty($cart)?$finalTotal:'0'?></span>/-
     </div>
-    <a class="col-6 bg-warning text-white py-2 text-center" href="<?=base_url('cart')?>">
-        Go to cart
+    <?php if($this->uri->segment('1')=='cart'){?>
+    <a class="col-6 bg-warning text-white py-3 text-center" href="<?=base_url('home')?>">
+        + Add more items
     </a>
+    <?php } else{?>
+    <a class="col-6 bg-warning text-white py-3 text-center" href="<?=base_url('cart')?>">
+        Change quantity
+    </a>
+    <?php }?>
 </div>
 
 <!--Main js file Style-->

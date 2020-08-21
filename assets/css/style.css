@@ -616,7 +616,7 @@ ul{
 }
 .item_quantity{
 	position: relative;
-	max-width: 80px;
+	min-width: 100px;
 }
 .item_quantity > input{
 	width: 100%;
@@ -11626,6 +11626,7 @@ ul{
 	}
 	.cart_table_section.woocommerce-cart.table-responsive{
 		padding-left: 0 !important;
+		padding-right: 0 !important;
 	}
 	.woocommerce-cart .cart_table tr th, .woocommerce-cart .cart_table tr td{
 		padding: 10px 15px 10px 15px;
@@ -11647,7 +11648,7 @@ ul{
 	#prods .fa-pencil{
 		font-size: 12px !important;
 	}
-	.footer-cart{
+	.footer-cart.visible{
 		visibility: visible;
 		opacity: 1;
 	}
