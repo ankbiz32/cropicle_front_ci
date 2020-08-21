@@ -118,7 +118,7 @@
         				$(".cart_toggle_float span").html(resp.data.totalItems);
 						$(".table_heading h4").html(resp.data.totalItems+' items in your cart');
 						$(".clv_cart_box").html(resp.data.content);
-						$(".product_total"+product_id ).html('<small><h6><strong>Total:</strong> ₹'+resp.data.total+'/-</h6></small>');
+						$(".product_total"+product_id ).html('<small><span class=""><strong>Total:</strong> ₹'+resp.data.total+'/-</span></small>');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
         				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
 						Alert.fire({icon:'success',title: 'Cart updated'});
