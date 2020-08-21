@@ -117,7 +117,7 @@
                             </div>
                         </td> -->
                         <td class="pl-0">
-                            <a href="javascript:;" class="pro_remove text-danger" onclick="removeCartItem(<?=$row['product_id']?>);">
+                            <a href="javascript:;" class="pro_remove<?=$row['product_id']?> text-danger" onclick="removeCartItem(<?=$row['product_id']?>);">
                                 <i class="fa fa-times fa-lg"></i>
                             </a>
                         </td>
@@ -141,7 +141,7 @@
                     </tr>
                 </table>
                     <?php if(isset($this->session->user)){?>
-                        <div class="checkout_btn_block mt-3">
+                        <div class="checkout_btn_block mt-3 ">
                             <a href="javascript:;" class="clv_btn checkout-button">Next</a>
                         </div>
                     <?php } else{?>

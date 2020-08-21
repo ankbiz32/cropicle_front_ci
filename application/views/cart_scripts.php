@@ -45,6 +45,7 @@
         			}
         		},
         		error: function(err) {
+        			$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
 					Alert.fire({icon: 'error',title:"Unable to add item"});
         			// alert("Unable to add item");
         		}
@@ -66,6 +67,9 @@
 					"product_id":product_id,
 				},
 				cache: false,
+				beforeSend:function(resp) {
+						$(".pro_remove"+product_id).html(`<i class="fa fa-spinner fa-spin"></i>`);
+				},
 				success: function(resp) {
 					if(resp.status == '200'){
 						$(".cart_toggle span").html(resp.data.totalItems);
@@ -88,6 +92,7 @@
 					}
 				},
 				error: function(err) {
+					$(".pro_remove"+product_id).html(`<i class="fa fa-times fa-lg"></i>`);
 					Alert.fire({icon: 'error',title: 'Unable to remove item!'});
 					// alert("Unable to remove item!");
 				} 
@@ -111,6 +116,9 @@
 					"quantity":quantity,
 				},
 				cache: false,
+				beforeSend: function(resp) {
+					$(".product_total"+product_id ).html('<small><span class=""><strong>Total:</strong> <i class="fa fa-spinner fa-spin"></i></span></small>');
+				},
 				success: function(resp) {
 					if(resp.status == '200'){
 						//alert("Added to cart");
@@ -128,7 +136,8 @@
 					}
 				},
 				error: function(err) {
-						Alert.fire({icon:'error',title: 'Unable to update cart!'});
+					$(".product_total"+product_id ).html('<small><span class="text-danger">Error !</span></small>');
+					Alert.fire({icon:'error',title: 'Unable to update cart!'});
 				}
 			});
 		}
