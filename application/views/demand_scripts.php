@@ -13,8 +13,7 @@
 						<div class="col-md-6">
 							<div class="form_block">
 								<h6>Contact no.</h6>
-								<input type="text" name="mobile_no" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" 
-								<?=$this->session->user->login_oauth_uid!=NULL?'class="form_field"':'class="form_field bg-light" readonly'?> required>
+								<input type="text" name="mobile_no" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" minlength="10" maxlength="10" <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field digits"':'class="form_field digits bg-light" readonly'?> required>
 							</div>
 						</div>
 						<div class="col-md-6">

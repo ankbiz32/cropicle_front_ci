@@ -110,7 +110,7 @@
                                 <small><span class=""><strong>Total:</strong> ₹<?=$row['total']?>/-</span></small>
                             </div>
                         </td>
-<!--                         
+                        <!--      
                         <td>
                             <div class="product_total<?=$row['product_id']?> pro_price">
                                 <h5>₹<?=$row['total']?></h5>

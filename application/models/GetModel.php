@@ -184,7 +184,7 @@ class GetModel extends CI_Model{
         return $this->db->select('i.*, u.unit_short_name ')
                         ->from('items_master i')
                         ->join('units u','u.id=i.unit_id','LEFT')
-                        ->where('i.is_active',1)
+                        // ->where('i.is_active',1)
                         ->get()
                         ->result();
     }
