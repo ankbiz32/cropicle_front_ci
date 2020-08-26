@@ -300,6 +300,7 @@ class Home extends MY_Controller {
 								);
 			$this->load->view('index.php');
 			$this->load->view('footer');
+			$this->load->view('cart_scripts');
 		}
 	}
 

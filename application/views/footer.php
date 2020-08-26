@@ -243,7 +243,7 @@
     </a>
     <?php } else{?>
     <a class="col-6 bg-warning text-white py-3 text-center" href="<?=base_url('cart')?>">
-        Change quantity
+        Go to cart
     </a>
     <?php }?>
 </div>
@@ -327,7 +327,7 @@
           }
         })
 
-  }
+    }
 
   
     // $('.quantity_plus').on('click', function(e){
@@ -382,15 +382,32 @@
     // });	
 
 
-    $("select.demand_quantity").change(function(){
-        var quantity = $(this).children("option:selected").val();
-        var product_id = $(this).data("product_id");
-        if(product_id && quantity > 0){
-            // alert(quantity+", "+product_id);
-            updateCart(product_id, quantity);
-        }
-    });
-    $("select.demand_quantity").niceSelect();
+   
+
+    
+    <?php if($this->uri->segment('1')=='cart'){?>
+
+        $("select.demand_quantity").change(function(){
+            var quantity = $(this).children("option:selected").val();
+            var product_id = $(this).data("product_id");
+            if(product_id && quantity > 0){
+                // alert(quantity+", "+product_id);
+                updateCart(product_id, quantity);
+            }
+        });
+        $("select.demand_quantity").niceSelect();
+
+    <?php } else{?>
+        
+        $(document).on('change', 'select.demand_quantity', function() {
+            var quantity = $(this).children("option:selected").val();
+            var product_id = $(this).data("product_id");
+            if(product_id && quantity > 0){
+                // alert(quantity+", "+product_id);
+                updateCart(product_id, quantity);
+            }
+        });
+    <?php }?>
 </script>
 
 

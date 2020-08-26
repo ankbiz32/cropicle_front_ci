@@ -5684,7 +5684,21 @@ ul{
 	transition-property: all ;
 	transition-duration: 0.3s;
 }
-.org_product_block:hover a{
+.org_product_block select{
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 2px;
+    font-size: 14px;
+    color: #222;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 1;
+    transition-property: all;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+.org_product_block:hover a.toAdd{
 	font-size: 18px;
 	opacity: 0.5 !important;
 	width: 100%;
