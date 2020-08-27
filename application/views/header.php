@@ -234,10 +234,18 @@
                                                     <a class="dropdown-item" href="<?=base_url('demands')?>">My demands</a>
                                                     <a class="dropdown-item text-danger" href="<?=base_url('logout')?>">Logout</a>
                                                 </div>
+                                                <a class="text-dark ml-3" href="<?=base_url('cart')?>">
+                                                    <i class="fa fa-shopping-bag"></i> 
+                                                    <sup class="badge badge-secondary badge-pill"><?=!empty($cart)?sizeof($cart):'0'?></sup>
+                                                </a> 
                                             <?php } else{?>
                                                 <a class="profile_toggle2 text-dark" href="javascript:;">
                                                     <i class="fa fa-user"></i> Login
                                                 </a>
+                                                <a class="text-dark ml-3" href="<?=base_url('cart')?>">
+                                                    <i class="fa fa-shopping-bag"></i>  
+                                                    <sup class="badge badge-secondary badge-pill"><?=!empty($cart)?sizeof($cart):'0'?></sup>
+                                                </a> 
                                             <?php }?>
                                         </li>
                                     
