@@ -198,7 +198,7 @@
                                                                     <h4><span>₹</span> <?=$row['quantity']*$row['price']?></h4>
                                                                 </div>
                                                                 <div class="cart_block">
-                                                                    <a href="javascript:void(0);" onclick="removeCartItem(<?=$row['product_id']?>);"><i class="fa fa-times"></i></a>
+                                                                    <a href="javascript:void(0);" onclick='removeCartItem(<?=$row["product_id"]?>, "<?=$row["unit"]?>")'><i class="fa fa-times"></i></a>
                                                                 </div>
                                                             </li>
                                                             <?php 

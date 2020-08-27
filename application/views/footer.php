@@ -390,6 +390,10 @@
         $("select.demand_quantity").change(function(){
             var quantity = $(this).children("option:selected").val();
             var product_id = $(this).data("product_id");
+            var unit = $(this).data("unit");
+            if(quantity==0){
+                removeCartItem(product_id, unit);
+            }
             if(product_id && quantity > 0){
                 // alert(quantity+", "+product_id);
                 updateCart(product_id, quantity);
@@ -402,6 +406,10 @@
         $(document).on('change', 'select.demand_quantity', function() {
             var quantity = $(this).children("option:selected").val();
             var product_id = $(this).data("product_id");
+            var unit = $(this).data("unit");
+            if(quantity==0){
+                removeCartItem(product_id, unit);
+            }
             if(product_id && quantity > 0){
                 // alert(quantity+", "+product_id);
                 updateCart(product_id, quantity);

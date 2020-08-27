@@ -119,7 +119,8 @@
 
 														<!-- <a href="<?=base_url('cart')?>" class="bg-success btnAddtoCart<?php echo $pr->id; ?>"><i class='fa fa-check'></i>&nbsp; Added</a> -->
 													
-														<select id="product_quantity<?=$cart[$pr->id]['product_id'];?>" name="product_quantity<?=$cart[$pr->id]['product_id'];?>" class="demand_quantity" data-product_id="<?=$cart[$pr->id]['product_id'];?>">
+														<select id="product_quantity<?=$cart[$pr->id]['product_id'];?>" name="product_quantity<?=$cart[$pr->id]['product_id'];?>" class="demand_quantity" data-product_id="<?=$cart[$pr->id]['product_id'];?>" data-unit="<?=$pr->unit_short_name?>">
+															<option value="0">0 <?=$pr->unit_short_name?></option>
 															<?php if($pr->unit_short_name=='kg' OR $pr->unit_short_name=='dzn'){?>
 															<?php if($pr->unit_short_name=='kg'){?>
 															<option <?=$cart[$pr->id]['quantity']==0.25?'selected':''?> value="0.25">0.25 <?=$pr->unit_short_name?></option>
@@ -142,6 +143,8 @@
 															<option <?=$cart[$pr->id]['quantity']==10?'selected':''?> value="10">10 <?=$pr->unit_short_name?></option>
 															<?php }?>
 														</select>
+
+														<!-- <a href="javascript:void(0);" id="remover<?=$pr->id?>" class="remover text-danger bg-white" onclick="removeCartItem(<?=$pr->id?>);"><i class="fa fa-times"></i> Remove</a> -->
 														
 													<?php }
 													else{

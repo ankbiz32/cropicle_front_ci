@@ -8,7 +8,7 @@
 	});
 
 	
-	function removeCartItem(product_id){
+	function removeCartItem(product_id, short_unit){
 		// alert("Product ID : "+ product_id);
 		if(product_id){
 			$.ajax({
@@ -31,13 +31,14 @@
 						$(".table_heading h4").html(resp.data.totalItems+' items in your cart');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
         				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
-						$(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1)");
+						$(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1,'"+short_unit+"')");
 						$(".btnAddtoCart"+product_id).attr("title","Add to demand");
 						$(".btnAddtoCart"+product_id).attr("href","javascript:;");
 						$(".btnAddtoCart"+product_id).addClass("toAdd");
 						$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
-						$(".btnAddtoCart"+product_id).show();
 						$("select#product_quantity"+product_id).remove();
+						// $("#remover"+product_id).remove();
+						$(".btnAddtoCart"+product_id).show();
 						if(!resp.data.totalItems){
 							$('.checkout_btn_block').remove();
 						}
@@ -129,7 +130,8 @@
         				$(".btnAddtoCart"+product_id).removeAttr("title");
 						$(".btnAddtoCart"+product_id).removeClass("toAdd");
 						var selection=`
-									<select id="product_quantity`+product_id+`" name="product_quantity`+product_id+`" class="demand_quantity" data-product_id="`+product_id+`">
+									<select id="product_quantity`+product_id+`" name="product_quantity`+product_id+`" class="demand_quantity" data-product_id="`+product_id+`" data-unit="`+short_unit+`">
+									<option value="0">0 `+short_unit+`</option>
 								`;
 								if(short_unit=='kg' || short_unit=='dzn'){
 									if(short_unit=='kg'){
@@ -158,7 +160,11 @@
 									`;
 								}
 						selection+=`</select>`;
+						// remover=`
+						// 		<a href="javascript:void(0);" id="remover`+product_id+`" class="remover bg-danger" onclick="removeCartItem(`+product_id+`);"><i class="fa fa-times"></i></a>>
+						// 	`;
 						$(selection).insertAfter( $( ".btnAddtoCart"+product_id) );
+						// $(remover).insertAfter( $( ".btnAddtoCart"+product_id) );
 						$(".btnAddtoCart"+product_id).hide();
 						Alert.fire({icon: 'success',title: 'Added to cart'});
         			}

@@ -5674,7 +5674,7 @@ ul{
 .org_product_block a{
 	position: absolute;
     top: 10px;
-    right: 10px;
+	right: 10px;
 	padding: 5px 10px;
 	font-size: 16px;
 	color: #ffffff;
@@ -5684,10 +5684,12 @@ ul{
 	transition-property: all ;
 	transition-duration: 0.3s;
 }
+
 .org_product_block select{
 	position: absolute;
     top: 10px;
-    right: 10px;
+	left: 50%;
+	transform: translateX(-50%);
     padding: 5px 2px;
     font-size: 14px;
     color: #222;
@@ -5727,7 +5729,16 @@ ul{
 	pointer-events: none;
 	cursor: default;
 }
-
+.org_product_block .remover{
+	position: relative;
+    margin-top: 5px;
+	font-size: 14px;
+	padding:0;
+    opacity: 0.8;
+    transition-property: all;
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
 .org_team_wrapper{
 	background-color: #f9fcf6;
 	padding-top: 88px;
