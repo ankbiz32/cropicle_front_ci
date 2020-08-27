@@ -158,6 +158,16 @@ class GetModel extends CI_Model{
     }
 
 
+    public function notifStatus($user_id)
+    {
+        return $this->db->limit(1)
+                        ->order_by('id', 'desc')
+                        ->where('user_id',$user_id)
+                        ->get('customer_demands')
+                        ->row();
+    }
+
+
     // Fetch info by id
     public function getInfoById($id, $table)
     {

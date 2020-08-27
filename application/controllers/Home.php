@@ -136,6 +136,59 @@ class Home extends MY_Controller {
 		}
 		
 	}
+	
+	public function fetchItems($id)
+	{
+
+		if(!$this->session->userdata('user')){
+			$auth_url=$this->getOAutLoginhUrl();
+			$notif='';
+		}
+		else{
+			$auth_url="#";
+			$notif=$this->fetch->notifStatus($this->session->user->id)->notify;
+		}
+
+		$location=$this->fetch->getInfoById($id,'locations_master');
+		if(!empty($location)){
+			$location=$location->area;
+		}
+		else{
+			$location='Select area';
+		}
+		$this->session->set_userdata(['location_id' =>  $id]);
+		$this->session->set_userdata(['location_name' =>  $location]);
+		$res=$this->fetch->getAllItems();
+		$hawker_count=$this->fetch->hawkerCount($id);
+		// echo'<pre>';var_dump($res);exit;
+		if($res){
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'notif'=>$notif,
+										'loc'=>$loc,
+										'auth_url'=>$auth_url,
+										'location'=>$location,
+										'prods'=>$res,
+										'hawker_count'=>$hawker_count
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+			$this->load->view('cart_scripts');
+		}else{
+			$loc=$this->fetch->getActiveInfo('locations_master');
+			$this->load->view('header',['title' => 'Home',
+										'notif'=>$notif,
+										'loc'=>$loc,
+										'auth_url'=>$auth_url,
+										'location'=>$location
+									]
+								);
+			$this->load->view('index.php');
+			$this->load->view('footer');
+			$this->load->view('cart_scripts');
+		}
+	}
 
 	public function Cart()
 	{	
@@ -255,54 +308,6 @@ class Home extends MY_Controller {
 		$this->load->view('footer');
 	}
 
-	public function fetchItems($id)
-	{
-
-		if(!$this->session->userdata('user')){
-			$auth_url=$this->getOAutLoginhUrl();
-		}
-		else{
-			$auth_url="#";
-		}
-
-		$location=$this->fetch->getInfoById($id,'locations_master');
-		if(!empty($location)){
-			$location=$location->area;
-		}
-		else{
-			$location='Select area';
-		}
-		$this->session->set_userdata(['location_id' =>  $id]);
-		$this->session->set_userdata(['location_name' =>  $location]);
-		$res=$this->fetch->getAllItems();
-		$hawker_count=$this->fetch->hawkerCount($id);
-		// echo'<pre>';var_dump($res);exit;
-		if($res){
-			$loc=$this->fetch->getActiveInfo('locations_master');
-			$this->load->view('header',['title' => 'Home',
-										'loc'=>$loc,
-										'auth_url'=>$auth_url,
-										'location'=>$location,
-										'prods'=>$res,
-										'hawker_count'=>$hawker_count
-									]
-								);
-			$this->load->view('index.php');
-			$this->load->view('footer');
-			$this->load->view('cart_scripts');
-		}else{
-			$loc=$this->fetch->getActiveInfo('locations_master');
-			$this->load->view('header',['title' => 'Home',
-										'loc'=>$loc,
-										'auth_url'=>$auth_url,
-										'location'=>$location
-									]
-								);
-			$this->load->view('index.php');
-			$this->load->view('footer');
-			$this->load->view('cart_scripts');
-		}
-	}
 
 	public function fetchItems_old($id)
 	{

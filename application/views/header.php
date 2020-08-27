@@ -31,6 +31,7 @@
 </head>
 <script>
     var loc="<?=base_url()?>";
+
 </script>
 <body>
 	<div class="preloader_wrapper">
@@ -38,6 +39,13 @@
 			<img src="<?=base_url('assets/')?>images/preloader.gif" alt="image" />
 		</div>
 	</div>
+    <?php if(isset($this->session->user)) {
+        if(isset($notif) && $notif==1) { ?>
+        <div class="notification text-center bg-info text-white py-1 px-2">
+            Your order status has been updated. Check status here &nbsp; <a href="<?=base_url('demands')?>" class="badge badge-pill bg-white">Details</a>
+        </div>
+        <?php }
+     }?>
 <div class="clv_main_wrapper index_v">
     <div class="clv_header">
         <div class="container"> 
