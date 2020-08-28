@@ -1,12 +1,24 @@
 <?php
 class EditModel extends CI_Model{
 
-
     // Update Info
     public function updateInfo($data, $id, $table)
     {
         $this->db->where('id', $id);
         $wpflag = $this->db->update($table , $data);
+        if($wpflag){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    
+    public function notifStatusSeen($user_id)
+    {
+        $this->db->where('user_id', $user_id);
+        $wpflag = $this->db->update('customer_demands' , ['notify'=>'0']);
         if($wpflag){
             return true;
         }

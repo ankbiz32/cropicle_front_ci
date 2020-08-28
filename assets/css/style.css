@@ -66,6 +66,17 @@ Purchase:
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+.notification{
+	position: relative;
+}
+.notification .cross{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform:translateY(-50%);
+	font-size:18px;
+	color: #fffffff0;
+}
 a, a:hover, a:focus{
 	text-decoration: none;
 	cursor:pointer;
@@ -11382,7 +11393,7 @@ ul{
 		font-size: 26px;
 	}
 	.social_button_section > a > span:last-child{
-		display: none;
+		/* display: none; */
 	}
 	.social_button_section{
 		justify-content: center;

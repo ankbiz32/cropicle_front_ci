@@ -154,7 +154,7 @@
             <div class="signup_form_section">
                 <h4>sign in account</h4>
                 <img src="<?=base_url('assets/')?>images/clv_underline.png" alt="image">
-                <form action="<?=base_url('Login/authenticate')?>" method="POST">
+                <!-- <form action="<?=base_url('Login/authenticate')?>" method="POST">
                     <div class="form_block">
                         <input type="text" maxlength="10" minlength="10" class="form_field" name="mob" placeholder="Mobile no">
                     </div>
@@ -162,7 +162,7 @@
                         <input type="password" class="form_field" name="pwd" placeholder="Password">
                     </div>
                     <button type="submit" class="clv_btn">sign in</button>
-                </form>
+                </form> -->
                 <p class="text-center mt-3">Sign in with</p>
                 <div class="social_button_section mt-1">
                     <!-- <a href="javascript:;" class="fb_btn">
@@ -419,12 +419,12 @@
 </script>
 
 
-<?php if(isset($prods)){?>
+<!-- <?php if(isset($prods)){?>
     <script>
         var elmnt = document.getElementById("prods");
         elmnt.scrollIntoView();
     </script>
-<?php }?>
+<?php }?> -->
 
 
 </body>

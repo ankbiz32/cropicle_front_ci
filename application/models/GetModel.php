@@ -189,6 +189,14 @@ class GetModel extends CI_Model{
                         ->result();
     }
 
+    public function getUserDemands($table, $where)
+    {
+        return $this->db->where($where)
+                        ->order_by('id','desc')
+                        ->get($table)
+                        ->result();
+    }
+
     public function getAllItems()
     {
         return $this->db->select('i.*, u.unit_short_name ')

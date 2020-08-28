@@ -137,6 +137,24 @@ class Home extends MY_Controller {
 		
 	}
 	
+	public function seeNotif()
+	{
+		if($this->session->userdata('user')){
+			$this->load->model('EditModel','edit');
+			$this->edit->notifStatusSeen($this->session->user->id);
+		}
+		redirect('demands');
+	}
+	
+	public function closeNotif()
+	{
+		if($this->session->userdata('user')){
+			$this->load->model('EditModel','edit');
+			$this->edit->notifStatusSeen($this->session->user->id);
+		}
+		redirect('/');
+	}
+	
 	public function fetchItems($id)
 	{
 
@@ -146,7 +164,10 @@ class Home extends MY_Controller {
 		}
 		else{
 			$auth_url="#";
-			$notif=$this->fetch->notifStatus($this->session->user->id)->notify;
+			$notif=$this->fetch->notifStatus($this->session->user->id);
+			if($notif){
+				$notif=$notif->notify;
+			}
 		}
 
 		$location=$this->fetch->getInfoById($id,'locations_master');
@@ -297,7 +318,7 @@ class Home extends MY_Controller {
 	public function userDemands()
 	{
 		$this->redirectIfNotLoggedIn();
-		$demands=$this->fetch->getInfoParams('customer_demands',array('user_id'=>$this->session->user->id));
+		$demands=$this->fetch->getUserDemands('customer_demands',array('user_id'=>$this->session->user->id));
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Your demands',
 									'loc'=>$loc,

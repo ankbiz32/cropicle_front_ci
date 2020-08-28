@@ -41,8 +41,9 @@
 	</div>
     <?php if(isset($this->session->user)) {
         if(isset($notif) && $notif==1) { ?>
-        <div class="notification text-center bg-info text-white py-1 px-2">
-            Your order status has been updated. Check status here &nbsp; <a href="<?=base_url('demands')?>" class="badge badge-pill bg-white">Details</a>
+        <div class="notification text-center bg-info text-white py-1 px-4">
+            Your order status has been updated. Check status here &nbsp; <a href="<?=base_url('Home/seeNotif')?>" class="badge badge-pill bg-white">Details</a>
+            <a href="<?=base_url('Home/closeNotif')?>" class="cross">&times;</a>
         </div>
         <?php }
      }?>
