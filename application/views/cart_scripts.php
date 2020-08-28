@@ -169,6 +169,7 @@
 						$(selection).insertAfter( $( ".btnAddtoCart"+product_id) );
 						// $(remover).insertAfter( $( ".btnAddtoCart"+product_id) );
 						$(".btnAddtoCart"+product_id).hide();
+						$('#product_quantity'+product_id).focus().click();
 						Alert.fire({icon: 'success',title: 'Added to cart'});
         			}
         			else{
@@ -188,5 +189,4 @@
 			Alert.fire({icon: 'error',title:"Product and Quantity greater than 0 required!"});
         }
     }
-
 </script>

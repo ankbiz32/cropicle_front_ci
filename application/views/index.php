@@ -150,6 +150,7 @@
 													else{
 													?>
 														<a href="javascript:;" title="Add to demand" onclick="addToCart(<?=$pr->id?>, 1, '<?=$pr->unit_short_name?>')" class="btnAddtoCart<?php echo $pr->id; ?> toAdd"><i class="fa fa-plus"></i>&nbsp; Add</a>
+														
 												<?php }
 											 }?>
                                         </div>
