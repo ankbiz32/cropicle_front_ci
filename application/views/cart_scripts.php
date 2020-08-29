@@ -32,14 +32,12 @@
 						$(".table_heading h4").html(resp.data.totalItems+' items in your cart');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
         				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
-						$(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1,'"+short_unit+"')");
-						$(".btnAddtoCart"+product_id).attr("title","Add to demand");
-						$(".btnAddtoCart"+product_id).attr("href","javascript:;");
-						$(".btnAddtoCart"+product_id).addClass("toAdd");
-						$(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
-						$("select#product_quantity"+product_id).remove();
-						// $("#remover"+product_id).remove();
-						$(".btnAddtoCart"+product_id).show();
+						// $(".btnAddtoCart"+product_id).attr("onclick","addToCart("+product_id+",1,'"+short_unit+"')");
+						// $(".btnAddtoCart"+product_id).attr("title","Add to demand");
+						// $(".btnAddtoCart"+product_id).attr("href","javascript:;");
+						// $(".btnAddtoCart"+product_id).addClass("toAdd");
+						// $(".btnAddtoCart"+product_id).html("<i class='fa fa-plus'></i>&nbsp; Add");
+						$("#remover"+product_id ).addClass('hidden');
 						if(!resp.data.totalItems){
 							$('.checkout_btn_block').remove();
 						}
@@ -86,6 +84,7 @@
 						$(".product_total"+product_id ).html('<small><span class=""><strong>Total:</strong> ₹'+resp.data.total+'/-</span></small>');
 						$(".pro_final_total h5").html('₹ '+resp.data.finalTotal);
         				$(".footer-cart span.finalTotal").html(resp.data.finalTotal);
+						$("#remover"+product_id ).removeClass('hidden');
 						Alert.fire({icon:'success',title: 'Cart updated'});
 					}
 					else{

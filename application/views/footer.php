@@ -401,21 +401,16 @@
         });
         $("select.demand_quantity").niceSelect();
 
-    <?php } else{?>
-        
-        $(document).on('change', 'select.demand_quantity', function() {
-            var quantity = $(this).children("option:selected").val();
-            var product_id = $(this).data("product_id");
-            var unit = $(this).data("unit");
-            if(quantity==0){
-                removeCartItem(product_id, unit);
-            }
-            if(product_id && quantity > 0){
-                // alert(quantity+", "+product_id);
-                updateCart(product_id, quantity);
-            }
-        });
     <?php }?>
+    
+    $(".adder a.btnAddtoCart").click(function(){
+        var quantity=$(this).siblings("select").val();
+        var product_id=$(this).siblings("select").data("product_id");
+        if(product_id && quantity > 0){
+            // alert(quantity+", "+product_id);
+            updateCart(product_id, quantity);
+        }
+    });
 </script>
 
 
