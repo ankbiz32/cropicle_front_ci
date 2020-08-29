@@ -113,7 +113,12 @@
 												<!-- <small> <del><i class="fa fa-inr fa-xl"></i> 50/kg</del></small> -->
 											</h6>
 											<?php if($pr->is_active==0){?>
-												<a href="javascript:;" class="bg-dark"><i class="fa fa-ban"></i>&nbsp; Out of stock</a>
+												<div class="adder">
+													<select id="product_quantity<?=$pr->id?>" class="demand_quantity" data-product_id="<?=$pr->id?>" disabled readonly style="opacity:0; pointer-events:none;">
+														<option></option>
+													</select>
+													<a href="javascript:;" title="Add to demand" id="btnAddtoCart<?=$pr->id?>" class="btnAddtoCart disabled" disabled  style="opacity:0.4; pointer-events:none;">Out of stock</a>
+												</div>
 											<?php } else {?>
 											<div class="adder">
 												<select id="product_quantity<?=$pr->id?>" class="demand_quantity" data-product_id="<?=$pr->id?>">
