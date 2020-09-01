@@ -24,6 +24,9 @@
 				},
 				success: function(resp) {
 					if(resp.status == '200'){
+						if(resp.data.totalItems == 0){
+        				$(".footer-cart").removeClass("visible");
+						}
 						$(".cart_toggle span").html(resp.data.totalItems);
         				$(".cart_toggle_float span").html(resp.data.totalItems);
         				$(".profile-drop sup").html(resp.data.totalItems);
@@ -76,6 +79,7 @@
 				success: function(resp) {
 					if(resp.status == '200'){
 						//alert("Added to cart");
+        				$(".footer-cart").addClass('visible');
 						$(".cart_toggle span").html(resp.data.totalItems);
         				$(".cart_toggle_float span").html(resp.data.totalItems);
         				$(".profile-drop sup").html(resp.data.totalItems);

@@ -9457,14 +9457,7 @@ ul{
 	opacity: 1;
 }
 .footer-cart{
-	position: sticky;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-	z-index: 111;
-	box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
-	visibility: hidden;
-	opacity: 0;
+	display: none;
 }
 /********************************************************
 38. Preloader End
@@ -11676,6 +11669,17 @@ ul{
 	}
 	#prods .fa-pencil{
 		font-size: 12px !important;
+	}
+	.footer-cart{
+		display: flex;
+		position: sticky;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		z-index: 111;
+		box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+		visibility: hidden;
+		opacity: 0;
 	}
 	.footer-cart.visible{
 		visibility: visible;

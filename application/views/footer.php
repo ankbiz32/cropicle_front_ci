@@ -232,8 +232,7 @@
             </a>
         </div>
 </div>
-
-<div class="row footer-cart bg-white <?=isset($this->session->cart)?' visible':''?>">
+<div class="row footer-cart bg-white <?=isset($this->session->cart) ? (sizeof($this->session->userdata("cart"))>0?' visible':'') : ''?>">
     <div class="col-6 py-3 text-center text-black">
         Total = ₹<span class="finalTotal"><?=!empty($cart)?$finalTotal:'0'?></span>/-
     </div>
