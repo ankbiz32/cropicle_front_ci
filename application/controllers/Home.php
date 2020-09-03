@@ -124,9 +124,11 @@ class Home extends MY_Controller {
 				$auth_url="#";
 			}
 
+			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => $this->session->location_id.'Home',
 										'auth_url'=>$auth_url,
+										'banner'=>$banner,
 										'loc'=>$loc
 									]
 								);
@@ -136,25 +138,7 @@ class Home extends MY_Controller {
 		}
 		
 	}
-	
-	public function seeNotif()
-	{
-		if($this->session->userdata('user')){
-			$this->load->model('EditModel','edit');
-			$this->edit->notifStatusSeen($this->session->user->id);
-		}
-		redirect('demands');
-	}
-	
-	public function closeNotif()
-	{
-		if($this->session->userdata('user')){
-			$this->load->model('EditModel','edit');
-			$this->edit->notifStatusSeen($this->session->user->id);
-		}
-		redirect('/');
-	}
-	
+		
 	public function fetchItems($id)
 	{
 
@@ -179,13 +163,22 @@ class Home extends MY_Controller {
 		}
 		$this->session->set_userdata(['location_id' =>  $id]);
 		$this->session->set_userdata(['location_name' =>  $location]);
-		$res=$this->fetch->getAllItems();
+		if(isset($_GET['category'])){
+			$res=$this->fetch->getAllItemsCat($_GET['category']);
+		}
+		else{
+			$res=$this->fetch->getAllItems();
+		}
 		$hawker_count=$this->fetch->hawkerCount($id);
 		// echo'<pre>';var_dump($res);exit;
 		if($res){
+			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
+			$catm=$this->fetch->getActiveInfo('categories_master');
 			$this->load->view('header',['title' => 'Home',
 										'notif'=>$notif,
+										'catm'=>$catm,
+										'banner'=>$banner,
 										'loc'=>$loc,
 										'auth_url'=>$auth_url,
 										'location'=>$location,
@@ -197,9 +190,13 @@ class Home extends MY_Controller {
 			$this->load->view('footer');
 			$this->load->view('cart_scripts');
 		}else{
+			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
+			$catm=$this->fetch->getActiveInfo('categories_master');
 			$this->load->view('header',['title' => 'Home',
 										'notif'=>$notif,
+										'banner'=>$banner,
+										'catm'=>$catm,
 										'loc'=>$loc,
 										'auth_url'=>$auth_url,
 										'location'=>$location
@@ -210,6 +207,25 @@ class Home extends MY_Controller {
 			$this->load->view('cart_scripts');
 		}
 	}
+
+	public function seeNotif()
+	{
+		if($this->session->userdata('user')){
+			$this->load->model('EditModel','edit');
+			$this->edit->notifStatusSeen($this->session->user->id);
+		}
+		redirect('demands');
+	}
+	
+	public function closeNotif()
+	{
+		if($this->session->userdata('user')){
+			$this->load->model('EditModel','edit');
+			$this->edit->notifStatusSeen($this->session->user->id);
+		}
+		redirect('/');
+	}
+
 
 	public function Cart()
 	{	

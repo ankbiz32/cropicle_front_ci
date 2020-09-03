@@ -1920,7 +1920,6 @@ website:    http://www.themepunch.com
 
 }
 @media only screen and (max-width: 768px) {
-
 }
 
 /*-----------------------------------------------------------------------------
@@ -2127,6 +2126,15 @@ website:    http://www.themepunch.com
         .metis.tp-tabs:before {
             background: rgba(0, 0, 0, 0.75);
         }
+      .erinyen.tparrows {
+        min-width:40px;
+        min-height:40px; 
+      }
+      
+      .erinyen.tparrows:before {
+        line-height: 40px;
+        font-size: 14px;
+      }
     }
 
 /*-----------------------------------------------------------------------------

@@ -837,9 +837,9 @@ Assigned to: Theme Forest
 						jsFileLocation:"revolution/js/",
 						sliderLayout:"auto responsive",
 						dottedOverlay:"none",
-						delay:7000,
+						delay:5000,
 						navigation: {
-							keyboardNavigation:"off",
+							keyboardNavigation:"on",
 							keyboard_direction: "vertical",
 							mouseScrollNavigation:"off",
  							mouseScrollReverse:"default",
@@ -875,7 +875,7 @@ Assigned to: Theme Forest
 						responsiveLevels:[1240,1024,778,480],
 						visibilityLevels:[1240,1024,778,480],
 						gridwidth:[1240,1024,778,480],
-						gridheight:[800,768,960,720],
+						gridheight:[350,350,450,450],
 						lazyType:"none",
 						parallax: {
 							type:"scroll",

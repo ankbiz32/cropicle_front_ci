@@ -199,10 +199,24 @@ class GetModel extends CI_Model{
 
     public function getAllItems()
     {
-        return $this->db->select('i.*, u.unit_short_name ')
+        return $this->db->select('i.*, u.unit_short_name, c.category_name')
                         ->from('items_master i')
                         ->join('units u','u.id=i.unit_id','LEFT')
+                        ->join('categories_master c','c.id=i.category_id','LEFT')
+                        ->where('i.category_active',1)
                         // ->where('i.is_active',1)
+                        ->get()
+                        ->result();
+    }
+
+    public function getAllItemsCat($id)
+    {
+        return $this->db->select('i.*, u.unit_short_name, c.category_name')
+                        ->from('items_master i')
+                        ->join('units u','u.id=i.unit_id','LEFT')
+                        ->join('categories_master c','c.id=i.category_id','LEFT')
+                        ->where('i.category_active',1)
+                        ->where('i.category_id',$id)
                         ->get()
                         ->result();
     }

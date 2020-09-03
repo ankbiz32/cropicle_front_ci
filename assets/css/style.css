@@ -462,7 +462,7 @@ ul{
 	visibility: visible;
 	transform: scale(1);
 }
-.search_box .search_block {
+ .search_block {
     position: relative;
     padding: 100px 50px;
     border-radius: 10px;
@@ -476,11 +476,23 @@ ul{
     width: 1170px;
     transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;
 }
-.search_box .search_block h3 {
-	font-size: 30px;
+ .search_boxs .search_block {
+    opacity: 1;
+    visibility: visible;
+	transform: scale(1);
+	width: 100%;
+	padding: 10px 00px;
+}
+ .search_boxs .search_block h3{
+	text-align: center;
+}
+ .search_boxs .search_block h6{
+	color: #FFCC00;
+}
+ .search_block h3 {
+	font-size: 25px;
 	font-weight: 600;
 	margin-bottom: 20px;
-	text-transform: capitalize;
 	color: #FFCC00;
 }
 .search_box .search_close {
@@ -501,7 +513,7 @@ ul{
 	border-radius: 100px;
 	width: 1070px;
 }
-.search_box .search_block .search_field input{
+ .search_block .search_field input{
 	width:100%;
 	height: 70px;
 	outline: none;
@@ -511,7 +523,7 @@ ul{
 	padding: 0px 20px;
 	padding-right: 80px;
 }
-.search_box .search_block .search_field > a{
+ .search_block .search_field > a{
 	/* position: absolute; */
 	right: 0;
 	top: 0;
@@ -9459,6 +9471,26 @@ ul{
 .footer-cart{
 	display: none;
 }
+.cats .cat{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin:10px 30px;
+}
+.cats .cat .image{
+	height:60px;
+	width:60px;
+	border-radius:80px;
+	overflow:hidden;
+	margin-bottom: 8px;
+}
+.cats .cat h6{
+	transition: 0.2s;
+}
+.cat:hover h6{
+	color: #FFCC00 !important;
+}
 /********************************************************
 38. Preloader End
 *******************************************************/  
@@ -10804,10 +10836,10 @@ ul{
 	.search_field {
 		width: 450px;
 	}
-	.search_box .search_block .search_field input{
+	 .search_block .search_field input{
 		height: 50px;
 	}
-	.search_box .search_block .search_field > a{
+	 .search_block .search_field > a{
 		line-height: 50px;
 	}
 	.gallery_grid .gallery_grid_item{
@@ -11411,7 +11443,7 @@ ul{
 	.search_field{
 		width: 330px;
 	}
-	.search_box .search_block .search_field > a{
+	.search_block .search_field > a{
 		padding: 0px 20px;
 	}
 	.thankyou_wrapper > .thankyou_inner > .thankyou_img > img{
@@ -11705,6 +11737,25 @@ ul{
 		margin-top: 8px;
 		font-weight: 600;
 		display: block;
+	}
+	.search_block h3 {
+		font-size: 22px;
+	}
+	.cats{
+		width: 100%;
+		flex-wrap: wrap;
+		/* justify-content: space-between !important; */
+	}
+	.cats .cat{
+		flex-basis: 48%;
+		margin:0 0 25px;
+	}
+	.cats .cat h6{
+		font-size: 12px;
+	}
+	.cats .cat .image{
+		height:40px;
+		width:40px;
 	}
 }
 @media (max-width: 320px){
