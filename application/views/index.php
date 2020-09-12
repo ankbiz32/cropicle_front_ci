@@ -5,9 +5,14 @@
 				<ul>
 				<?php if(!empty($banner)){ $i=0; foreach($banner as $b){?>
 					<li data-index="rs-320<?=$i?>" data-transition="slideoververtical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb=""  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="2000" data-fsslotamount="7" data-saveperformance="off"  data-title="" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-						<img src="<?=KART_DOMAIN.'assets/images/'.$b->img_src?>"  alt="image"  data-lazyload="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+					
+						<picture>
+							<source media="(max-width: 480px)" srcset="<?=KART_DOMAIN.'assets/images/'.$b->img_src480w?>"  alt="Banner" data-lazyload="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+							<img src="<?=KART_DOMAIN.'assets/images/'.$b->img_src?>" alt="Banner" data-lazyload="" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina style="width: 100%; object-fit: cover; height: 100%;">
+						</picture>
 						
-						<div class="tp-caption  " 
+						<!-- <div class="tp-caption  " 
 							id="slide-3204-layer-1" 
 							data-x="['left','left','left','left']" data-hoffset="['90','90','76','30']" 
 							data-y="['top','top','top','top']" data-voffset="['50','50','60','40']" 
@@ -30,7 +35,7 @@
 				
 							style="z-index: 5; white-space: nowrap; font-size: 20px; font-weight: 700; color: #1fa12e; display: inline-block;font-family:'Source Sans Pro', sans-serif;letter-spacing:3px;">
 							Coming soon
-						</div>
+						</div> -->
 				
 						<div class="tp-caption  " 
 							id="slide-3204-layer-3" 
@@ -55,7 +60,7 @@
 				
 							style="z-index: 7; font-size: 82px; line-height: 81px; font-weight: 500; color: rgba(255, 255, 255, 1); display: block;font-family:'Source Sans Pro', sans-serif;"><?=$b->text?>
 						</div>
-
+<!-- 
 						<div class="tp-caption tp-shape tp-shapewrapper " 
 							id="slide-3204-layer-2" 
 							data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
@@ -76,7 +81,7 @@
 								data-paddingleft="[0,0,0,0]"
 
 								style="z-index: 1;background-color:rgba(0,0,0,0.70);">
-						</div>
+						</div> -->
 					</li>
 				<?php $i++; } } ?>
 				</ul>
