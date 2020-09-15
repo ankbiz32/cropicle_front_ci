@@ -411,17 +411,6 @@ class Home extends MY_Controller {
 	}
 
 
-	public function unique()
-	{
-		echo '<pre>';
-		$data=$this->db->select('id,name,mobile_no')->get('users')->result();
-		// unset($data[0]);
-		var_dump($data);
-		foreach($data as $d){
-			$this->db->where('user_id', $d->id)
-					->update('customer_demands' , ['phone_no'=>$d->mobile_no]);
-		}
-	}
 	public function saveDemand()
 	{	
 		// echo 'in save <pre>';var_dump($this->input->post());exit;
