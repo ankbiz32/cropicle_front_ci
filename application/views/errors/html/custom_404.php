@@ -34,6 +34,6 @@
     <div class="wrapper error">
         <h1 class="h1">404</h1>
         <h3 class="h3"> Looks like you are lost ! </h3>
-        <a class="track" onclick="window.history.back()">←&nbsp; Let's get you back on track</a>
+        <a class="track" href="<?=base_url()?>">←&nbsp; Let's get you back on track</a>
     </div>
 </section>
