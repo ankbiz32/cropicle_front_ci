@@ -3,7 +3,7 @@
     <?php if(isset($this->session->cart)){?>
 			$('.checkout-button').click(function() {
 				$(`
-					<form class="row" id="demand-form"  method="POST" action="`+loc+`save-demand">
+					<form class="row" style="margin-top:65px;padding:0 10px;" id="demand-form"  method="POST" action="`+loc+`save-demand">
 						<div class="col-md-6">
 							<div class="form_block">
 								<h6>Name</h6>
@@ -12,7 +12,11 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form_block">
-								<h6>Contact no.</h6>
+								<h6>
+									Contact no.
+									<span class="float-right"><input type="checkbox" id="update_phone" name="update_phone" value="update">
+									<label for="update_phone" class="d-inline" style="font-size:14px"> Update contact no. in profile</label></span>
+								</h6>
 								<input type="text" name="mobile_no" value="<?=isset($this->session->user)?$this->session->user->mobile_no:''?>" minlength="10" maxlength="10" <?=$this->session->user->login_oauth_uid!=NULL?'class="form_field digits"':'class="form_field digits bg-light" readonly'?> required>
 							</div>
 						</div>
