@@ -71,7 +71,7 @@
 			<div class="search_field row">
                 
 				<i class="fa fa-map-marker fa-lg px-0 col"></i>
-				<select id="loc-select" class="col">
+				<select id="loc-select" class="col" required>
 					<option value="" hidden>Select you area</option>
                     <?php foreach($loc as $l){?>
 					<option value="<?=$l->id?>" <?=isset($this->session->location_id)?($l->id==$this->session->location_id?' selected':''):''?>><?=$l->area.', '.$l->city.', '.$l->state.' ('.$l->pin_code.')'?></option>

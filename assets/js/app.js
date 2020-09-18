@@ -73,8 +73,14 @@
 
     $('#loc-search').on('click', function (e) {
         var area= $('#loc-select').val();
-        var url= loc+'location/'+area;
-        window.location.replace(url)
+        if (area){
+            var url= loc+'location/'+area;
+            window.location.replace(url);
+        }
+        else{
+            $('#loc-select').select2('open');
+            // $('#loc-select').focus();
+        }
     });
 
     
