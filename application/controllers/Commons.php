@@ -41,7 +41,8 @@ class Commons extends MY_Controller {
 						"quantity" => $quantity,
 						"price" => $price,
 						"unit" => $productData->unit_short_name,
-						"total" => $total,
+						"buying_qtys" => $productData->buying_qtys,
+						"total" => $total
 					);
 					$this->session->set_userdata("cart",$cart);
 					$cartstr = "";
@@ -220,6 +221,7 @@ class Commons extends MY_Controller {
 						"image" => $productData->item_img,
 						"quantity" => $quantity,
 						"price" => $price,
+						"buying_qtys" => $productData->buying_qtys,
 						"unit" => $productData->unit_short_name,
 						"total" => $total,
 						"actual_price"=>$actual_price,

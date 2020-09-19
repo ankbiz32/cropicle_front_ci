@@ -247,9 +247,27 @@
 											<?php } else {?>
 											<div class="adder">
 												<select id="product_quantity<?=$pr->id?>" class="demand_quantity" data-product_id="<?=$pr->id?>">
-													<?php $qtys=explode("|",$pr->buying_qtys); foreach($qtys as $q){?>
-													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==$q?'selected':''):''?> value="<?=$q?>"><?=$q?> <?=$pr->unit_short_name?></option>
-													<?php }?>
+												<?php if($pr->unit_short_name=='kg' OR $pr->unit_short_name=='dzn'){?>
+												<?php if($pr->unit_short_name=='kg'){?>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==0.25?'selected':''):''?> value="0.25">0.25 <?=$pr->unit_short_name?></option>
+												<?php }?>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==0.5?'selected':''):''?> value="0.5">0.5 <?=$pr->unit_short_name?></option>
+												<?php if($pr->unit_short_name=='kg'){?>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==0.75?'selected':''):''?> value="0.75">0.75 <?=$pr->unit_short_name?></option>
+												<?php }?>
+												<?php }?>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==1?'selected':''):' selected'?> value="1">1 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==2?'selected':''):''?> value="2">2 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==3?'selected':''):''?> value="3">3 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==4?'selected':''):''?> value="4">4 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==5?'selected':''):''?> value="5">5 <?=$pr->unit_short_name?></option>
+												<?php if($pr->unit_short_name=='pc'){?>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==6?'selected':''):''?> value="6">6 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==7?'selected':''):''?> value="7">7 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==8?'selected':''):''?> value="8">8 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==9?'selected':''):''?> value="9">9 <?=$pr->unit_short_name?></option>
+													<option <?=isset($cart[$pr->id])?($cart[$pr->id]['quantity']==10?'selected':''):''?> value="10">10 <?=$pr->unit_short_name?></option>
+												<?php }?>
 												</select>
 												
 												<a href="javascript:;" title="Add to demand" id="btnAddtoCart<?=$pr->id?>" class="btnAddtoCart">Add</a>

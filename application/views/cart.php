@@ -82,28 +82,9 @@
                                     name="product_quantity<?=$row["product_id"];?>"
                                     class="demand_quantity"
                                     data-product_id="<?=$row['product_id'];?>">
-                                    <?php if($row['unit']=='kg' OR $row['unit']=='dzn'){?>
-                                    <?php if($row['unit']=='kg'){?>
-                                    <option <?=$row['quantity']==0.25?'selected':''?> value="0.25">0.25 <?=$row['unit']?></option>
-                                    <?php }?>
-                                    <option <?=$row['quantity']==0.5?'selected':''?> value="0.5">0.5 <?=$row['unit']?></option>
-                                    <?php if($row['unit']=='kg'){?>
-                                    <option <?=$row['quantity']==0.75?'selected':''?> value="0.75">0.75 <?=$row['unit']?></option>
-                                    <?php }?>
-                                    <?php }?>
-                                    <option <?=$row['quantity']==1?'selected':''?> value="1">1 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==2?'selected':''?> value="2">2 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==3?'selected':''?> value="3">3 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==4?'selected':''?> value="4">4 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==5?'selected':''?> value="5">5 <?=$row['unit']?></option>
-                                    <?php if($row['unit']=='pc'){?>
-                                    <option <?=$row['quantity']==6?'selected':''?> value="6">6 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==7?'selected':''?> value="7">7 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==8?'selected':''?> value="8">8 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==9?'selected':''?> value="9">9 <?=$row['unit']?></option>
-                                    <option <?=$row['quantity']==10?'selected':''?> value="10">10 <?=$row['unit']?></option>
-                                    <?php }?>
-                                    
+									<?php $qtys=explode("|",$row['buying_qtys']); foreach($qtys as $q){?>
+									    <option <?=$row['quantity']==$q?' selected':''?> value="<?=$q?>"><?=$q?> <?=$row['unit']?></option>
+									<?php }?>
                                 </select>
                             </div>
                             <div class="product_total<?=$row['product_id']?> pro_price mt-1">

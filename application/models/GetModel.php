@@ -130,7 +130,7 @@ class GetModel extends CI_Model{
 
     public function getItemInfo2($id)
     {
-        return $this->db->select('i.id, i.item_name, i.item_price_customer, i.item_img, u.unit_short_name')
+        return $this->db->select('i.id, i.item_name, i.item_price_customer, i.buying_qtys, i.item_img, u.unit_short_name')
                         ->from('items_master i')
                         ->join('units u', 'u.id = i.unit_id', 'LEFT')
                         ->where('i.id',$id)
