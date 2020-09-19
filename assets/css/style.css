@@ -269,7 +269,7 @@ ul{
 }
 .clv_main_wrapper .clv_header{
 	position: relative;
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	z-index: 10;
 }
 .clv_main_wrapper .clv_header .clv_left_header{
@@ -636,6 +636,10 @@ ul{
 	font-size: 16px; 
 	font-weight: 500;
 	color: #222222;
+}
+.notice{
+	background-color: #343A40;
+	color: white;
 }
 .item_quantity{
 	position: relative;
@@ -11756,6 +11760,9 @@ ul{
 	.cats .cat .image{
 		height:40px;
 		width:40px;
+	}
+	.notice{
+		font-size: 12px;
 	}
 }
 @media (max-width: 320px){

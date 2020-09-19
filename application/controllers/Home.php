@@ -124,11 +124,13 @@ class Home extends MY_Controller {
 				$auth_url="#";
 			}
 
+			$notice=$this->fetch->getNotice();
 			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$this->load->view('header',['title' => $this->session->location_id.'Home',
 										'auth_url'=>$auth_url,
 										'banner'=>$banner,
+										'notice'=>$notice,
 										'loc'=>$loc
 									]
 								);
@@ -172,6 +174,7 @@ class Home extends MY_Controller {
 		$hawker_count=$this->fetch->hawkerCount($id);
 		// echo'<pre>';var_dump($res);exit;
 		if($res){
+			$notice=$this->fetch->getNotice();
 			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$catm=$this->fetch->getActiveInfo('categories_master');
@@ -179,6 +182,7 @@ class Home extends MY_Controller {
 										'notif'=>$notif,
 										'catm'=>$catm,
 										'banner'=>$banner,
+										'notice'=>$notice,
 										'loc'=>$loc,
 										'auth_url'=>$auth_url,
 										'location'=>$location,
@@ -190,12 +194,14 @@ class Home extends MY_Controller {
 			$this->load->view('footer');
 			$this->load->view('cart_scripts');
 		}else{
+			$notice=$this->fetch->getNotice();
 			$banner=$this->fetch->getInfo('banner');
 			$loc=$this->fetch->getActiveInfo('locations_master');
 			$catm=$this->fetch->getActiveInfo('categories_master');
 			$this->load->view('header',['title' => 'Home',
 										'notif'=>$notif,
 										'banner'=>$banner,
+										'notice'=>$notice,
 										'catm'=>$catm,
 										'loc'=>$loc,
 										'auth_url'=>$auth_url,
@@ -250,8 +256,10 @@ class Home extends MY_Controller {
 			$location='Select area';
 		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
+		$notice=$this->fetch->getNotice();
 		$this->load->view('header',['title' => 'Demand Cart',
 									'loc'=>$loc,
+									'notice'=>$notice,
 									'profile'=>$profile,
 									'location'=>$location,
 									'auth_url'=>$auth_url
@@ -272,8 +280,10 @@ class Home extends MY_Controller {
 			$auth_url="#";
 		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
+		$notice=$this->fetch->getNotice();
 		$this->load->view('header',['title' => 'Home',
 									'auth_url'=>$auth_url,
+									'notice'=>$notice,
 									'loc'=>$loc
 								]
 							);
@@ -290,8 +300,10 @@ class Home extends MY_Controller {
 			$auth_url="#";
 		}
 		$loc=$this->fetch->getActiveInfo('locations_master');
+		$notice=$this->fetch->getNotice();
 		$this->load->view('header',['title' => 'Home',
 									'auth_url'=>$auth_url,
+									'notice'=>$notice,
 									'loc'=>$loc
 								]
 							);
@@ -307,9 +319,11 @@ class Home extends MY_Controller {
 		else{
 			$auth_url="#";
 		}
+		$notice=$this->fetch->getNotice();
 		$loc=$this->fetch->getActiveInfo('locations_master');
 		$this->load->view('header',['title' => 'Home',
 									'auth_url'=>$auth_url,
+									'notice'=>$notice,
 									'loc'=>$loc
 								]
 							);
@@ -322,8 +336,10 @@ class Home extends MY_Controller {
 		$this->redirectIfNotLoggedIn();
 		$profile=$this->fetch->getInfoByColId('user_id',$this->session->user->id, 'user_info');
 		$loc=$this->fetch->getActiveInfo('locations_master');
+		$notice=$this->fetch->getNotice();
 		$this->load->view('header',['title' => 'Home',
 									'loc'=>$loc,
+									'notice'=>$notice,
 									'profile'=>$profile
 								]
 							);

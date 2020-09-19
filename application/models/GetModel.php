@@ -139,6 +139,11 @@ class GetModel extends CI_Model{
                         ->row();
     }
     
+    public function getNotice()
+    {
+        return $this->db->get('notice_ribbon')->row();
+    }
+
     public function getInfo($table)
     {
         return $this->db->get($table)->result();

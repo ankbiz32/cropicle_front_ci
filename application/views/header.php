@@ -58,7 +58,7 @@ setTimeout(ldinsp, 0);
         <?php }
      }?>
 <div class="clv_main_wrapper index_v">
-    <div class="clv_header">
+    <div class="clv_header" <?=$notice->is_active==1?'style="margin-bottom:-7px;"':''?>>
         <div class="container"> 
             <div class="row" style="align-items:center;">
                 <div class="col-lg-4 col-sm-4">
@@ -275,4 +275,9 @@ setTimeout(ldinsp, 0);
                 </div>
             </div>
         </div>
+        <?php if($notice->is_active==1){?>
+            <marquee class="notice py-1">
+                <?=$notice->text?>
+            </marquee>
+        <?php }?>
     </div>

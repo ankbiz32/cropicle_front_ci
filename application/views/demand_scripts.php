@@ -3,6 +3,7 @@
     <?php if(isset($this->session->cart)){?>
 			$('.checkout-button').click(function() {
 				$(`
+					<div class="notice mt-1 px-2 py-1"><?=$notice->is_active==1?$notice->text:''?></div>
 					<form class="row" style="margin-top:65px;padding:0 10px;" id="demand-form"  method="POST" action="`+loc+`save-demand">
 						<div class="col-md-6">
 							<div class="form_block">
