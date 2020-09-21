@@ -430,6 +430,7 @@ class Home extends MY_Controller {
 	public function saveDemand()
 	{	
 		// echo 'in save <pre>';var_dump($this->input->post());exit;
+		// echo '<pre>';var_dump($this->session->user->mobile_no);exit;
 		$this->redirectIfNotLoggedIn();
 		$items=$this->session->cart;
 		$amt=0;
@@ -437,6 +438,10 @@ class Home extends MY_Controller {
 			$amt+=$i['quantity']*$i['price'];
 		}
 		$info=['email'=>$this->input->post('email')];
+		if($this->session->user->mobile_no==''){
+			$info['mobile_no']=$this->input->post('mobile_no');
+			$this->session->user->mobile_no=$info['mobile_no'];
+		}
 		if($this->input->post('update_phone')){
 			$info['mobile_no']=$this->input->post('mobile_no');
 			$this->session->user->mobile_no=$info['mobile_no'];
