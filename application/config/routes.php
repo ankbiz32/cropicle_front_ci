@@ -50,10 +50,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-// CUSTOM ROUTING
 
+                         //-------------------- CUSTOM ROUTING ----------------------//
+
+                         
+// Comment below 2 lines to remove maintenance mode
+$route['default_controller'] = 'Maintenance';
+$route['(:any)'] = 'Maintenance';
+
+// $route['default_controller'] = 'Home';
 $route['translate_uri_dashes'] = FALSE;
-$route['default_controller'] = 'Home';
 $route['404_override'] = 'Error404';
 $route['about'] = 'Home/About';
 $route['home'] = 'Home/afterGoogleLogin';
